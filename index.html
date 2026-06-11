@@ -24,9 +24,9 @@
   </header>
 
   <main>
-    <section class="intro" id="inicio">
-      <div class="container intro-layout">
-        <div>
+    <section class="hero" id="inicio">
+      <div class="container hero-layout">
+        <div class="hero-text">
           <p class="small-title">Página personal</p>
           <h1>Antonio Cerrato Casado</h1>
           <p class="position">Profesor Ayudante Doctor</p>
@@ -35,14 +35,98 @@
             Escuela Técnica Superior de Ingeniería<br />
             Universidad de Sevilla
           </p>
+
+          <div class="quick-links" aria-label="Accesos rápidos">
+            <a href="#docencia">Docencia</a>
+            <a href="#recursos">Aplicaciones</a>
+            <a href="#investigacion">Investigación</a>
+            <a href="mailto:antoniocerrato@us.es">Contacto</a>
+          </div>
         </div>
 
-        <aside class="contact-box" aria-label="Datos de contacto">
-          <h2>Contacto</h2>
-          <p><strong>Correo:</strong> <a href="mailto:antoniocerrato@us.es">antoniocerrato@us.es</a></p>
-          <p><strong>Centro:</strong> Escuela Técnica Superior de Ingeniería</p>
-          <p><strong>Universidad:</strong> Universidad de Sevilla</p>
-        </aside>
+        <div class="campus-card" aria-label="Mapa interactivo de la página">
+          <p class="map-caption">Explora la página</p>
+          <svg class="campus-map" viewBox="0 0 760 520" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">Mapa interactivo de docencia, recursos, investigación y contacto</title>
+            <desc id="map-desc">Ilustración de un pequeño campus de ingeniería con enlaces a las secciones principales.</desc>
+
+            <defs>
+              <linearGradient id="ground" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#dfe9df" />
+                <stop offset="100%" stop-color="#c8d8cd" />
+              </linearGradient>
+              <linearGradient id="water" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#91c7d2" />
+                <stop offset="100%" stop-color="#5794a3" />
+              </linearGradient>
+            </defs>
+
+            <path class="map-ground" d="M96 343 L380 184 L668 349 L382 500 Z" />
+            <path class="map-road" d="M126 364 L381 222 L636 368 L382 468 Z" />
+            <path class="map-road-line" d="M164 369 L383 247 L598 371" />
+            <path class="map-water" d="M107 414 C166 390 207 399 242 427 C203 450 145 457 107 414 Z" />
+
+            <a href="#docencia" class="map-zone" aria-label="Ir a Docencia">
+              <g class="building building-main">
+                <path d="M186 222 L292 162 L401 224 L294 286 Z" />
+                <path d="M186 222 L294 286 L294 379 L186 316 Z" />
+                <path d="M401 224 L294 286 L294 379 L401 317 Z" />
+                <path class="roof" d="M221 210 L292 171 L365 213 L294 252 Z" />
+                <path class="door" d="M262 305 L292 322 L292 371 L262 354 Z" />
+                <path class="window" d="M210 250 L236 265 L236 289 L210 274 Z" />
+                <path class="window" d="M327 273 L364 252 L364 279 L327 300 Z" />
+                <text x="292" y="142">Docencia</text>
+              </g>
+            </a>
+
+            <a href="#recursos" class="map-zone" aria-label="Ir a Recursos docentes">
+              <g class="building building-apps">
+                <path d="M425 260 L515 209 L612 264 L520 318 Z" />
+                <path d="M425 260 L520 318 L520 397 L425 342 Z" />
+                <path d="M612 264 L520 318 L520 397 L612 343 Z" />
+                <path class="roof" d="M455 254 L515 220 L581 258 L520 292 Z" />
+                <path class="screen" d="M454 292 L493 315 L493 348 L454 325 Z" />
+                <path class="screen" d="M543 325 L585 300 L585 332 L543 357 Z" />
+                <text x="520" y="192">Recursos</text>
+              </g>
+            </a>
+
+            <a href="#investigacion" class="map-zone" aria-label="Ir a Investigación">
+              <g class="building building-research">
+                <path d="M365 116 L431 78 L500 117 L432 156 Z" />
+                <path d="M365 116 L432 156 L432 238 L365 199 Z" />
+                <path d="M500 117 L432 156 L432 238 L500 199 Z" />
+                <path class="roof" d="M393 113 L431 91 L472 114 L432 136 Z" />
+                <path class="window" d="M384 143 L410 158 L410 183 L384 168 Z" />
+                <path class="window" d="M450 162 L478 146 L478 173 L450 189 Z" />
+                <circle class="antenna" cx="432" cy="70" r="8" />
+                <path class="antenna-line" d="M432 78 L432 45" />
+                <text x="433" y="56">Investigación</text>
+              </g>
+            </a>
+
+            <a href="#contacto" class="map-zone" aria-label="Ir a Contacto">
+              <g class="building building-contact">
+                <path d="M170 338 L237 300 L304 338 L237 377 Z" />
+                <path d="M170 338 L237 377 L237 435 L170 397 Z" />
+                <path d="M304 338 L237 377 L237 435 L304 397 Z" />
+                <path class="roof" d="M193 334 L237 309 L282 335 L237 360 Z" />
+                <path class="mail" d="M194 365 L223 382 L223 407 L194 390 Z" />
+                <path class="mail-line" d="M194 365 L208 388 L223 382" />
+                <text x="236" y="287">Contacto</text>
+              </g>
+            </a>
+
+            <g class="details" aria-hidden="true">
+              <path d="M540 160 L555 151 L570 160 L555 169 Z" />
+              <path d="M548 168 L548 195 L562 187 L562 160" />
+              <path d="M115 330 L132 320 L149 330 L132 340 Z" />
+              <path d="M122 339 L122 363 L142 351 L142 328" />
+              <path d="M627 407 L641 399 L655 407 L641 415 Z" />
+              <path d="M633 415 L633 437 L649 428 L649 406" />
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
