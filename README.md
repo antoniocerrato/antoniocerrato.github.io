@@ -8,6 +8,7 @@ La página está planteada como una web estática sencilla para GitHub Pages, co
 
 - `index.html`: página principal en español.
 - `styles.css`: estilos visuales de la web.
+- `assets/engineering-campus.png`: ilustración principal del campus interactivo.
 
 ## Secciones principales
 
