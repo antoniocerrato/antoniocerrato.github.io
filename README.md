@@ -2,20 +2,26 @@
 
 Web académica personal de Antonio Cerrato Casado.
 
-La página está planteada como una web estática sencilla para GitHub Pages, con una primera versión en español. Reúne información de docencia, recursos docentes, aplicaciones interactivas de Streamlit, investigación y contacto.
+La página está planteada como una web estática sencilla para GitHub Pages, con una primera versión en español. Reúne información de docencia, recursos docentes, aplicaciones interactivas de Streamlit, investigación, contacto y una sección personal.
 
 ## Estructura
 
-- `index.html`: página principal en español.
-- `styles.css`: estilos visuales de la web.
-- `assets/engineering-campus.png`: ilustración principal del campus interactivo.
+- `index.html`: portada de la web.
+- `docencia.html`: página de docencia y mapa de asignaturas.
+- `investigacion.html`: página de investigación, actualmente en construcción.
+- `yo.html`: página personal, actualmente en construcción.
+- `asignaturas/`: páginas específicas de asignaturas.
+- `styles.css`: estilos visuales compartidos.
+- `assets/campus-home.png`: ilustración principal de la portada.
+- `assets/teaching-campus.png`: ilustración interactiva de docencia.
+- `AGENTS.md`: instrucciones para futuros agentes.
 
 ## Secciones principales
 
 - Inicio.
 - Docencia.
-- Recursos docentes.
 - Investigación.
+- Yo.
 - Contacto.
 
 ## Cómo publicar en GitHub Pages
@@ -28,7 +34,7 @@ La página está planteada como una web estática sencilla para GitHub Pages, co
 
 ## Cómo añadir una aplicación de Streamlit
 
-Edita `index.html` y añade o modifica un enlace dentro de la sección `Recursos docentes`. Por ejemplo:
+Edita la página de la asignatura correspondiente dentro de `asignaturas/` o la sección de asignaturas en `docencia.html`. Por ejemplo:
 
 ```html
 <a href="https://tu-app.streamlit.app/" target="_blank" rel="noopener">
@@ -38,6 +44,7 @@ Edita `index.html` y añade o modifica un enlace dentro de la sección `Recursos
 
 ## Próximos pasos recomendados
 
-- Completar los enlaces de investigación.
-- Añadir recursos específicos para cada asignatura.
+- Completar la página personal `yo.html`.
+- Completar las páginas de asignaturas.
+- Desarrollar la página de investigación.
 - Crear más adelante una versión inglesa, por ejemplo en `en/index.html`.
