@@ -385,6 +385,33 @@ h3 {
   text-decoration: underline;
 }
 
+.topic-link > a {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.sub-link-stack {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 18px;
+}
+
+.sub-link-stack li {
+  border-top: 0;
+  padding: 5px 0;
+}
+
+.sub-link-stack a {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.sub-link-stack a::before {
+  color: var(--accent);
+  content: "-> ";
+  font-weight: 800;
+}
+
 .table-card {
   overflow: hidden;
 }
@@ -450,6 +477,91 @@ td {
   font-size: clamp(1.45rem, 2.5vw, 2rem);
 }
 
+.lesson-layout {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(190px, 0.28fr) minmax(0, 0.72fr);
+}
+
+.lesson-nav {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 18px;
+  position: sticky;
+  top: 86px;
+}
+
+.lesson-nav h2 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.lesson-nav a {
+  border-top: 1px solid var(--border);
+  display: block;
+  font-weight: 750;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.lesson-nav a:first-of-type {
+  border-top: 0;
+}
+
+.lesson-content {
+  max-width: 860px;
+}
+
+.lesson-block {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin-bottom: 22px;
+  padding: 28px;
+}
+
+.lesson-block h2 {
+  font-size: clamp(1.45rem, 2.8vw, 2.05rem);
+}
+
+.lesson-block h3 {
+  margin-top: 24px;
+}
+
+.lesson-block p {
+  color: #394440;
+}
+
+.resource-box {
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin-top: 26px;
+  padding: 18px;
+}
+
+.resource-box p {
+  color: var(--muted);
+}
+
+.app-embed {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  height: min(760px, 78vh);
+  margin-top: 18px;
+  overflow: hidden;
+}
+
+.app-embed iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .site-footer {
   background: var(--primary-dark);
   color: rgba(255, 255, 255, 0.8);
@@ -483,8 +595,13 @@ td {
   }
 
   .profile-grid,
-  .subject-list {
+  .subject-list,
+  .lesson-layout {
     grid-template-columns: 1fr;
+  }
+
+  .lesson-nav {
+    position: static;
   }
 }
 
@@ -539,5 +656,15 @@ td {
     justify-content: center;
     white-space: normal;
     width: 100%;
+  }
+
+  .lesson-block {
+    padding: 20px;
+  }
+
+  .app-embed {
+    height: 680px;
+    margin-left: -8px;
+    margin-right: -8px;
   }
 }

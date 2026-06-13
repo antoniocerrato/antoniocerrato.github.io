@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estudios previos: viabilidad económica | Antonio Cerrato Casado</title>
+  <meta
+    name="description"
+    content="Tema de Proyectos de Ingeniería sobre estudios previos y viabilidad económica: préstamos y análisis financiero de inversiones."
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]]
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a>
+        <a href="../../investigacion.html">Investigación</a>
+        <a href="../../yo.html">Yo</a>
+        <a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería</p>
+        <h1>Estudios previos: viabilidad económica</h1>
+        <p class="lead">
+          Introducción a la financiación mediante préstamos y al análisis financiero
+          de inversiones en fases tempranas de proyecto.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Unidades del tema">
+          <h2>Unidades</h2>
+          <a href="#creditos">Tipos de crédito</a>
+          <a href="#analisis-financiero">Análisis financiero de inversiones</a>
+          <a href="#resumen">Resumen operativo</a>
+        </aside>
+
+        <article class="lesson-content">
+          <section id="creditos" class="lesson-block">
+            <p class="small-title">Unidad 1</p>
+            <h2>Tipos de crédito y sistemas de amortización</h2>
+            <p>
+              Cuando un proyecto se financia con deuda, el préstamo transforma una
+              inversión inicial en una serie de pagos futuros. Cada cuota puede incluir
+              devolución de principal, intereses o ambas cosas. La forma en la que se
+              reparte esa devolución condiciona la tesorería del proyecto.
+            </p>
+
+            <h3>Sistema americano</h3>
+            <p>
+              En el sistema americano se pagan intereses durante la vida del préstamo y
+              el principal se devuelve íntegramente al final. Si el capital prestado es
+              \( C_0 \), el tipo de interés periódico es \( i \) y hay \( n \) periodos,
+              los pagos intermedios son:
+            </p>
+            \[
+              I_t = C_0 \cdot i
+            \]
+            <p>
+              En el último periodo se paga el interés del periodo y además se devuelve
+              todo el capital pendiente. Es un sistema cómodo al inicio, pero concentra
+              un esfuerzo financiero importante al vencimiento.
+            </p>
+
+            <h3>Sistema italiano o alemán</h3>
+            <p>
+              En el sistema italiano o alemán la amortización de principal es constante.
+              Cada periodo se devuelve la misma parte del capital:
+            </p>
+            \[
+              A = \frac{C_0}{n}
+            \]
+            <p>
+              Los intereses se calculan sobre el capital pendiente, por lo que van
+              disminuyendo con el tiempo. Como consecuencia, las cuotas totales son más
+              altas al principio y más bajas al final.
+            </p>
+
+            <h3>Sistema francés</h3>
+            <p>
+              En el sistema francés la cuota total es constante. Al principio la mayor
+              parte de la cuota son intereses y una parte menor amortización de capital;
+              con el tiempo ocurre lo contrario. La cuota periódica puede calcularse como:
+            </p>
+            \[
+              Q = C_0 \cdot \frac{i(1+i)^n}{(1+i)^n - 1}
+            \]
+            <p>
+              Es el sistema habitual en muchos préstamos porque facilita la previsión de
+              pagos: la cuota no cambia si el tipo de interés y el plazo permanecen fijos.
+            </p>
+
+            <div class="resource-box">
+              <h3>Aplicación interactiva</h3>
+              <p>
+                Usa esta herramienta para comparar sistemas de amortización y observar
+                cómo cambian cuotas, intereses y capital pendiente.
+              </p>
+              <a class="primary-button" href="https://app-app-proyectos-financiacion-ayhrrrdjzncdsnkhu2adba.streamlit.app/" target="_blank" rel="noopener">
+                Abrir Crédito y financiación
+              </a>
+              <div class="app-embed">
+                <iframe
+                  src="https://app-app-proyectos-financiacion-ayhrrrdjzncdsnkhu2adba.streamlit.app/?embed=true"
+                  title="Aplicación de crédito y financiación"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <section id="analisis-financiero" class="lesson-block">
+            <p class="small-title">Unidad 2</p>
+            <h2>Análisis financiero de inversiones</h2>
+            <p>
+              El análisis financiero estudia si una inversión genera suficiente valor
+              para compensar el desembolso inicial, el coste del capital y el riesgo
+              asumido. En estudios previos no se busca una precisión absoluta, sino una
+              primera lectura económica coherente para comparar alternativas.
+            </p>
+
+            <h3>Flujos de caja antes de impuestos</h3>
+            <p>
+              El flujo de caja antes de impuestos representa la caja generada por la
+              explotación antes de considerar el impuesto sobre beneficios. De forma
+              simplificada:
+            </p>
+            \[
+              FC_{AI,t} = Ingresos_t - Costes\ operativos_t - Inversiones_t
+            \]
+            <p>
+              Es importante distinguir beneficios contables y caja. Una inversión puede
+              ser rentable en términos contables y, aun así, tener tensiones de liquidez
+              si los cobros y pagos se producen en momentos desfavorables.
+            </p>
+
+            <h3>Amortizaciones y base imponible</h3>
+            <p>
+              La amortización contable reparte el coste de un activo a lo largo de su
+              vida útil. No es una salida de caja en el periodo, pero reduce el resultado
+              sujeto a impuestos. Una forma básica de expresar la base imponible es:
+            </p>
+            \[
+              BI_t = Ingresos_t - Costes_t - Amortizaciones_t
+            \]
+            <p>
+              Si el tipo impositivo es \( \tau \), el impuesto estimado puede expresarse
+              como \( Impuesto_t = BI_t \cdot \tau \), siempre que la base imponible sea
+              positiva y no se consideren reglas fiscales adicionales.
+            </p>
+
+            <h3>Valor Actual Neto</h3>
+            <p>
+              El Valor Actual Neto, VAN, actualiza los flujos de caja futuros a una tasa
+              de descuento \( r \) y los compara con la inversión inicial \( I_0 \):
+            </p>
+            \[
+              VAN = -I_0 + \sum_{t=1}^{n} \frac{FC_t}{(1+r)^t}
+            \]
+            <p>
+              Si el VAN es positivo, la inversión crea valor respecto a la rentabilidad
+              mínima exigida. Si es negativo, no alcanza esa exigencia.
+            </p>
+
+            <h3>Tasa Interna de Retorno</h3>
+            <p>
+              La Tasa Interna de Retorno, TIR, es la tasa que hace que el VAN sea cero:
+            </p>
+            \[
+              0 = -I_0 + \sum_{t=1}^{n} \frac{FC_t}{(1+TIR)^t}
+            \]
+            <p>
+              Permite expresar la rentabilidad del proyecto como porcentaje, aunque debe
+              interpretarse con cuidado cuando hay cambios de signo en los flujos de caja
+              o cuando se comparan proyectos de tamaño muy distinto.
+            </p>
+
+            <h3>Prima de riesgo</h3>
+            <p>
+              La tasa de descuento suele construirse a partir de una rentabilidad libre
+              de riesgo más una prima que compensa la incertidumbre del proyecto:
+            </p>
+            \[
+              r = r_f + \pi
+            \]
+            <p>
+              Donde \( r_f \) es la tasa libre de riesgo y \( \pi \) es la prima de
+              riesgo. A mayor incertidumbre técnica, comercial, financiera o regulatoria,
+              mayor debería ser la rentabilidad exigida.
+            </p>
+
+            <h3>Payback simple y ajustado</h3>
+            <p>
+              El payback simple mide cuántos periodos tarda el proyecto en recuperar la
+              inversión inicial con los flujos acumulados, sin actualizar. El payback
+              ajustado, o descontado, realiza la misma lectura pero usando flujos
+              actualizados:
+            </p>
+            \[
+              FC_{desc,t} = \frac{FC_t}{(1+r)^t}
+            \]
+            <p>
+              El payback es fácil de entender, pero no mide por sí solo todo el valor
+              creado después del momento de recuperación.
+            </p>
+
+            <h3>Rotación del capital</h3>
+            <p>
+              La rotación del capital relaciona el volumen de actividad generado con el
+              capital invertido. Ayuda a valorar la eficiencia con la que una inversión
+              convierte recursos comprometidos en ingresos:
+            </p>
+            \[
+              Rotación\ del\ capital = \frac{Ingresos}{Capital\ invertido}
+            \]
+            <p>
+              Una mayor rotación puede indicar un uso más eficiente del capital, aunque
+              debe analizarse junto con márgenes, riesgo y necesidades de financiación.
+            </p>
+
+            <div class="resource-box">
+              <h3>Aplicación interactiva</h3>
+              <p>
+                Usa esta herramienta para ensayar inversiones, flujos de caja, VAN, TIR,
+                payback y otros indicadores financieros.
+              </p>
+              <a class="primary-button" href="https://e6zekqwyxrgyqzrlygxtpm.streamlit.app/" target="_blank" rel="noopener">
+                Abrir Análisis financiero
+              </a>
+              <div class="app-embed">
+                <iframe
+                  src="https://e6zekqwyxrgyqzrlygxtpm.streamlit.app/?embed=true"
+                  title="Aplicación de análisis financiero"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <section id="resumen" class="lesson-block">
+            <h2>Resumen operativo</h2>
+            <div class="table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Concepto</th>
+                      <th>Para qué sirve</th>
+                      <th>Precaución</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Sistema de amortización</td>
+                      <td>Estimar el calendario de pagos de la deuda.</td>
+                      <td>No todos los sistemas generan la misma presión de tesorería.</td>
+                    </tr>
+                    <tr>
+                      <td>VAN</td>
+                      <td>Medir creación de valor frente a una tasa exigida.</td>
+                      <td>Depende mucho de la tasa de descuento y de los flujos previstos.</td>
+                    </tr>
+                    <tr>
+                      <td>TIR</td>
+                      <td>Expresar la rentabilidad como tasa.</td>
+                      <td>Puede ser ambigua con flujos no convencionales.</td>
+                    </tr>
+                    <tr>
+                      <td>Payback</td>
+                      <td>Ver el tiempo aproximado de recuperación.</td>
+                      <td>No mide todo el valor generado tras recuperar la inversión.</td>
+                    </tr>
+                    <tr>
+                      <td>Rotación del capital</td>
+                      <td>Evaluar la eficiencia de uso del capital invertido.</td>
+                      <td>Debe leerse junto a margen, riesgo y necesidades de financiación.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>
