@@ -17,6 +17,7 @@ Este repositorio contiene la web personal académica de Antonio Cerrato Casado. 
 - No dejar caracteres rotos por problemas de codificación.
 - No cambiar cargos, asignaturas, periodos docentes, correo, enlaces institucionales ni datos académicos sensibles sin confirmación del usuario.
 - Los archivos `personal_info_ACC.md` y `enlaces_aplicaciones.txt` son fuentes de contenido.
+- Para el tema `temas/proyectos/documentos-proyecto.html`, el contenido del apartado sobre el Pliego de Prescripciones Técnicas Particulares debe proceder de los documentos Word ubicados en `Fuentes_Ignorar/`. Esa carpeta no se versiona y podría actualizarse en el futuro; si cambia, extraer de nuevo la información de esos Word sin inventar contenido.
 
 ## Imágenes
 
