@@ -6,3 +6,12 @@ https://e6zekqwyxrgyqzrlygxtpm.streamlit.app/
 Crédito y financiación:
 
 https://app-app-proyectos-financiacion-ayhrrrdjzncdsnkhu2adba.streamlit.app/
+
+
+Aplicación PERT - Método de los tres valores
+
+https://app-app-pert-beta-rn2vcevphg96wr6tcgwatm.streamlit.app/
+
+Aplicación simulador PERT AoN
+
+https://appapppert-5sih3pdrjfbej26psurqwb.streamlit.app/

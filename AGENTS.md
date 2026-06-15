@@ -2,6 +2,8 @@
 
 Este repositorio contiene la web personal académica de Antonio Cerrato Casado. Es una web estática para GitHub Pages, sin framework, sin JavaScript y sin proceso de compilación.
 
+Si está disponible, usar la skill `docencia-web-acc` para cambios de contenido, estructura o estilo en esta web docente.
+
 ## Estilo y estructura
 
 - Mantener una estructura por páginas, no una única página larga.
