@@ -15,6 +15,25 @@ La idea actual es organizarla por páginas, no como una única página larga:
 - `asignaturas/`: páginas principales de asignaturas.
 - `temas/`: páginas de temas o unidades docentes.
 
+## Estado reciente
+
+Última actualización de contexto: 2026-06-15.
+
+Último commit subido a GitHub:
+
+```text
+13e2d0b Añade aplicaciones PERT
+```
+
+En esa actualización se hizo lo siguiente:
+
+- Se añadieron dos nuevas aplicaciones Streamlit de PERT a `enlaces_aplicaciones.txt`.
+- Se enlazaron las dos apps en `docencia.html`, dentro de la asignatura Proyectos de Ingeniería.
+- Se enlazaron las dos apps en `asignaturas/proyectos-ingenieria.html`, agrupadas bajo `Planificación de proyectos`.
+- Se añadió a `AGENTS.md` la indicación de usar la skill `docencia-web-acc` cuando esté disponible.
+
+El repositorio quedó limpio después del `push` a `origin/master`.
+
 ## Estilo visual
 
 - Mantener el estilo de la portada: texto a la izquierda e imagen/mapa a la derecha cuando sea posible.
@@ -56,6 +75,10 @@ En `docencia.html` hay tres accesos principales:
 En `asignaturas/proyectos-ingenieria.html`, `Análisis financiero` y `Crédito y financiación` deben colgar de:
 
 - `Estudios previos - Viabilidad económica`
+
+En `asignaturas/proyectos-ingenieria.html`, las aplicaciones de PERT cuelgan de:
+
+- `Planificación de proyectos`
 
 El tema está en:
 
@@ -109,6 +132,18 @@ Crédito y financiación:
 
 ```text
 https://app-app-proyectos-financiacion-ayhrrrdjzncdsnkhu2adba.streamlit.app/
+```
+
+PERT - Método de los tres valores:
+
+```text
+https://app-app-pert-beta-rn2vcevphg96wr6tcgwatm.streamlit.app/
+```
+
+Simulador PERT AoN:
+
+```text
+https://appapppert-5sih3pdrjfbej26psurqwb.streamlit.app/
 ```
 
 Para embeber Streamlit se está usando `?embed=true`, por ejemplo:
@@ -183,6 +218,7 @@ git status --short
 
 ## Posibles próximos pasos
 
+- Crear una página de tema para planificación de proyectos / PERT si las aplicaciones crecen con teoría, ejemplos o prácticas.
 - Revisar visualmente en navegador las apps embebidas y ajustar altura de `.app-embed` si hace falta.
 - Convertir las páginas de asignatura a carpetas con `index.html` si el contenido crece mucho.
 - Crear más temas dentro de `temas/proyectos/`.
