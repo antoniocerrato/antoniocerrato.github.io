@@ -17,7 +17,7 @@ La idea actual es organizarla por páginas, no como una única página larga:
 
 ## Estado reciente
 
-Última actualización de contexto: 2026-06-15.
+Última actualización de contexto: 2026-06-19.
 
 Último commit subido a GitHub:
 
@@ -32,7 +32,27 @@ En esa actualización se hizo lo siguiente:
 - Se enlazaron las dos apps en `asignaturas/proyectos-ingenieria.html`, agrupadas bajo `Planificación de proyectos`.
 - Se añadió a `AGENTS.md` la indicación de usar la skill `docencia-web-acc` cuando esté disponible.
 
-El repositorio quedó limpio después del `push` a `origin/master`.
+Actualización de sesión de 2026-06-19:
+
+- Se añadió una nueva aplicación Streamlit de planificación y programación de proyectos:
+  `CPM-PERT AoA con simulación Monte Carlo`.
+- La nueva app se añadió a `enlaces_aplicaciones.txt`, `docencia.html` y `asignaturas/proyectos-ingenieria.html`, dentro de `Planificación de proyectos`.
+- Se empezó a desarrollar la asignatura de Procedimientos Generales de Construcción.
+- Se creó la carpeta `temas/procedimientos/`.
+- Se creó `temas/procedimientos/pipe-jacking.html`, como entrada base sobre pipe jacking o hinca de tuberías.
+- Se creó `temas/procedimientos/box-jacking.html`, como entrada sobre box jacking o hinca de cajón.
+- `asignaturas/procedimientos-construccion.html` enlaza directamente a `Pipe jacking` y `Box jacking`, sin subenlaces internos.
+- Se añadieron estilos en `styles.css` para vídeos HTML5 y tarjetas de recursos visuales.
+- En `pipe-jacking.html` se insertaron vídeos HTML5 de Pipe Jacking Association/Iseki:
+  - `PJA_Introduction.mp4`.
+  - `ISEKI Pipejacking Microtunelling Animation.m4v`.
+- En `box-jacking.html` no se deben usar esos vídeos de PJA/Iseki como si fueran box jacking, porque son de pipe jacking / microtunnelling.
+- Para `box-jacking.html` se añadieron recursos visuales específicos del caso Werrington:
+  - Vídeo de BBC News sobre el cajón empujado bajo la East Coast Main Line.
+  - Página de Network Rail sobre `Werrington grade separation`.
+- Importante: se probó a embeber páginas HTML de Pipe Jacking Association con `iframe`, pero dieron problemas o enlaces 404. Evitar `pipejacking.html`; usar `pipeintro.html` como página externa, o los archivos de vídeo directos si siguen disponibles.
+
+El repositorio no quedó limpio al final de esta sesión: hay cambios pendientes en páginas docentes, estilos, enlaces de apps y nuevas páginas bajo `temas/procedimientos/`.
 
 ## Estilo visual
 
@@ -51,6 +71,8 @@ El repositorio quedó limpio después del `push` a `origin/master`.
 - `asignaturas/procedimientos-construccion.html`: página de Procedimientos Generales de Construcción.
 - `asignaturas/tecnologia-materiales-construccion.html`: página relacionada con Tecnología de Materiales de Construcción / Construcción de Aeropuertos I.
 - `temas/proyectos/estudios-previos-viabilidad-economica.html`: primer tema real creado.
+- `temas/procedimientos/pipe-jacking.html`: tema introductorio sobre pipe jacking / hinca de tuberías.
+- `temas/procedimientos/box-jacking.html`: tema sobre box jacking / hinca de cajón.
 - `styles.css`: estilos globales, incluyendo estilos para temas, navegación lateral, fórmulas, cajas de recursos e iframes.
 - `AGENTS.md`: instrucciones generales para futuros agentes.
 - `README.md`: descripción pública del proyecto.
@@ -146,6 +168,12 @@ Simulador PERT AoN:
 https://appapppert-5sih3pdrjfbej26psurqwb.streamlit.app/
 ```
 
+CPM-PERT AoA con simulación Monte Carlo:
+
+```text
+https://appapppert-aoa-gtw6uamf4v2rcxwaesx5cw.streamlit.app/
+```
+
 Para embeber Streamlit se está usando `?embed=true`, por ejemplo:
 
 ```html
@@ -179,6 +207,28 @@ https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-aer
 ```
 
 En Proyectos conviene incluir el enlace oficial de Proyectos y Dirección de Obras. En una fase anterior también se habló de que Proyectos y Procedimientos comparten contenidos, así que el enlace de Procedimientos puede aparecer relacionado si Antonio lo quiere.
+
+## Temas creados en Procedimientos
+
+La asignatura `asignaturas/procedimientos-construccion.html` enlaza ahora dos temas:
+
+- `temas/procedimientos/pipe-jacking.html`
+- `temas/procedimientos/box-jacking.html`
+
+`Pipe jacking` debe funcionar como entrada base para entender la hinca con gatos hidráulicos, pozos de ataque y recepción, guiado, rozamiento, lubricación y control de asientos.
+
+`Box jacking` debe centrarse en cajones rectangulares, pasos inferiores, marcos de drenaje, pasos bajo ferrocarril o carretera, control de asientos y auscultación. Puede mencionar su relación con pipe jacking, pero no debe mezclar los vídeos o ejemplos de pipe jacking como si fueran box jacking.
+
+Recursos visuales actuales:
+
+- En `pipe-jacking.html`, vídeos HTML5 directos de Pipe Jacking Association/Iseki:
+  - `https://www.pipejacking.org/assets/pj/static/PJA_Introduction.mp4`
+  - `https://www.pipejacking.org/assets/pj/static/ISEKI%20Pipejacking%20Microtunelling%20Animation.m4v`
+- En `box-jacking.html`, caso Werrington:
+  - BBC News: `https://www.bbc.co.uk/news/av/uk-england-cambridgeshire-55800851`
+  - Network Rail: `https://www.networkrail.co.uk/running-the-railway/our-routes/lne-and-em/east-coast-mainline-route-upgrade/werrington-grade-separation/`
+
+Si se añaden más vídeos de box jacking, comprobar que sean realmente de box jacking, box culvert jacking, jacked box, curved box jack o hinca de cajón, no solo de pipe jacking.
 
 ## Preferencias de Antonio
 
@@ -219,6 +269,8 @@ git status --short
 ## Posibles próximos pasos
 
 - Crear una página de tema para planificación de proyectos / PERT si las aplicaciones crecen con teoría, ejemplos o prácticas.
+- Revisar visualmente en navegador `pipe-jacking.html` y `box-jacking.html`, especialmente los vídeos HTML5 y las tarjetas del caso Werrington.
+- Buscar más vídeos realmente específicos de box jacking y sustituir búsquedas abiertas por enlaces concretos si se encuentran fuentes fiables.
 - Revisar visualmente en navegador las apps embebidas y ajustar altura de `.app-embed` si hace falta.
 - Convertir las páginas de asignatura a carpetas con `index.html` si el contenido crece mucho.
 - Crear más temas dentro de `temas/proyectos/`.

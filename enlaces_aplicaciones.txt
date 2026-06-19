@@ -15,3 +15,7 @@ https://app-app-pert-beta-rn2vcevphg96wr6tcgwatm.streamlit.app/
 Aplicación simulador PERT AoN
 
 https://appapppert-5sih3pdrjfbej26psurqwb.streamlit.app/
+
+Aplicación CPM-PERT AoA con simulación Monte Carlo
+
+https://appapppert-aoa-gtw6uamf4v2rcxwaesx5cw.streamlit.app/

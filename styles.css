@@ -546,6 +546,43 @@ td {
   color: var(--muted);
 }
 
+.video-resource-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.video-resource {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  color: var(--text);
+  display: block;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.video-resource:hover {
+  border-color: rgba(32, 79, 88, 0.45);
+  transform: translateY(-1px);
+}
+
+.video-resource strong,
+.video-resource span {
+  display: block;
+}
+
+.video-resource strong {
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.video-resource span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
 .document-content {
   display: grid;
   gap: 24px;
@@ -642,6 +679,44 @@ td {
   display: block;
   height: 100%;
   width: 100%;
+}
+
+.video-embed {
+  background: #111816;
+  border: 1px solid rgba(217, 221, 215, 0.95);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.video-embed::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+.video-embed iframe {
+  border: 0;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.video-embed video {
+  background: #111816;
+  display: block;
+  height: 100%;
+  inset: 0;
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+}
+
+.hero-video {
+  margin-top: 28px;
+  max-width: 860px;
 }
 
 .site-footer {
@@ -742,6 +817,10 @@ td {
 
   .lesson-block {
     padding: 20px;
+  }
+
+  .video-resource-grid {
+    grid-template-columns: 1fr;
   }
 
   .app-embed {
