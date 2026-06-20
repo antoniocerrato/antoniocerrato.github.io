@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Introducción al pipe jacking</title>
+  <desc id="desc">Esquema de una tubería hincada bajo una carretera mediante gatos hidráulicos.</desc>
+  <rect width="1280" height="720" fill="#e8eeeb"/>
+  <rect y="90" width="1280" height="135" fill="#63716c"/>
+  <path d="M0 200h1280" stroke="#f3e9b0" stroke-width="12" stroke-dasharray="70 45"/>
+  <rect y="225" width="1280" height="495" fill="#ad8056"/>
+  <path d="M0 300h1280M0 430h1280M0 560h1280" stroke="#8e6745" stroke-width="5" opacity=".55"/>
+  <circle cx="640" cy="470" r="124" fill="#d9dedb" stroke="#204f58" stroke-width="24"/>
+  <circle cx="640" cy="470" r="76" fill="#52645f"/>
+  <path d="M180 470h315" stroke="#204f58" stroke-width="30"/>
+  <path d="m480 425 70 45-70 45" fill="none" stroke="#204f58" stroke-width="24"/>
+  <rect x="106" y="370" width="92" height="200" rx="10" fill="#9b6434"/>
+  <text x="64" y="66" fill="#17383f" font-family="system-ui, sans-serif" font-size="38" font-weight="700">Introducción al pipe jacking</text>
+</svg>

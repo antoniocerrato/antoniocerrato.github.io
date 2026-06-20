@@ -714,6 +714,101 @@ td {
   width: 100%;
 }
 
+.video-feature {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.video-feature .video-embed {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.video-feature-caption {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 14px 16px;
+}
+
+.video-feature-caption p {
+  margin: 0;
+}
+
+.video-preview-link {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.video-preview-link:hover,
+.video-preview-link:focus-visible {
+  border-color: rgba(32, 79, 88, 0.45);
+  transform: translateY(-1px);
+}
+
+.video-preview-image {
+  aspect-ratio: 16 / 9;
+  background: #dce5e2;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.video-preview-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.video-play-icon {
+  align-items: center;
+  background: rgba(32, 79, 88, 0.92);
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 1.35rem;
+  height: 64px;
+  justify-content: center;
+  left: 50%;
+  padding-left: 4px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+}
+
+.video-preview-copy {
+  display: block;
+  padding: 14px 16px 16px;
+}
+
+.video-preview-copy strong,
+.video-preview-copy span {
+  display: block;
+}
+
+.video-preview-copy strong {
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.video-preview-copy span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
 .hero-video {
   margin-top: 28px;
   max-width: 860px;
@@ -821,6 +916,11 @@ td {
 
   .video-resource-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-feature-caption {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .app-embed {

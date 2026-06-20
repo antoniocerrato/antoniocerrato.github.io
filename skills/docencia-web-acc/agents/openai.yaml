@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docencia Web ACC"
+  short_description: "Editar la web docente academica de Antonio"
+  default_prompt: "Usa $docencia-web-acc para integrar material en la web docente."

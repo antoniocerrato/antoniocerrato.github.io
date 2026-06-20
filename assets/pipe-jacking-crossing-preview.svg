@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cruce sin zanja mediante pipe jacking</title>
+  <desc id="desc">Esquema de una tubería hincada bajo un río y una carretera.</desc>
+  <rect width="1280" height="720" fill="#edf2ef"/>
+  <path d="M0 150h390l100 55h300l100-55h390v170H0z" fill="#6d7974"/>
+  <path d="M480 150q160 95 320 0v155H480z" fill="#4e8796"/>
+  <rect y="320" width="1280" height="400" fill="#b58a62"/>
+  <path d="M0 420h1280M0 550h1280" stroke="#936b48" stroke-width="5" opacity=".5"/>
+  <path d="M180 515h920" stroke="#204f58" stroke-width="122"/>
+  <path d="M180 515h920" stroke="#dce2df" stroke-width="76"/>
+  <path d="m1025 455 95 60-95 60" fill="#204f58"/>
+  <text x="64" y="78" fill="#17383f" font-family="system-ui, sans-serif" font-size="38" font-weight="700">Cruce sin zanja</text>
+</svg>

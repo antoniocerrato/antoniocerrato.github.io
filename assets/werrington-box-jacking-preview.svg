@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Hinca de cajón de Werrington</title>
+  <desc id="desc">Esquema de un gran cajón de hormigón empujado bajo varias vías ferroviarias.</desc>
+  <rect width="1280" height="720" fill="#e7eeeb"/>
+  <rect y="110" width="1280" height="175" fill="#7b8580"/>
+  <g stroke="#d8d8ce" stroke-width="15">
+    <path d="M0 145h1280"/><path d="M0 205h1280"/><path d="M0 265h1280"/>
+  </g>
+  <g stroke="#303735" stroke-width="6">
+    <path d="M0 133h1280"/><path d="M0 157h1280"/><path d="M0 193h1280"/><path d="M0 217h1280"/><path d="M0 253h1280"/><path d="M0 277h1280"/>
+  </g>
+  <rect y="285" width="1280" height="435" fill="#a97e57"/>
+  <path d="M0 400h1280M0 565h1280" stroke="#896345" stroke-width="6" opacity=".5"/>
+  <rect x="420" y="370" width="540" height="270" rx="8" fill="#d8ddda" stroke="#204f58" stroke-width="24"/>
+  <rect x="500" y="430" width="380" height="210" fill="#52645f"/>
+  <path d="M170 505h195" stroke="#204f58" stroke-width="34"/>
+  <path d="m345 455 80 50-80 50" fill="#204f58"/>
+  <text x="64" y="75" fill="#17383f" font-family="system-ui, sans-serif" font-size="38" font-weight="700">Werrington box jack</text>
+</svg>
