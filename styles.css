@@ -640,6 +640,39 @@ td {
   margin: 0;
 }
 
+.case-figure-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.case-figure {
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.case-figure img {
+  display: block;
+  height: 260px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.case-figure figcaption {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding: 12px 14px;
+}
+
+.case-figure figcaption a {
+  font-weight: 750;
+}
+
 .document-table {
   margin: 18px 0;
 }
@@ -950,6 +983,10 @@ td {
   }
 
   .video-preview-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-figure-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 

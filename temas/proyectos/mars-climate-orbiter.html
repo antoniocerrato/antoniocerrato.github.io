@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mars Climate Orbiter: una interfaz que no cerró | Antonio Cerrato Casado</title>
+  <meta
+    name="description"
+    content="Caso de estudio sobre la pérdida de la Mars Climate Orbiter: Lockheed Martin Astronautics, JPL, unidades, archivo AMD, software SM_FORCES, navegación y gestión de interfaces."
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a>
+        <a href="../../investigacion.html">Investigación</a>
+        <a href="../../yo.html">Yo</a>
+        <a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Caso de estudio</p>
+        <h1>Mars Climate Orbiter: una interfaz que no cerró</h1>
+        <p class="lead">
+          La pérdida de la Mars Climate Orbiter en 1999 suele resumirse como “un error
+          entre unidades imperiales y métricas”. La frase es cierta, pero demasiado pequeña.
+          Detrás había una interfaz de software incumplida, una cadena de datos entre
+          Lockheed Martin Astronautics y el Jet Propulsion Laboratory, anomalías que no se
+          cerraron a tiempo y una misión que llegó a Marte unos 170 kilómetros más baja de
+          lo previsto.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del caso">
+          <h2>Contenido</h2>
+          <a href="#ficha">Ficha rápida</a>
+          <a href="#imagen">Imagen</a>
+          <a href="#participantes">Quién participó</a>
+          <a href="#causa">La causa real</a>
+          <a href="#error">Tipo de error</a>
+          <a href="#coste">Coste del error</a>
+          <a href="#proyecto">Interfaces y unidades</a>
+          <a href="#referencias">Referencias</a>
+        </aside>
+
+        <article class="lesson-content">
+          <section id="ficha" class="lesson-block">
+            <p class="small-title">Ficha del caso</p>
+            <h2>Un dato correcto en el sistema equivocado</h2>
+            <div class="table-card">
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><th>Misión</th><td>Mars Climate Orbiter, dentro del Mars Surveyor Project '98 de NASA.</td></tr>
+                    <tr><th>Lanzamiento</th><td>11 de diciembre de 1998.</td></tr>
+                    <tr><th>Pérdida de contacto</th><td>23 de septiembre de 1999, durante la llegada a Marte.</td></tr>
+                    <tr><th>Objetivo</th><td>Estudiar el clima marciano y servir de relé de comunicaciones para la Mars Polar Lander.</td></tr>
+                    <tr><th>Contratista principal</th><td>Lockheed Martin Astronautics, Denver, Colorado.</td></tr>
+                    <tr><th>Centro líder</th><td>Jet Propulsion Laboratory (JPL), responsable de gestión del proyecto, ingeniería de sistemas, diseño de misión, navegación y aseguramiento de misión.</td></tr>
+                    <tr><th>Error principal</th><td>El software de tierra <code>SM_FORCES</code> escribió datos de impulso en libras-fuerza segundo (<code>lbf-s</code>) en un archivo AMD que, según la especificación de interfaz, debía estar en newton-segundo (<code>N-s</code>).</td></tr>
+                    <tr><th>Consecuencia técnica</th><td>La navegación subestimó el efecto de pequeñas maniobras de los propulsores por un factor 4,45; la trayectoria de llegada quedó aproximadamente 170 km por debajo de lo previsto.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="imagen" class="lesson-block">
+            <h2>Imagen del caso</h2>
+            <figure class="case-figure">
+              <img
+                src="https://mars.nasa.gov/system/content_pages/main_images/375_mco_mapping.jpg"
+                alt="Concepto artístico de la Mars Climate Orbiter sobre Marte"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              />
+              <figcaption>
+                Concepto artístico de la Mars Climate Orbiter. Fuente: NASA/JPL-Caltech.
+                <a href="https://science.nasa.gov/mission/mars-climate-orbiter/" target="_blank" rel="noopener">Ficha de misión de NASA Science</a>.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="participantes" class="lesson-block">
+            <h2>Quién participó</h2>
+            <p>
+              La Mars Climate Orbiter formaba parte del programa Mars Surveyor de NASA. El
+              Jet Propulsion Laboratory fue el centro líder del programa y creó la oficina
+              Mars Surveyor Project '98 para definir las misiones Mars Climate Orbiter y
+              Mars Polar Lander, desarrollar los elementos de vuelo y coordinar integración,
+              pruebas y lanzamiento.
+            </p>
+            <p>
+              Lockheed Martin Astronautics, con sede en Denver, fue seleccionada como
+              contratista principal. Sus responsabilidades incluían diseñar y desarrollar las
+              dos naves, liderar la integración y prueba del sistema de vuelo y apoyar las
+              operaciones de lanzamiento. El informe de investigación distingue además el
+              Mars Surveyor Operations Project, encargado de las operaciones de vuelo, con
+              funciones distribuidas entre varios equipos.
+            </p>
+            <p>
+              En la operación diaria, Lockheed Martin Astronautics realizaba funciones de
+              operación de la nave, seguimiento de salud y estado, desarrollo de secuencias y
+              mando desde Denver. JPL conservaba la gestión global de proyecto y misión, la
+              ingeniería de sistemas, el mantenimiento del sistema de datos de tierra, la
+              navegación, la planificación de misión y la integración de secuencias. Esa
+              división hacía imprescindible que las interfaces de datos entre equipos fueran
+              inequívocas.
+            </p>
+          </section>
+
+          <section id="causa" class="lesson-block">
+            <h2>La causa real</h2>
+            <p>
+              La causa raíz identificada por el Mars Climate Orbiter Mishap Investigation
+              Board fue muy concreta: no se usaron unidades métricas en el código de un
+              archivo de software de tierra llamado <em>Small Forces</em>, empleado en los
+              modelos de trayectoria. El programa <code>SM_FORCES</code> procesaba datos de pequeñas
+              fuerzas asociadas a maniobras de control de actitud y generaba un archivo de
+              Angular Momentum Desaturation, conocido como archivo AMD.
+            </p>
+            <p>
+              Ese archivo AMD debía cumplir una especificación de interfaz del Mars Surveyor
+              Operations Project. La especificación exigía que el impulso se entregara en
+              newton-segundo (<code>N-s</code>). Sin embargo, el software de tierra produjo los datos
+              en libras-fuerza segundo (<code>lbf-s</code>). Al procesar el archivo, el algoritmo de
+              navegación asumió que los números ya estaban en unidades métricas. El efecto
+              de los disparos de los propulsores quedó subestimado por un factor 4,45, la
+              conversión entre libra-fuerza y newton.
+            </p>
+            <p>
+              El error se volvió importante porque la nave necesitaba descargar con
+              frecuencia el momento angular acumulado en sus ruedas de reacción. Esas
+              maniobras AMD se realizaban con propulsores y producían pequeños cambios de
+              velocidad. En el caso de la Mars Climate Orbiter ocurrieron entre diez y
+              catorce veces más de lo esperado, en parte por la asimetría de su panel solar
+              respecto al cuerpo de la nave. Cada evento mal modelado introducía una
+              pequeña discrepancia; durante nueve meses de viaje, la suma dejó de ser
+              pequeña.
+            </p>
+            <p>
+              La investigación también explica por qué el problema sobrevivió. Durante los
+              primeros meses los archivos AMD no se usaron de forma normal en la determinación
+              orbital por errores de formato y especificaciones incorrectas de actitud.
+              Cuando empezaron a utilizarse, aparecieron datos anómalos. Había indicios de
+              que las perturbaciones de trayectoria estaban siendo subestimadas, pero el
+              problema no se cerró mediante un proceso formal y completo. Las comunicaciones
+              entre navegación, operaciones, ingeniería de sistemas y equipo de la nave no
+              bastaron para convertir la anomalía en una corrección antes de la llegada.
+            </p>
+          </section>
+
+          <section id="error" class="lesson-block">
+            <h2>Qué tipo de error fue</h2>
+            <div class="table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Dimensión</th><th>Lectura del caso</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Error de proyecto</td><td>Sí. La arquitectura de responsabilidades dependía de una interfaz de datos que existía formalmente, pero no quedó asegurada de extremo a extremo.</td></tr>
+                    <tr><td>Error de software de tierra</td><td>Sí. El código <code>SM_FORCES</code> generó datos en <code>lbf-s</code> donde la especificación exigía <code>N-s</code>.</td></tr>
+                    <tr><td>Error de gestión de interfaces</td><td>Sí. El archivo AMD cruzaba la frontera entre operaciones de la nave y navegación; su significado físico no fue verificado con suficiente robustez.</td></tr>
+                    <tr><td>Error de verificación y validación</td><td>Sí. El proceso no detectó que los impulsos estaban siendo interpretados con un factor 4,45 de diferencia.</td></tr>
+                    <tr><td>Error de ingeniería de sistemas</td><td>Sí. El paso de desarrollo a operaciones no integró bien navegación, control de actitud, propulsión, software de tierra y conocimiento real de la nave.</td></tr>
+                    <tr><td>Error de comunicación</td><td>Sí. Las preocupaciones de navegación no llegaron con suficiente eficacia al equipo de operaciones de la nave ni a la gestión del proyecto.</td></tr>
+                    <tr><td>Error de contingencia</td><td>Sí. Se discutió una maniobra TCM-5 para elevar la trayectoria antes de la inserción orbital, pero no estaba preparada ni se ejecutó.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="coste" class="lesson-block">
+            <h2>Coste del error</h2>
+            <ul>
+              <li><strong>Coste humano:</strong> no hubo víctimas, al tratarse de una misión no tripulada.</li>
+              <li><strong>Coste económico:</strong> la misión Mars Surveyor 98 tuvo un coste total del orden de 327,6 millones de dólares para orbitador, aterrizador, lanzamiento y operaciones; la pérdida del orbitador suele citarse como una pérdida de unos 125 millones de dólares.</li>
+              <li><strong>Coste científico:</strong> pérdida de la cartografía atmosférica prevista, de observaciones climáticas y de una función de relé para la Mars Polar Lander.</li>
+              <li><strong>Coste operativo:</strong> Mars Polar Lander quedó sin el apoyo de relé que debía proporcionar el orbitador durante su misión en superficie.</li>
+              <li><strong>Coste organizativo:</strong> investigación formal, revisión del programa Mars Surveyor, auditorías de interfaces y refuerzo de procesos de ingeniería de sistemas, navegación y operaciones.</li>
+            </ul>
+          </section>
+
+          <section id="proyecto" class="lesson-block">
+            <h2>Interfaces y unidades</h2>
+            <p>
+              La Mars Climate Orbiter no se perdió por una maniobra espectacular, sino por
+              una discrepancia persistente en datos aparentemente ordinarios. En cada evento
+              de desaturación, los propulsores descargaban el momento acumulado en las
+              ruedas de reacción. Ese pequeño impulso debía incorporarse al modelo de
+              navegación. La nave no estaba quieta entre grandes maniobras: iba recibiendo
+              pequeños empujes que también contaban.
+            </p>
+            <p>
+              El archivo AMD era el punto donde ese efecto físico se convertía en dato para
+              la navegación. Sobre el papel, la interfaz decía <code>N-s</code>; en la práctica, el
+              archivo contenía <code>lbf-s</code>. Cada equipo podía estar trabajando con rutinas que
+              parecían coherentes dentro de su propio entorno, y aun así el sistema conjunto
+              se iba alejando del Marte calculado.
+            </p>
+            <p>
+              Cuando la nave llegó a Marte, la trayectoria real estaba demasiado baja. La
+              señal se perdió al entrar en ocultación durante la maniobra de inserción
+              orbital y no volvió a recuperarse. La investigación concluyó que la nave se
+              destruyó en la atmósfera marciana o salió de nuevo hacia una órbita
+              heliocéntrica. El error de unidades fue el dato visible; el fallo completo fue
+              una interfaz que nadie consiguió cerrar a tiempo.
+            </p>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <h2>Referencias y recursos</h2>
+            <ul class="link-stack">
+              <li>
+                <a href="https://llis.nasa.gov/llis_lib/pdf/1009464main1_0641-mr.pdf" target="_blank" rel="noopener">Mars Climate Orbiter Mishap Investigation Board Phase I Report</a>
+                <p>Informe de investigación con causa raíz, causas contribuyentes, responsabilidades entre JPL y Lockheed Martin Astronautics y recomendaciones.</p>
+              </li>
+              <li>
+                <a href="https://science.nasa.gov/mission/mars-climate-orbiter/" target="_blank" rel="noopener">NASA Science: Mars Climate Orbiter</a>
+                <p>Ficha de misión con cronología básica, objetivo, vehículo de lanzamiento y resumen de la pérdida.</p>
+              </li>
+            </ul>
+            <a class="primary-button" href="catastrofes-errores-proyectos-ingenieria.html">Volver a catástrofes y errores</a>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>

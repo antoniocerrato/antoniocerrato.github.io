@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airbus A380 y CATIA: cuando el modelo digital no es único | Antonio Cerrato Casado</title>
+  <meta
+    name="description"
+    content="Caso de estudio sobre los retrasos del Airbus A380 por problemas de cableado, CATIA V4/V5, gestión de configuración, interfaces y control de cambios."
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a>
+        <a href="../../investigacion.html">Investigación</a>
+        <a href="../../yo.html">Yo</a>
+        <a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Caso de estudio</p>
+        <h1>Airbus A380 y CATIA: cuando el modelo digital no es único</h1>
+        <p class="lead">
+          El retraso del Airbus A380 por problemas de cableado es un caso magnífico para
+          explicar que un proyecto moderno no falla solo por cálculo estructural. También
+          puede fallar por interfaces digitales, gestión de configuración, versiones de
+          software, control de cambios y comunicación entre centros de diseño y fabricación.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del caso">
+          <h2>Contenido</h2>
+          <a href="#ficha">Ficha rápida</a>
+          <a href="#imagen">Imagen</a>
+          <a href="#que-ocurrio">Qué ocurrió</a>
+          <a href="#error">Tipo de error</a>
+          <a href="#coste">Coste del error</a>
+          <a href="#proyecto">El modelo digital</a>
+          <a href="#referencias">Referencias</a>
+        </aside>
+
+        <article class="lesson-content">
+          <section id="ficha" class="lesson-block">
+            <p class="small-title">Ficha del caso</p>
+            <h2>Un avión enorme y un cableado todavía más enorme</h2>
+            <div class="table-card">
+              <div class="table-wrap">
+                <table>
+                  <tbody>
+                    <tr><th>Proyecto</th><td>Airbus A380, avión comercial de doble cubierta.</td></tr>
+                    <tr><th>Periodo crítico</th><td>Retrasos anunciados entre 2005 y 2006; primera entrega comercial en octubre de 2007.</td></tr>
+                    <tr><th>Elemento afectado</th><td>Cableado eléctrico y maquetas digitales de integración.</td></tr>
+                    <tr><th>Problema conocido</th><td>Uso de CATIA V4 en algunos centros y CATIA V5 en otros, junto con fallos de gestión de configuración y control de cambios.</td></tr>
+                    <tr><th>Consecuencia principal</th><td>Retrasos industriales, rediseño de cableado y revisión del calendario de entregas.</td></tr>
+                    <tr><th>Lección central</th><td>En un megaproyecto, la compatibilidad de herramientas y datos es una decisión de proyecto, no un asunto informático secundario.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="imagen" class="lesson-block">
+            <h2>Imagen del caso</h2>
+            <figure class="case-figure">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/A6-EDY_A380_Emirates_31_jan_2013_jfk_%288442269364%29_%28cropped%29.jpg/330px-A6-EDY_A380_Emirates_31_jan_2013_jfk_%288442269364%29_%28cropped%29.jpg"
+                alt="Airbus A380 de Emirates en vuelo"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              />
+              <figcaption>
+                Airbus A380 en vuelo. Fuente: Wikimedia Commons.
+                <a href="https://commons.wikimedia.org/wiki/File:A6-EDY_A380_Emirates_31_jan_2013_jfk_(8442269364)_(cropped).jpg" target="_blank" rel="noopener">Ficha de la imagen</a>.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="que-ocurrio" class="lesson-block">
+            <h2>Qué ocurrió</h2>
+            <p>
+              El A380 era un programa europeo de una escala extraordinaria. No se trataba
+              solo de diseñar un avión más grande: había que coordinar centros de varios
+              países, miles de piezas, una elevada personalización para aerolíneas y un
+              sistema eléctrico de enorme complejidad. Las fuentes habituales citan del
+              orden de quinientos kilómetros de cableado por avión, con decenas de miles de
+              conectores.
+            </p>
+            <p>
+              El problema que se hizo visible en producción fue que el modelo digital no
+              funcionaba como una única verdad compartida. Centros alemanes y españoles
+              seguían trabajando con CATIA V4, mientras centros franceses y británicos
+              habían migrado a CATIA V5. Esa diferencia de versiones no era cosmética. Los
+              mazos de cables, sus radios de curvatura, dimensiones, recorridos y reglas de
+              fabricación debían encajar físicamente en el avión. Si los datos no se
+              transferían con fidelidad entre versiones y centros, el montaje real revelaba
+              interferencias, longitudes incorrectas o documentación insuficiente.
+            </p>
+            <p>
+              Conviene no reducir el caso a “Airbus usó dos versiones de CATIA”. Esa frase
+              es útil como titular, pero se queda corta. El problema de fondo fue la
+              coordinación del proyecto: herramientas heterogéneas, diseño y producción en
+              paralelo, personalización por cliente, cambios acumulados y una cultura de
+              reporte que no elevó suficientemente pronto la mala noticia. El software fue
+              el lugar donde se manifestó una debilidad organizativa más amplia.
+            </p>
+          </section>
+
+          <section id="error" class="lesson-block">
+            <h2>Qué tipo de error fue</h2>
+            <div class="table-card">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>Dimensión</th><th>Lectura del caso</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Error de proyecto</td><td>Sí. La definición del sistema de herramientas, datos e interfaces no estaba suficientemente cerrada para la escala y simultaneidad del programa.</td></tr>
+                    <tr><td>Error de gestión de configuración</td><td>Sí. El diseño digital, los cambios y las versiones no convergieron en una maqueta única fiable para fabricar el cableado.</td></tr>
+                    <tr><td>Error de gestión del proyecto</td><td>Sí. La coordinación multinacional, la comunicación de problemas y el control de cambios no contuvieron el problema antes de afectar a entregas.</td></tr>
+                    <tr><td>Error técnico de software</td><td>Parcialmente. CATIA V4 y V5 fueron parte del problema, pero el fallo importante está en cómo se gobernó la interoperabilidad.</td></tr>
+                    <tr><td>Error de seguridad operacional</td><td>No como accidente: el problema se detectó antes de entregar aviones en servicio comercial, pero con un coste industrial enorme.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="coste" class="lesson-block">
+            <h2>Coste del error</h2>
+            <ul>
+              <li><strong>Coste humano:</strong> no hubo víctimas; es un caso de fallo de proyecto industrial, no de accidente en servicio.</li>
+              <li><strong>Coste de plazo:</strong> la entrada en servicio se desplazó hasta octubre de 2007, con retrasos acumulados respecto a los planes iniciales.</li>
+              <li><strong>Coste económico:</strong> Airbus comunicó un impacto previsto de 4.800 millones de euros en resultados hasta 2010 asociado a retrasos y reestructuración del programa.</li>
+              <li><strong>Coste comercial:</strong> compensaciones a aerolíneas, renegociación de calendarios y pérdida de confianza en la capacidad de cumplir entregas.</li>
+              <li><strong>Coste organizativo:</strong> cambios directivos, programa de reestructuración y revisión de procesos digitales e industriales.</li>
+            </ul>
+          </section>
+
+          <section id="proyecto" class="lesson-block">
+            <h2>El modelo digital</h2>
+            <p>
+              En el A380, el modelo digital era parte de la fábrica. No era un archivo
+              auxiliar ni una herramienta neutra: de él dependían recorridos, interferencias,
+              longitudes, radios de curvatura, documentación de montaje y coordinación entre
+              centros. Si cada centro trabajaba con reglas distintas, versiones distintas o
+              datos que se traducían de forma incompleta, el avión dejaba de tener una
+              referencia común.
+            </p>
+            <p>
+              El retraso no se explica solo por la convivencia de CATIA V4 y CATIA V5. Esa
+              convivencia fue el síntoma visible de una integración insuficiente: diseño y
+              producción avanzaban en paralelo, las aerolíneas introducían configuraciones
+              específicas, los cambios se acumulaban y la información crítica no siempre
+              emergía con la rapidez necesaria. El cableado terminó actuando como prueba
+              física de la coordinación digital.
+            </p>
+            <p>
+              Una vez que los mazos no encajaban como debían, el problema dejó de ser
+              abstracto. Hubo que rediseñar, revisar documentación, renegociar calendarios y
+              reorganizar responsabilidades. En un programa de esa escala, la gestión de
+              interfaces no es administración posterior al diseño: forma parte del propio
+              sistema técnico que hace posible fabricar.
+            </p>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <h2>Referencias y recursos</h2>
+            <ul class="link-stack">
+              <li>
+                <a href="https://www.airbus.com/en/products-services/commercial-aircraft/passenger-aircraft/a380" target="_blank" rel="noopener">Airbus: A380</a>
+                <p>Página oficial del producto, con datos generales del avión, escala del programa y evolución del A380.</p>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Airbus_A380#Production_and_delivery_delays" target="_blank" rel="noopener">Airbus A380: Production and delivery delays</a>
+                <p>Síntesis con referencias a retrasos, cableado, CATIA V4/V5, gestión de configuración y coste previsto.</p>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/History_of_Airbus#A380_delays" target="_blank" rel="noopener">History of Airbus: A380 delays</a>
+                <p>Resumen histórico del impacto del problema de compatibilidad y de los retrasos del programa.</p>
+              </li>
+            </ul>
+            <a class="primary-button" href="catastrofes-errores-proyectos-ingenieria.html">Volver a catástrofes y errores</a>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>
