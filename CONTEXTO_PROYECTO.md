@@ -2,6 +2,24 @@
 
 Este archivo resume el estado actual de la web personal de Antonio Cerrato Casado para que una futura sesión pueda retomarla sin reconstruir el contexto desde cero.
 
+## Estado vigente — 2026-07-22
+
+- Se ha añadido `temas/proyectos/ariane-5-vuelo-501.html` a la serie de catástrofes y
+  errores en proyectos de ingeniería.
+- La entrada desarrolla el fallo del primer vuelo de Ariane 5 desde la reutilización de
+  software, el desbordamiento numérico, el fallo común de los sistemas redundantes y la
+  falta de ensayos representativos del sistema completo.
+- Usa como fuentes principales el informe y los recursos visuales oficiales de ESA/CNES.
+  El artículo de PVS-Studio aportado por Antonio queda como lectura complementaria.
+- Las imágenes enlazadas proceden de fichas oficiales con crédito y licencia estándar de
+  la ESA. El vídeo se presenta como tarjeta enlazada, compatible con apertura mediante
+  `file://`.
+- La tabla general y la página de la asignatura enlazan la nueva entrada.
+- Revisión editorial posterior: la página de Ariane 501 adopta un estilo de artículo
+  técnico más detallado. Sustituye «excepción de operando» por «excepción interna de
+  software por conversión fuera de rango» y conserva `Operand Error` únicamente como la
+  denominación utilizada por el informe, explicando su alcance.
+
 ## Estado vigente — 2026-07-01
 
 Este apartado prevalece sobre los historiales anteriores.

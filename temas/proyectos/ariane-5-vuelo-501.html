@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ariane 5: el software que no sabía que había cambiado de cohete | Antonio Cerrato Casado</title>
+  <meta
+    name="description"
+    content="Historia técnica del fallo del vuelo 501 de Ariane 5: software heredado, conversión fuera de rango, sistemas inerciales redundantes y ensayos que no reprodujeron la nueva trayectoria."
+  />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a>
+        <a href="../../investigacion.html">Investigación</a>
+        <a href="../../yo.html">Yo</a>
+        <a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Caso de estudio</p>
+        <h1>Ariane 5: el software que no sabía que había cambiado de cohete</h1>
+        <p class="lead">
+          El 4 de junio de 1996, Europa estrenaba un lanzador más potente y una parte de su
+          software seguía razonando con los límites de Ariane 4. Treinta segundos después
+          del despegue, una conversión numérica fuera de rango detuvo los dos sistemas de
+          referencia inercial. El cohete todavía volaba correctamente; lo que había perdido
+          era la posibilidad de saber cómo estaba volando.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del caso">
+          <h2>Contenido</h2>
+          <a href="#vuelo">Treinta segundos de vuelo</a>
+          <a href="#recursos">Imágenes y vídeo</a>
+          <a href="#sri">Qué calculaba el SRI</a>
+          <a href="#conversion">La conversión que no cabía</a>
+          <a href="#redundancia">Dos equipos, un mismo fallo</a>
+          <a href="#ensayos">El ensayo que faltó</a>
+          <a href="#proyecto">Más que un error de programación</a>
+          <a href="#despues">Después del vuelo 501</a>
+          <a href="#referencias">Referencias</a>
+        </aside>
+
+        <article class="lesson-content">
+          <section id="vuelo" class="lesson-block">
+            <p class="small-title">Ariane 5 · Vuelo 501</p>
+            <h2>Treinta segundos de vuelo normal</h2>
+            <p>
+              A las 09:33:59, hora de Kourou, se encendió el motor principal Vulcain. Ese
+              instante se tomó como origen de la cronología y se denominó
+              H<sub>0</sub>. La notación procede de la convención francesa
+              <em>heure zéro</em>, «hora cero»: H<sub>0</sub> no representa una altura ni
+              una fase del vuelo, sino el momento de referencia respecto al que se expresan
+              los demás acontecimientos mediante segundos positivos o negativos.
+            </p>
+            <p>
+              En Ariane 501, H<sub>0</sub> tampoco coincidía exactamente con el despegue.
+              Primero se encendió el Vulcain y se comprobó su funcionamiento mientras el
+              vehículo permanecía sujeto a la plataforma. En H<sub>0</sub> + 7,5 segundos
+              arrancaron los dos propulsores sólidos y Ariane 5 abandonó la plataforma con
+              cuatro satélites Cluster bajo la cofia. Era el primer vuelo de un programa
+              iniciado en 1984 para dotar a Europa de un lanzador con mucha más capacidad
+              que Ariane 4.
+            </p>
+            <div class="document-note">
+              <p>
+                La referencia temporal permite leer toda la secuencia sin ambigüedad:
+                H<sub>0</sub> es el encendido del Vulcain; H<sub>0</sub> + 7,5 s, el
+                encendido de los propulsores sólidos y el despegue; H<sub>0</sub> + 37 s,
+                la pérdida de la información de guiado; y H<sub>0</sub> + 39 s, la rotura
+                del lanzador y la actuación del sistema de neutralización.
+              </p>
+            </div>
+            <p>
+              Durante aproximadamente 30 segundos después del despegue, el vehículo, los
+              motores y la trayectoria se comportaron con normalidad. Hacia H<sub>0</sub> +
+              37 segundos, las toberas de los propulsores sólidos giraron hasta su posición
+              límite. El lanzador se inclinó bruscamente, alcanzó un ángulo de ataque
+              superior a 20 grados y quedó sometido a cargas aerodinámicas para las que no
+              estaba diseñado. Dos segundos más tarde comenzó a desintegrarse. La ruptura de
+              las conexiones entre los propulsores y la etapa central activó el sistema de
+              neutralización y destruyó el resto del vehículo.
+            </p>
+            <p>
+              La propulsión no había fallado. Tampoco se había roto primero una estructura.
+              Las órdenes extremas de las toberas procedían del ordenador de a bordo, y este
+              actuaba con la información que recibía del sistema de referencia inercial. La
+              investigación tuvo que recorrer la cadena en sentido inverso: desde la
+              autodestrucción hasta una operación numérica ejecutada unas décimas de segundo
+              antes.
+            </p>
+          </section>
+
+          <section id="recursos" class="lesson-block">
+            <h2>El vuelo 501 en imágenes</h2>
+            <div class="case-figure-grid">
+              <figure class="case-figure">
+                <img
+                  src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/1998/01/launch_of_ariane_501/9086666-5-eng-GB/Launch_of_Ariane_501.jpg"
+                  alt="Despegue del primer Ariane 5 desde Kourou"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Despegue del primer Ariane 5, el 4 de junio de 1996. Crédito: ESA/CNES,
+                  licencia estándar de la ESA.
+                  <a href="https://www.esa.int/ESA_Multimedia/Images/1998/01/Launch_of_Ariane_501" target="_blank" rel="noopener">Ficha de la imagen</a>.
+                </figcaption>
+              </figure>
+              <figure class="case-figure">
+                <img
+                  src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/1998/01/ariane_501_explosion/9088578-6-eng-GB/Ariane_501_explosion.jpg"
+                  alt="Restos del Ariane 501 cayendo tras su autodestrucción"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Restos del vuelo 501 tras la autodestrucción. Crédito: ESA, licencia
+                  estándar de la ESA.
+                  <a href="https://www.esa.int/ESA_Multimedia/Images/1998/01/Ariane_501_explosion" target="_blank" rel="noopener">Ficha de la imagen</a>.
+                </figcaption>
+              </figure>
+            </div>
+
+            <a
+              class="video-preview-link hero-video"
+              href="https://www.esa.int/ESA_Multimedia/Videos/1996/06/Ariane_501_recordings_telecine_4_3"
+              target="_blank"
+              rel="noopener"
+              aria-label="Abrir la grabación oficial de la ESA del vuelo Ariane 501"
+            >
+              <span class="video-preview-image">
+                <img
+                  src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/1998/01/ariane_501_explosion/9088578-6-eng-GB/Ariane_501_explosion.jpg"
+                  alt="Fotografía oficial de la ESA utilizada como acceso a la grabación del vuelo 501"
+                  loading="lazy"
+                />
+                <span class="video-play-icon" aria-hidden="true">▶</span>
+              </span>
+              <span class="video-preview-copy">
+                <strong>ESA/CNES: grabación del fallo de Ariane 501</strong>
+                <span>Filmación oficial de 4 minutos y 30 segundos, digitalizada a partir de película de 35 mm.</span>
+              </span>
+            </a>
+          </section>
+
+          <section id="sri" class="lesson-block">
+            <h2>Qué calculaba el sistema de referencia inercial</h2>
+            <p>
+              Ariane 5 llevaba dos sistemas de referencia inercial, conocidos en el informe
+              por las siglas francesas SRI. Cada uno reunía sensores y un ordenador propio.
+              A partir de las medidas de acelerómetros y giróscopos, el SRI calculaba la
+              actitud y el movimiento del lanzador y enviaba esa información al ordenador de
+              a bordo. Un equipo estaba activo y el otro permanecía como reserva caliente:
+              funcionaba al mismo tiempo y debía estar preparado para sustituirlo.
+            </p>
+            <p>
+              Dentro de aquel software sobrevivía una función de alineamiento concebida para
+              Ariane 4. Su utilidad estaba en tierra. Si la cuenta atrás se interrumpía pocos
+              segundos antes del lanzamiento, mantener el cálculo activo permitía recuperar
+              rápidamente el control de la plataforma inercial y evitar un nuevo alineamiento
+              de unos 45 minutos, demasiado largo para conservar la ventana de lanzamiento.
+              Por eso la función seguía ejecutándose durante 50 segundos después de entrar en
+              modo de vuelo.
+            </p>
+            <p>
+              En Ariane 5 el modo de vuelo comenzaba en H<sub>0</sub> − 3 segundos. La
+              función, por tanto, continuaba activa durante unos 40 segundos después del
+              despegue, aunque ya no tenía ninguna utilidad. No gobernaba el cohete ni
+              corregía su trayectoria; simplemente permanecía ejecutándose porque se había
+              heredado una necesidad operativa del lanzador anterior.
+            </p>
+          </section>
+
+          <section id="conversion" class="lesson-block">
+            <h2>La conversión que no cabía</h2>
+            <p>
+              La función de alineamiento calculaba una variable interna llamada
+              <code>BH</code>, <em>Horizontal Bias</em>. Era un indicador de la precisión del
+              alineamiento relacionado con la velocidad horizontal medida por la plataforma;
+              no era, estrictamente, una orden de guiado ni la velocidad horizontal que se
+              enviaba al ordenador de a bordo.
+            </p>
+            <p>
+              El valor se manejaba en coma flotante de 64 bits y, en un punto del programa,
+              se convertía a un entero con signo de 16 bits. La trayectoria inicial de
+              Ariane 5 desarrollaba una velocidad horizontal mucho mayor que la de Ariane 4.
+              Como consecuencia, <code>BH</code> superó el máximo que podía representarse en
+              el entero de destino. La operación produjo una excepción interna de software
+              por conversión fuera de rango.
+            </p>
+            <p>
+              El informe de la comisión llamó <em>Operand Error</em> a esta condición. La
+              expresión puede traducirse literalmente como «error de operando», pero no
+              conviene convertirla en «excepción de operando»: el informe distingue la
+              excepción interna del software de la condición que la provocó, y no identifica
+              esta última como el nombre formal de una excepción predefinida de Ada. Lo
+              importante es menos ambiguo: el número no cabía en el tipo entero elegido y la
+              conversión no estaba protegida para tratar ese caso.
+            </p>
+            <p>
+              Los desarrolladores habían examinado siete variables sometidas a conversiones
+              semejantes. Cuatro quedaron protegidas y tres, entre ellas <code>BH</code>, no.
+              Los análisis demostraban que esas tres nunca desbordarían su rango bajo el
+              perfil de Ariane 4. Además, el ordenador del SRI tenía fijado un objetivo de
+              carga máxima del 80 %, por lo que se evitó añadir comprobaciones consideradas
+              innecesarias. No fue una conversión escrita al azar: fue una protección
+              descartada sobre la base de una hipótesis que dejó de ser cierta al cambiar de
+              lanzador.
+            </p>
+          </section>
+
+          <section id="redundancia" class="lesson-block">
+            <h2>Dos equipos que fallaron de la misma manera</h2>
+            <p>
+              La especificación del SRI establecía una respuesta contundente ante cualquier
+              excepción de software: declarar el fallo en el bus de datos, guardar el
+              contexto en memoria EEPROM y detener el procesador. Esta política facilitó la
+              investigación —la memoria recuperada permitió reconstruir lo sucedido—, pero
+              durante el vuelo convirtió una operación sin utilidad en la pérdida completa
+              de un equipo esencial.
+            </p>
+            <p>
+              El SRI de reserva no acudió al rescate. Había recibido los mismos datos, estaba
+              ejecutando el mismo programa y se había detenido por la misma conversión fuera
+              de rango 72 milisegundos antes. Había dos ordenadores, dos juegos de sensores y
+              dos canales, pero una sola lógica. La duplicación protegía frente a una avería
+              aleatoria de hardware; no frente a un fallo común de especificación y software.
+            </p>
+            <p>
+              El SRI activo alcanzó a enviar por el bus un patrón de bits de diagnóstico. El
+              ordenador de a bordo interpretó ese patrón como si fueran datos válidos de
+              actitud. A partir de ellos calculó órdenes de corrección extremas y llevó las
+              toberas hasta sus límites. La estructura y el sistema de neutralización
+              reaccionaron después tal como cabía esperar ante una desviación de aquella
+              magnitud.
+            </p>
+            <div class="document-note">
+              <p>
+                La redundancia no se mide únicamente contando equipos. También hay que
+                preguntar qué causas comparten, qué software ejecutan, qué datos reciben y
+                si pueden fallar simultáneamente ante la misma condición.
+              </p>
+            </div>
+          </section>
+
+          <section id="ensayos" class="lesson-block">
+            <h2>El ensayo que habría reproducido el accidente</h2>
+            <p>
+              El SRI se había probado como equipo, pero su especificación y sus ensayos no
+              incorporaron los datos de trayectoria de Ariane 5. En las simulaciones globales
+              del lanzador tampoco se incluyó el sistema inercial real ni una simulación
+              detallada de su software. Se sustituyó por un generador de sus salidas
+              esperadas. El modelo entregaba datos correctos y, precisamente por eso, no
+              podía revelar cómo se comportaría el equipo al recibir entradas que excedían
+              las hipótesis de Ariane 4.
+            </p>
+            <p>
+              Después del accidente, la comisión ejecutó el software del SRI con un entorno
+              que reproducía la trayectoria real del vuelo 501. La simulación repitió la
+              cadena de acontecimientos. El fallo no dependía de una perturbación extraña ni
+              de un estado imposible de recrear: estaba determinado por el programa y por
+              los datos normales del nuevo vuelo.
+            </p>
+            <p>
+              Las revisiones tampoco cerraron ese hueco. Miles de anomalías habían sido
+              detectadas y corregidas durante el desarrollo, pero el análisis de criticidad
+              del software estaba orientado principalmente a fallos aleatorios. Una decisión
+              de diseño coherente con un sistema anterior no se presentó como una avería; por
+              eso atravesó revisiones, pruebas de equipo y simulaciones sin convertirse en
+              una alarma.
+            </p>
+          </section>
+
+          <section id="proyecto" class="lesson-block">
+            <h2>Por qué no fue simplemente un error de programación</h2>
+            <p>
+              Decir que Ariane 501 se perdió por un desbordamiento numérico es correcto del
+              mismo modo que decir que un puente cayó cuando cedió una unión: identifica el
+              instante técnico, pero no explica por qué esa rotura pudo destruir el sistema.
+              Para llegar desde una conversión fuera de rango hasta la pérdida del lanzador
+              tuvieron que coincidir varias decisiones compatibles entre sí.
+            </p>
+            <p>
+              Se reutilizó una función que ya no era necesaria después del despegue. Sus
+              límites se justificaron con el entorno antiguo. La excepción provocaba la
+              parada del procesador. El respaldo era idéntico y ejecutaba el mismo código.
+              Los datos de diagnóstico podían llegar al ordenador de a bordo por el mismo
+              canal que los datos de vuelo. Los ensayos del equipo no usaron la nueva
+              trayectoria y las simulaciones del sistema sustituyeron el SRI por salidas
+              correctas.
+            </p>
+            <p>
+              Ninguna de esas decisiones, aislada, describe el accidente completo. Juntas
+              formaron una cadena sin una barrera eficaz. La reutilización ahorraba desarrollo;
+              la redundancia aumentaba la disponibilidad; limitar la carga del procesador
+              preservaba margen; simular salidas simplificaba los ensayos. El problema estaba
+              en los supuestos que conectaban unas decisiones con otras y que nadie volvió a
+              validar como conjunto cuando cambió el vehículo.
+            </p>
+          </section>
+
+          <section id="despues" class="lesson-block">
+            <h2>El coste y lo que cambió después</h2>
+            <p>
+              No hubo víctimas. Se perdieron el primer Ariane 5 y los cuatro satélites de la
+              misión Cluster, destinados a estudiar la interacción entre el viento solar y
+              la magnetosfera terrestre. El artículo de PVS-Studio cifra el vehículo y su
+              carga en unos 370 millones de dólares; esa estimación no debe confundirse con
+              el coste total del programa de desarrollo de Ariane 5. La misión científica
+              tuvo que reconstruirse y los cuatro satélites Cluster II no llegarían al
+              espacio hasta el año 2000.
+            </p>
+            <p>
+              Las recomendaciones de la comisión fueron mucho más amplias que proteger una
+              conversión. Se desactivó la función de alineamiento después del despegue, se
+              revisó el tratamiento de excepciones para evitar la parada automática del
+              procesador, se examinó de nuevo todo el software embarcado y se exigieron
+              entornos de cualificación más representativos. Las pruebas debían solaparse en
+              los niveles de equipo, etapa y sistema, y la información debía circular en los
+              dos sentidos: desde cada equipo hacia el sistema y desde el perfil de misión
+              hacia quienes diseñaban el equipo.
+            </p>
+            <p>
+              Ariane 5 continuó su desarrollo y se convirtió en un lanzador de enorme
+              importancia para Europa. El vuelo 501 no demostró que reutilizar software sea
+              imprudente. Demostró algo más exigente: cuando se reutiliza una solución, se
+              heredan también sus hipótesis invisibles, y esas hipótesis forman parte del
+              proyecto tanto como el código que puede leerse.
+            </p>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <h2>Referencias y recursos</h2>
+            <ul class="link-stack">
+              <li>
+                <a href="https://esamultimedia.esa.int/docs/esa-x-1819eng.pdf" target="_blank" rel="noopener">Ariane 501: informe de la comisión de investigación</a>
+                <p>Fuente técnica principal para la cronología, la conversión numérica, el comportamiento de los SRI, los ensayos y las recomendaciones.</p>
+              </li>
+              <li>
+                <a href="https://www.esa.int/Newsroom/Press_Releases/Ariane_501_-_Presentation_of_Inquiry_Board_report" target="_blank" rel="noopener">ESA: presentación del informe de investigación</a>
+                <p>Resumen oficial de las conclusiones y del plan inicial de medidas correctoras.</p>
+              </li>
+              <li>
+                <a href="https://www.esa.int/ESA_Multimedia/Videos/1996/06/Ariane_501_recordings_telecine_4_3" target="_blank" rel="noopener">ESA/CNES: grabación del vuelo Ariane 501</a>
+                <p>Filmación oficial del lanzamiento y del fallo, con descarga y datos de licencia.</p>
+              </li>
+              <li>
+                <a href="https://pvs-studio.com/en/blog/posts/cpp/0426/" target="_blank" rel="noopener">PVS-Studio: A space error: $370,000,000 for an integer overflow</a>
+                <p>Lectura complementaria sobre el accidente desde el punto de vista del desarrollo de software.</p>
+              </li>
+            </ul>
+            <a class="primary-button" href="catastrofes-errores-proyectos-ingenieria.html">Volver a catástrofes y errores</a>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>
