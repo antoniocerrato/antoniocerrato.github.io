@@ -4,6 +4,8 @@ Este archivo resume el estado actual de la web personal de Antonio Cerrato Casad
 
 ## Estado vigente — 2026-07-22
 
+- Cierre de sesión: rama `master` limpia y sincronizada con `origin/master`.
+- Último commit publicado al cerrar el trabajo principal: `05ce7d7 Añade caso Ariane 5 vuelo 501`.
 - Se ha añadido `temas/proyectos/ariane-5-vuelo-501.html` a la serie de catástrofes y
   errores en proyectos de ingeniería.
 - La entrada desarrolla el fallo del primer vuelo de Ariane 5 desde la reutilización de
@@ -19,6 +21,17 @@ Este archivo resume el estado actual de la web personal de Antonio Cerrato Casad
   técnico más detallado. Sustituye «excepción de operando» por «excepción interna de
   software por conversión fuera de rango» y conserva `Operand Error` únicamente como la
   denominación utilizada por el informe, explicando su alcance.
+- La primera aparición de H<sub>0</sub> explica la convención francesa <em>heure zéro</em>
+  y distingue el encendido del Vulcain en H<sub>0</sub>, el despegue en
+  H<sub>0</sub> + 7,5 s, la pérdida del guiado en H<sub>0</sub> + 37 s y la rotura del
+  lanzador en H<sub>0</sub> + 39 s.
+- Criterio editorial para futuras entradas de la serie: escribir como artículo o blog
+  técnico para lectores capaces de seguir la explicación; introducir las siglas y la
+  nomenclatura especializada antes de utilizarlas; integrar errores, costes y aprendizaje
+  en la narración en lugar de depender de fichas y tablas repetitivas.
+- Verificaciones realizadas: estructura y anclas HTML correctas, enlaces internos sin
+  rutas rotas, ausencia de caracteres dañados y `git diff --check` sin errores. Los avisos
+  LF/CRLF son los habituales del entorno Windows.
 
 ## Estado vigente — 2026-07-01
 
