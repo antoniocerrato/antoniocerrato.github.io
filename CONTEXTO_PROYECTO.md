@@ -4,7 +4,12 @@ Este archivo resume el estado actual de la web personal de Antonio Cerrato Casad
 
 ## Estado vigente — 2026-07-25
 
-- Hay cambios pendientes de revisión, sin commit ni publicación.
+- Cierre de sesión: el trabajo principal está publicado en `master` mediante el
+  commit `b01f509 Amplía casos de fallos de ingeniería`.
+- La rama local quedó sincronizada con `origin/master`. El único archivo no
+  versionado es `temas/proyectos/videointeresanteQuebeq`, que se conserva
+  deliberadamente como material fuente aportado por Antonio y no debe añadirse
+  al repositorio sin una petición expresa.
 - Se ha reescrito `temas/proyectos/hyatt-regency.html` con el nivel de detalle
   editorial de Ariane 5 y se han incorporado tres figuras extraídas del informe
   oficial NBS Building Science Series 143.
@@ -12,10 +17,11 @@ Este archivo resume el estado actual de la web personal de Antonio Cerrato Casad
   local e instalada de `docencia-web-acc`: las entradas extensas deben ser ricas
   en imágenes contrastadas; en casos de desastres no sustituir material técnico o
   documental con ilustraciones generadas por el agente.
-- Se han añadido tres casos de estudio nuevos:
+- Se han añadido cuatro casos de estudio nuevos:
   - `temas/proyectos/presa-teton.html`
   - `temas/proyectos/puente-quebec.html`
   - `temas/proyectos/piper-alpha.html`
+  - `temas/proyectos/puente-morandi.html`
 - Teton desarrolla el primer llenado, la geología de riolita fisurada, la zanja de
   impermeabilización, el núcleo de limo, la erosión interna, las señales del 5 de
   junio de 1976 y la creación del programa moderno de seguridad de presas. Usa
