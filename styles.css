@@ -514,6 +514,7 @@ td {
 
 .lesson-content {
   max-width: 860px;
+  min-width: 0;
 }
 
 .lesson-block {
@@ -660,6 +661,12 @@ td {
   height: 260px;
   object-fit: cover;
   width: 100%;
+}
+
+.case-figure--natural img {
+  background: #e8e5dc;
+  height: auto;
+  object-fit: contain;
 }
 
 .case-figure figcaption {

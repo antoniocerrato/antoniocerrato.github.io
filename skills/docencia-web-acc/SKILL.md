@@ -19,15 +19,66 @@ Editar la web pensando en la lectura del alumnado. Mantenerla estática, sobria,
 - No enlazar desde la web pública archivos privados o ignorados por Git.
 - Mantener la web sin frameworks, compilación ni JavaScript salvo petición expresa.
 - Reutilizar la estructura, los enlaces relativos y las clases existentes de `styles.css` antes de crear patrones nuevos.
+- Tratar las imágenes como parte del contenido docente. Las entradas extensas y los casos de
+  estudio deben incluir varias imágenes o figuras relevantes repartidas por la narración; una
+  sola miniatura de vídeo no constituye una cobertura visual suficiente.
+- Elegir cada recurso visual por su función explicativa: contexto, configuración, secuencia,
+  comparación o mecanismo. Priorizar fuentes oficiales y licencias claras y documentar la
+  procedencia en el pie.
+- En casos de estudio sobre errores o desastres no reemplazar las figuras documentales o
+  técnicas con ilustraciones generadas por el agente. Si no hay material contrastado de
+  calidad suficiente, buscar otra fuente, enlazar el documento original o dejar la imagen
+  pendiente.
+
+## Casos de estudio de ingeniería
+
+- Tomar como referencia editorial las entradas más recientes y completas del proyecto,
+  especialmente `temas/proyectos/puente-quebec.html`. Igualar como mínimo su profundidad,
+  claridad narrativa, riqueza visual y trazabilidad de fuentes.
+- Reconstruir el proyecto, no solo el instante del fallo. Cuando las fuentes lo permitan,
+  explicar la necesidad inicial, estudios y viabilidad, promotor y financiación, alcance,
+  organización y reparto de autoridad, ingeniería básica y de detalle, fabricación o
+  construcción, estados provisionales, señales previas, accidente, investigación,
+  correcciones, consecuencias humanas y evolución posterior de la infraestructura.
+- Presentar los factores técnicos y organizativos como una cadena de decisiones verificable.
+  Evitar reducir un caso complejo a una causa única, una moraleja o una lista genérica de
+  «lecciones aprendidas».
+- Integrar la lectura docente en la narración. Evitar secciones mecánicas como «Qué enseña
+  el caso», preguntas aisladas para el aula o fichas repetitivas cuando la relación con
+  alcance, coste, plazo, riesgo, documentación, interfaces y responsabilidades pueda
+  explicarse directamente en el artículo.
+- Dar entidad propia a las personas afectadas. Incluir víctimas, trabajadores, comunidades
+  y distribución social del riesgo cuando estén documentados, sin convertirlos en una nota
+  secundaria ni utilizar un tono sensacionalista.
+- Si el usuario aporta un vídeo, documental o transcripción, leer el material completo y
+  usarlo para descubrir líneas de investigación, cronologías y aspectos humanos o
+  constructivos. No tratar la transcripción automática como fuente de autoridad: contrastar
+  cifras, causalidad y afirmaciones técnicas con informes oficiales, archivos, organismos
+  públicos o bibliografía técnica primaria.
+- Diferenciar hechos confirmados, estimaciones, hipótesis técnicas y responsabilidades
+  jurídicas. Suavizar o excluir los detalles secundarios que no puedan verificarse.
+- Cerrar cada entrada con referencias anotadas: priorizar informes de investigación y
+  fuentes oficiales; indicar brevemente qué aporta cada enlace.
 
 ## Flujo de trabajo
 
 1. Leer `AGENTS.md`, la página que se va a modificar y ejemplos cercanos.
-2. Identificar al lector público, normalmente alumnado de la asignatura.
-3. Convertir el material en HTML semántico: títulos, párrafos, listas, tablas, notas y cajas de recursos.
-4. Mantener títulos y pies orientados al alumnado; dejar la procedencia técnica fuera del contenido visible.
-5. Antes de terminar, buscar en el HTML editado términos internos, caracteres rotos y rutas relativas inexistentes.
-6. Comprobar `git diff --check`, el estado de Git y que las carpetas privadas sigan sin seguimiento.
+2. Si es un caso de estudio, revisar al menos dos entradas recientes de calidad y sus fuentes
+   para fijar el estándar editorial antes de escribir.
+3. Identificar al lector público, normalmente alumnado de la asignatura.
+4. Convertir el material en HTML semántico: títulos, párrafos, listas, tablas, notas y cajas de recursos.
+5. Mantener títulos y pies orientados al alumnado; dejar la procedencia técnica fuera del contenido visible.
+6. Revisar la cobertura visual: comprobar que haya varias figuras útiles, bien distribuidas,
+   con texto alternativo y pies que identifiquen claramente su fuente contrastada.
+7. Comprobar las dimensiones intrínsecas de cada asset local y declarar `width` y `height`
+   correctos. Usar el patrón de imagen natural (`height: auto` y `object-fit: contain`) cuando
+   el encuadre tenga que respetarse completo; no imponer una ventana que recorte planos,
+   fotografías verticales o documentos.
+8. Verificar anclas, estructura HTML, rutas relativas, caracteres rotos y, cuando el entorno
+   lo permita, revisar la página renderizada en escritorio y móvil.
+9. Comprobar `git diff --check`, el estado de Git y que las carpetas privadas sigan sin seguimiento.
+10. Al cerrar una sesión de trabajo relevante, actualizar `CONTEXTO_PROYECTO.md` con las
+    decisiones editoriales, fuentes incorporadas, verificaciones y trabajo pendiente.
 
 ## Presentación de vídeos externos
 

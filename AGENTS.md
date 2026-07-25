@@ -30,6 +30,51 @@ proyecto, mantener ambas sincronizadas cuando se cambie el procedimiento.
 - No sobrescribir imágenes existentes salvo petición explícita; crear nombres nuevos y actualizar referencias.
 - La portada usa `assets/campus-home.png`.
 - La página de docencia usa `assets/teaching-campus.png`.
+- Las entradas docentes extensas, y especialmente los casos de estudio sobre errores o
+  desastres de ingeniería, deben ser visualmente ricas. No considerar terminada una entrada
+  con una única miniatura de vídeo: incorporar varias imágenes relevantes distribuidas a lo
+  largo de la narración.
+- Priorizar fotografías, planos y figuras de informes oficiales, archivos públicos,
+  organismos técnicos o repositorios con licencia clara. Cada imagen documental debe tener
+  pie con descripción, fuente, autor o crédito cuando conste, licencia cuando proceda y enlace
+  a su ficha de origen.
+- Las figuras no deben ser decorativas: deben ayudar a situar el caso, comparar soluciones,
+  seguir una secuencia o explicar el mecanismo técnico.
+- En los casos de estudio sobre errores o desastres, no sustituir una figura documental o
+  técnica con ilustraciones generadas por el agente. Si no se encuentra material contrastado
+  con calidad suficiente, buscar otra fuente, enlazar el documento original o dejar la
+  incorporación visual pendiente antes que fabricar un esquema de menor claridad.
+- Comprobar las dimensiones reales de los assets locales y declarar `width` y `height`
+  coherentes. Para planos, documentos, fotografías verticales o encuadres que deban verse
+  completos, usar altura automática y `object-fit: contain`; no imponer contenedores que
+  recorten el contenido.
+
+## Casos de estudio sobre fallos de ingeniería
+
+- Usar las entradas recientes más completas —en especial
+  `temas/proyectos/puente-quebec.html`— como estándar mínimo de profundidad, claridad,
+  calidad visual y fuentes.
+- Contar el proyecto completo, no únicamente el colapso: necesidad, viabilidad, actores,
+  financiación, alcance, ingeniería básica y de detalle, construcción y estados
+  provisionales, avisos, accidente, investigación, correcciones, impacto humano y vida
+  posterior, siempre que exista documentación suficiente.
+- Relacionar los factores técnicos y organizativos mediante una narración causal y
+  verificable. Evitar explicaciones monocausales, moralejas simplistas y bloques docentes
+  repetitivos del tipo «Qué enseña el caso».
+- Integrar de forma natural cuestiones de alcance, coste, plazo, riesgo, documentación,
+  interfaces, comunicación y autoridad. Las entradas deben funcionar como artículos
+  técnicos legibles, no como fichas esquemáticas.
+- Tratar víctimas, trabajadores y comunidades afectadas como parte sustantiva del caso,
+  con rigor y sin sensacionalismo.
+- Cuando Antonio aporte un vídeo o una transcripción, leerlo completo para localizar
+  aspectos relevantes, pero contrastar cronologías, cifras y causalidad con informes
+  oficiales, archivos y fuentes técnicas primarias. Una transcripción automática orienta
+  la investigación; no sustituye la verificación.
+- Separar hechos confirmados, estimaciones, hipótesis técnicas y responsabilidades
+  jurídicas. No elevar a dato firme un detalle dramático o secundario que solo aparezca en
+  una fuente divulgativa.
+- Terminar con referencias anotadas que expliquen qué aporta cada fuente, dando prioridad
+  a informes de investigación y organismos oficiales.
 
 ## Vídeos externos
 

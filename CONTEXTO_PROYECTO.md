@@ -2,6 +2,61 @@
 
 Este archivo resume el estado actual de la web personal de Antonio Cerrato Casado para que una futura sesión pueda retomarla sin reconstruir el contexto desde cero.
 
+## Estado vigente — 2026-07-25
+
+- Hay cambios pendientes de revisión, sin commit ni publicación.
+- Se ha reescrito `temas/proyectos/hyatt-regency.html` con el nivel de detalle
+  editorial de Ariane 5 y se han incorporado tres figuras extraídas del informe
+  oficial NBS Building Science Series 143.
+- El criterio visual vigente ha quedado registrado en `AGENTS.md` y en las copias
+  local e instalada de `docencia-web-acc`: las entradas extensas deben ser ricas
+  en imágenes contrastadas; en casos de desastres no sustituir material técnico o
+  documental con ilustraciones generadas por el agente.
+- Se han añadido tres casos de estudio nuevos:
+  - `temas/proyectos/presa-teton.html`
+  - `temas/proyectos/puente-quebec.html`
+  - `temas/proyectos/piper-alpha.html`
+- Teton desarrolla el primer llenado, la geología de riolita fisurada, la zanja de
+  impermeabilización, el núcleo de limo, la erosión interna, las señales del 5 de
+  junio de 1976 y la creación del programa moderno de seguridad de presas. Usa
+  fotografías oficiales del Bureau of Reclamation.
+- Quebec trata por separado el colapso de 1907 por insuficiencia de los cordones
+  comprimidos y errores de peso propio, y el accidente de 1916 durante el izado del
+  vano central. Usa imágenes históricas en dominio público y fuentes de ASCE,
+  Gobierno de Canadá y Smithsonian.
+- La entrada de Quebec se ha ampliado a partir del documental y la transcripción
+  aportados por Antonio en `temas/proyectos/videointeresanteQuebeq`. Incluye una
+  tarjeta enlazada al vídeo, la larga gestación y débil viabilidad inicial del
+  proyecto, el reparto de capacidades entre promotor, consultor y obra, el aumento
+  aproximado del 18 % del peso propio, la secuencia de avisos de agosto de 1907,
+  los ensayos a escala real de C. C. Schneider, el impacto sobre Kahnawà:ke, el
+  detalle del apoyo provisional que falló en 1916, el mito del anillo de hierro y
+  el programa federal de rehabilitación iniciado en 2024.
+- Los datos del documental se han contrastado con la Comisión Real, fuentes
+  oficiales canadienses, la Corporation of the Seven Wardens, ASCE, Smithsonian y
+  National Film Board of Canada. El fichero de transcripción de Antonio se conserva
+  intacto y sin versionar.
+- Tras validar Antonio la mejora de Quebec, este enfoque queda adoptado como estándar
+  para futuras entradas y registrado en `AGENTS.md` y `docencia-web-acc`: reconstruir
+  el ciclo completo del proyecto, integrar técnica, organización e impacto humano,
+  contrastar documentales y transcripciones con fuentes primarias, anotar las
+  referencias y comprobar las proporciones reales de las imágenes para evitar recortes.
+- Se ha añadido `temas/proyectos/puente-morandi.html`, centrado en el ciclo de vida
+  de una infraestructura: diseño de los tirantes revestidos de hormigón, dificultad
+  de inspección, durabilidad, reparaciones, gestión del riesgo, colapso de 2018 y
+  sustitución. Usa cuatro imágenes con licencia Creative Commons y distingue las
+  hipótesis técnicas de la atribución de responsabilidades jurídicas.
+- Piper Alpha desarrolla el permiso de trabajo de la válvula retirada, la puesta en
+  marcha de la bomba de condensado, la alimentación del incendio por las
+  interconexiones, la indisponibilidad de barreras, la evacuación y el régimen de
+  `safety case` posterior al informe Cullen. Usa diagramas de F. K. Crawley con
+  licencia CC BY 2.5 y una fotografía acreditada del memorial.
+- La tabla general de catástrofes y la página de Proyectos de Ingeniería enlazan
+  las tres entradas.
+- Verificaciones realizadas: anclas y rutas relativas correctas, cobertura de tres
+  o más figuras por entrada, ausencia de caracteres dañados y `git diff --check`
+  sin errores. Las advertencias LF/CRLF son las habituales del entorno Windows.
+
 ## Estado vigente — 2026-07-22
 
 - Cierre de sesión: rama `master` limpia y sincronizada con `origin/master`.
@@ -370,7 +425,7 @@ La idea actual es organizarla por páginas, no como una única página larga:
 
 ## Historial anterior — 2026-06-19, ya superado
 
-Última actualización de contexto: 2026-06-19.
+Última actualización de contexto: 2026-07-25.
 
 Último commit subido a GitHub:
 
