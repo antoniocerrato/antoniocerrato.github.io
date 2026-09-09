@@ -2,6 +2,32 @@
 
 Este archivo resume el estado actual de la web personal de Antonio Cerrato Casado para que una futura sesión pueda retomarla sin reconstruir el contexto desde cero.
 
+## Estado vigente — 2026-09-09 (sesión 2)
+
+- Cierre de sesión: `challenger.html` nuevo, `asignaturas/proyectos-ingenieria.html` actualizado. La fila de Challenger en la tabla de catástrofes ya tenía el enlace; no requirió modificación.
+- Cambios de esta sesión:
+  - `temas/proyectos/challenger.html` (nuevo): caso de estudio sobre el desastre del
+    transbordador Challenger el 28 de enero de 1986.
+- Descripción editorial de la nueva entrada:
+  - Fuentes: Wikipedia (Space Shuttle Challenger disaster, STS-51-L), Rogers Commission
+    Report (NASA History), apéndice personal de Richard Feynman, Encyclopædia Britannica,
+    Smithsonian NASM, Ethics Unwrapped (UT Austin), Diane Vaughan (The Challenger Launch
+    Decision, 1996).
+  - La página cubre: el programa del transbordador y la misión STS-51-L (7 tripulantes,
+    Teacher in Space, McAuliffe); el diseño de las juntas de campo y los O-rings
+    (Criticality 1R → Criticality 1 en 1982); el historial de erosión de O-rings desde
+    STS-2 (1981) y la escalada en 1985; la teleconferencia del 27 de enero (Boisjoly y
+    Thompson vs. gestores NASA; Thiokol revoca su recomendación de no lanzar); los 73
+    segundos del 28 de enero; la Comisión Rogers y la demostración de Feynman; el análisis
+    de Diane Vaughan (normalización de la desviación, secreto estructural); legado y
+    conexión con el Columbia (2003).
+  - Imágenes (cuatro, todas NASA dominio público o CC0):
+    - Foto oficial de la tripulación STS-51-L (Challenger_flight_51-l_crew.jpg, 3869×3095, NASA PD)
+    - Diagrama incidentes de juntas vs. temperatura (Defaillance_joint_Challenger_vs_temperature.svg, CC0, Cdang/Morel)
+    - Carámbanos en la rampa el día del lanzamiento (Ice on the Pad GPN-2004-00011.jpg, 2244×2830, NASA PD)
+    - Desintegración del Challenger (Challenger_explosion_cropped.jpg, 3555×2370, NASA PD)
+  - Vídeo: `2FehGJQlOf0` ("Challenger: A Rush to Launch"), thumbnail maxresdefault.jpg.
+
 ## Estado vigente — 2026-09-09
 
 - Cierre de sesión: todos los archivos listos para commit y push (Sleipner A, Therac-25 y Bhopal). Pendiente push.
