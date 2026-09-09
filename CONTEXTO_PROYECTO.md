@@ -2,6 +2,71 @@
 
 Este archivo resume el estado actual de la web personal de Antonio Cerrato Casado para que una futura sesión pueda retomarla sin reconstruir el contexto desde cero.
 
+## Estado vigente — 2026-09-09
+
+- Cierre de sesión: todos los archivos listos para commit y push (Sleipner A, Therac-25 y Bhopal). Pendiente push.
+- Cambios añadidos en esta sesión (continuación de la anterior):
+  - `temas/proyectos/bhopal.html` (nuevo): caso de estudio sobre el desastre de Bhopal del
+    2-3 de diciembre de 1984. Secciones: vídeo, planta y MIC, deterioro de la seguridad,
+    cronología de la noche, víctimas, tanque E610, respuesta de Union Carbide, acuerdo de
+    1989, emplazamiento cuarenta años después, legado regulatorio y referencias.
+  - `temas/proyectos/catastrofes-errores-proyectos-ingenieria.html`: fila Bhopal convertida
+    de texto plano a enlace hacia `bhopal.html`; descripción actualizada.
+  - `asignaturas/proyectos-ingenieria.html`: nuevo enlace `Caso Bhopal (1984)` en el
+    sub-listado de catástrofes y errores.
+- Descripción editorial de la nueva entrada:
+  - Fuentes: Wikipedia (Bhopal disaster), Encyclopædia Britannica, Origins / Ohio State
+    University, NASA Safety Center, Texas A&M University (safety case study), Union Carbide
+    Corporation (versión corporativa), DW Documentary 2023.
+  - La página cubre: UCIL/Union Carbide y la producción de Sevin, la química del MIC y
+    por qué se almacenaba en bulk, el deterioro de los seis sistemas de seguridad entre
+    1982 y 1984 (refrigeración, scrubber, antorcha, alarma, caldero de vapor, rociado),
+    la cronología del 2-3 de diciembre de 1984, las víctimas (2.259 oficiales / 3.787
+    confirmados / estimaciones de hasta 25.000), las secuelas crónicas, la hipótesis del
+    sabotaje de Union Carbide vs. investigaciones independientes, Warren Anderson, el
+    acuerdo de 470 M$ de 1989 y su insuficiencia, las condenas de 2010, la contaminación
+    persistente del emplazamiento, y el legado regulatorio (EPCRA 1986, Clean Air Act
+    Amendments 1990, Responsible Care).
+  - Imágenes (tres): fábrica abandonada 1985 (CC BY-SA 2.0, Bhopal Medical Appeal/Martin
+    Stott); manifestación de víctimas 2006 (CC BY 2.0, Obi); memorial de Ruth
+    Waterman-Kupferschmidt (CC BY-SA 2.0, Luca Frediani).
+  - Vídeo: DW Documentary 2023 `pGSJc_5p2og`, thumbnail `maxresdefault.jpg`.
+
+## Estado vigente — 2026-09-08
+
+- Cierre de sesión: tres archivos modificados, pendientes de commit y push.
+- Cambios de esta sesión:
+  - `temas/proyectos/sleipner-a.html` (nuevo): caso de estudio sobre el hundimiento del
+    GBS de la plataforma Sleipner A en el Gandsfjorden noruego el 23 de agosto de 1991.
+  - `temas/proyectos/catastrofes-errores-proyectos-ingenieria.html`: nueva fila enlazada
+    a `sleipner-a.html`, inserida entre Piper Alpha y Bhopal en el bloque offshore.
+  - `asignaturas/proyectos-ingenieria.html`: nuevo enlace a `Caso Sleipner A` en el
+    sub-listado de catástrofes y errores.
+- Descripción editorial de la nueva entrada:
+  - Fuente principal: Douglas N. Arnold / University of Minnesota, complementada con
+    Wikipedia (Sleipner A, Condeep), Equinor Industriminne, Oil & Gas Journal, OSTI
+    (Report 17 de SINTEF) y el artículo de Jakobsen (1994) en Engineering Failure
+    Analysis.
+  - La página cubre: el campo Sleipner East y el contrato de gas de 1986, el sistema
+    Condeep y la construcción del GBS, la geometría del tricell y su función estructural,
+    el error de malla en NASTRAN (subestimación del 47 % de esfuerzos cortantes), el
+    hundimiento del 23 de agosto de 1991 (22 evacuados sin heridos, 18 minutos), la
+    investigación de SINTEF (17 informes), la reconstrucción en 19 meses y el arranque de
+    producción el 24 de agosto de 1993, y el legado en verificación de modelos FEM.
+  - Imagen: fotografía de un Condeep en construcción en Noruega (probablemente Statfjord B
+    o C), Wikimedia Commons, CC BY-SA 3.0, autor Bluemoose. Es la única imagen con
+    licencia libre encontrada; no existe material fotográfico de Sleipner A específico
+    en Wikimedia Commons.
+  - Vídeo: tarjeta enlazada a `https://www.youtube.com/watch?v=x24s8EY-9Mw` (Sleipner A),
+    con miniatura hqdefault.jpg.
+  - Criterio aplicado: estilo de artículo técnico narrativo al nivel del caso Quebec;
+    sin secciones mecánicas de «lecciones aprendidas»; integración natural del enfoque
+    docente sobre gestión del riesgo y verificación numérica.
+- Verificaciones realizadas: rutas internas sin errores (script PowerShell), `git status`
+  limpio excepto los tres archivos nuevos/modificados. Carpeta videointeresanteQuebeq
+  sin versionar, como corresponde.
+- Próximo paso natural: commit y push de los tres archivos.
+
 ## Estado vigente — 2026-07-25
 
 - Cierre de sesión: el trabajo principal está publicado en `master` mediante el

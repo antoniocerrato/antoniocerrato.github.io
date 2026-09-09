@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleipner A: cuando el modelo de cálculo no es el modelo real | Antonio Cerrato Casado</title>
+  <meta name="description" content="El hundimiento de la plataforma Sleipner A en 1991: una base de hormigón de 24 celdas perdida por un error de malla en un modelo de elementos finitos que subestimó los esfuerzos cortantes en un 47 %." />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a><a href="../../investigacion.html">Investigación</a><a href="../../yo.html">Yo</a><a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Caso de estudio</p>
+        <h1>Sleipner A: cuando el modelo de cálculo no es el modelo real</h1>
+        <p class="lead">
+          En agosto de 1991, la base de hormigón de la plataforma petrolífera Sleipner A
+          se hundió en un fiordo noruego durante una operación de lastre controlada.
+          Veintidós personas evacuaron sin un solo herido. La estructura, sin embargo,
+          desapareció en dieciocho minutos. La causa no fue un error aritmético, una
+          carga imprevista ni una tormenta: fue un modelo de elementos finitos con una
+          malla demasiado gruesa que había subestimado los esfuerzos cortantes en un
+          47&nbsp;%. El error de cálculo estaba en las paredes del elemento más complejo
+          de la estructura, un nudo triangular de hormigón donde se encontraban tres
+          celdas cilíndricas. La pérdida económica alcanzó los 700 millones de dólares.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del caso">
+          <h2>Contenido</h2>
+          <a href="#video">Recurso audiovisual</a>
+          <a href="#campo">El proyecto Sleipner</a>
+          <a href="#condeep">Una base de hormigón sumergida</a>
+          <a href="#tricell">La celda triangular</a>
+          <a href="#modelo">El modelo y el error del 47&nbsp;%</a>
+          <a href="#hundimiento">Dieciocho minutos</a>
+          <a href="#investigacion">Lo que encontró SINTEF</a>
+          <a href="#reconstruccion">La plataforma que llegó a tiempo</a>
+          <a href="#verificacion">Calcular no es lo mismo que verificar</a>
+          <a href="#referencias">Referencias</a>
+        </aside>
+
+        <article class="lesson-content">
+
+          <section id="video" class="lesson-block">
+            <p class="small-title">Recurso audiovisual</p>
+            <h2>La plataforma y el hundimiento</h2>
+            <p>
+              Este vídeo recoge imágenes de la plataforma Sleipner A y de la operación de
+              construcción del GBS. Complementa la lectura técnica del caso con material
+              visual del proyecto real.
+            </p>
+            <a
+              class="video-preview-link hero-video"
+              href="https://www.youtube.com/watch?v=uIBWMK5pA5E&t=502s"
+              target="_blank"
+              rel="noopener"
+              aria-label="Abrir vídeo sobre el hundimiento de la plataforma Sleipner A"
+            >
+              <span class="video-preview-image">
+                <img
+                  src="https://i.ytimg.com/vi/uIBWMK5pA5E/maxresdefault.jpg"
+                  alt="Miniatura del vídeo sobre el hundimiento de la plataforma Sleipner A"
+                  loading="lazy"
+                />
+                <span class="video-play-icon" aria-hidden="true">▶</span>
+              </span>
+              <span class="video-preview-copy">
+                <strong>El hundimiento de Sleipner A</strong>
+                <span>Recurso audiovisual sobre el accidente de 1991, la estructura Condeep y el error de cálculo. El enlace arranca en el punto del caso Sleipner.</span>
+              </span>
+            </a>
+          </section>
+
+          <section id="campo" class="lesson-block">
+            <p class="small-title">Mar del Norte noruego · 1986-1991</p>
+            <h2>El proyecto Sleipner y la presión de un contrato de gas</h2>
+            <p>
+              El campo de gas Sleipner East se encuentra en el sector noruego del Mar del
+              Norte, a unos 200 kilómetros al suroeste de Stavanger. En 1986, Statoil
+              firmó un contrato de venta de gas con compradores europeos que obligaba a
+              entregar producción a partir de octubre de 1993. La plataforma Sleipner A
+              era la pieza central de ese compromiso: sin ella no había entrega.
+            </p>
+            <p>
+              Para alojar los equipos de producción, la plataforma necesitaba una base
+              fija en el fondo del mar. A 82 metros de profundidad y con las condiciones
+              del Mar del Norte, esa base tenía que ser una estructura de hormigón de
+              gravedad: un gran monolito que descansara sobre el lecho marino por su
+              propio peso. Norwegian Contractors (NC), la empresa noruega especializada
+              en este tipo de estructuras, obtuvo el contrato de construcción en junio de
+              1988. La obra comenzó en 1989.
+            </p>
+            <p>
+              El calendario era ajustado pero factible. La estructura se construiría en
+              un dique seco próximo a la costa, se sacaría a flote y se llevaría a su
+              emplazamiento definitivo mediante una operación de lastre controlada. Antes
+              de llegar al campo, el GBS &mdash;Gravity Base Structure&mdash; debía
+              superponerse a la cubierta de producción, que esperaría flotando en el
+              fiordo. Todo dependía de que la operación de lastre funcionara con
+              precisión. El 23 de agosto de 1991, durante uno de esos ensayos en el
+              Gandsfjorden, la estructura se hundió para siempre.
+            </p>
+          </section>
+
+          <section id="condeep" class="lesson-block">
+            <h2>Una base de hormigón sumergida: el sistema Condeep</h2>
+            <p>
+              El término Condeep es una contracción de <em>concrete deep water
+              structure</em>. Las plataformas Condeep no se anclan al fondo: se apoyan
+              en él por gravedad. Bajo el agua, la base de hormigón tiene que ser lo
+              suficientemente pesada en operación para no moverse y lo suficientemente
+              flotante durante la construcción para poder transportarse.
+            </p>
+            <p>
+              La solución es una base formada por celdas cilíndricas de hormigón que
+              actúan como depósitos. Durante el transporte se mantienen llenas de aire
+              y la estructura flota. Para instalarla en su posición definitiva se
+              introduce agua de mar en las celdas de forma controlada &mdash;el proceso
+              de lastre&mdash; hasta que la base toca el fondo. Una vez instalada, parte
+              de las celdas almacenan petróleo o condensado, y otras quedan como
+              depósitos de lastre.
+            </p>
+            <p>
+              De la base emergen cuatro grandes pilares de hormigón que sobresalen por
+              encima de la superficie del mar. Sobre esos pilares se apoya la cubierta
+              con todos los equipos de producción, alojamientos y grúas. El diseño es
+              robusto y ha funcionado bien en otras plataformas noruegas como Statfjord,
+              Gullfaks o Troll A. El GBS de Sleipner A contaba con 24 celdas
+              cilíndricas de unos 12 metros de diámetro, dispuestas en una cuadrícula
+              regular que formaba una planta aproximadamente cuadrada de 16.000&nbsp;m².
+            </p>
+            <figure class="case-figure case-figure--natural">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Oil_platform_Norway.jpg"
+                alt="Plataforma Condeep en construcción en Noruega, años ochenta, mostrando las celdas cilíndricas de hormigón de la base de gravedad"
+                width="941"
+                height="1289"
+                loading="lazy"
+              />
+              <figcaption>
+                Base de gravedad de hormigón tipo Condeep en construcción en Noruega,
+                probablemente Statfjord B o C, a principios de los años ochenta. La
+                fotografía muestra la disposición de las celdas cilíndricas antes de
+                que la estructura se ponga a flote. El GBS de Sleipner A seguía el
+                mismo principio constructivo. Autor: Bluemoose. Licencia: CC BY-SA 3.0.
+                <a href="https://commons.wikimedia.org/wiki/File:Oil_platform_Norway.jpg" target="_blank" rel="noopener">Ficha de origen y licencia</a>.
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="tricell" class="lesson-block">
+            <h2>La celda triangular: el nudo donde todo se complica</h2>
+            <p>
+              Cuando se disponen celdas cilíndricas en una cuadrícula compacta, entre
+              cada tres cilindros queda un hueco de forma triangular. En un GBS ese
+              hueco no puede dejarse vacío: tiene que rellenarse con hormigón para
+              mantener la estanquidad y para transmitir cargas entre las celdas
+              adyacentes. Ese elemento de hormigón de sección triangular que conecta
+              tres celdas cilíndricas se llama <em>tricell</em> o tricelda.
+            </p>
+            <p>
+              La tricelda no es un relleno pasivo. Cuando la estructura está sometida a
+              la presión hidrostática del agua &mdash;que crece con la profundidad y actúa
+              hacia dentro sobre las paredes de las celdas&mdash; las fuerzas se
+              redistribuyen en la zona de unión. Las esquinas donde las paredes curvas
+              de los cilindros se encuentran con las paredes planas de la tricelda
+              concentran esfuerzos cortantes de magnitud considerable. La resistencia de
+              esas paredes, su espesor y el armado colocado en ellas determinan si la
+              estructura aguanta o no bajo esa carga.
+            </p>
+            <p>
+              En el GBS de Sleipner A, las triceldas más comprometidas eran las
+              situadas junto al pozo de perforación D-3, uno de los cuatro pilares
+              verticales que atraviesan la base. Allí la geometría obligaba a
+              resolver una transición especialmente compleja entre las celdas
+              cilíndricas y el gran hueco circular del pozo.
+            </p>
+          </section>
+
+          <section id="modelo" class="lesson-block">
+            <h2>El modelo de elementos finitos y el error del 47&nbsp;%</h2>
+            <p>
+              Para calcular los esfuerzos en una estructura de esa complejidad geométrica
+              no hay solución analítica cerrada. El equipo de diseño utilizó NASTRAN, uno
+              de los programas de elementos finitos más contrastados del mundo. La idea
+              del método es dividir la estructura en pequeños elementos &mdash;la malla&mdash;,
+              asignar propiedades mecánicas a cada uno y resolver numéricamente el
+              equilibrio del conjunto. Cuanto más fina es la malla, más preciso es el
+              resultado. Cuanto más gruesa, mayor puede ser el error.
+            </p>
+            <p>
+              La malla usada para las triceldas era demasiado gruesa para capturar
+              correctamente los gradientes de tensión en sus esquinas. El programa
+              calculó esfuerzos cortantes significativamente menores que los reales.
+              La investigación posterior fijó esa subestimación en aproximadamente un
+              47&nbsp;%. Eso significa que las paredes de hormigón y el armado se
+              dimensionaron para resistir poco más de la mitad de los esfuerzos que
+              realmente actuaban sobre ellas.
+            </p>
+            <p>
+              A este error de modelado se sumó otro factor: las normas noruegas de
+              hormigón aplicadas en aquel momento contenían criterios poco conservadores
+              para ese tipo de detalle. El diseño pasó la revisión interna del contratista
+              sin que nadie verificara si la densidad de la malla era adecuada en las
+              zonas críticas. No había un proceso formal de comprobación independiente
+              de la calidad del modelo numérico. El GBS se construyó con paredes de
+              tricelda demasiado delgadas y con un armado insuficiente para los esfuerzos
+              reales.
+            </p>
+            <div class="document-note">
+              <p>
+                El error no procedía de datos de entrada incorrectos ni de un programa
+                defectuoso. Procedía de confiar en un resultado numérico sin comprobar que
+                la malla era suficientemente fina en la zona más exigente de la estructura.
+                La diferencia entre el modelo informático y la realidad física tenía un
+                nombre preciso: 47&nbsp;%.
+              </p>
+            </div>
+          </section>
+
+          <section id="hundimiento" class="lesson-block">
+            <h2>Dieciocho minutos en el Gandsfjorden</h2>
+            <p>
+              El 23 de agosto de 1991, el GBS de Sleipner A estaba siendo sometido a
+              pruebas de lastre finales en el Gandsfjorden, cerca de Stavanger. La
+              operación consistía en controlar la entrada de agua en las celdas para
+              hundir progresivamente la estructura hasta la cota de operación, verificar
+              que todo funcionaba correctamente y prepararla para el acoplamiento con la
+              cubierta de producción. A bordo y en la zona de trabajo había 22 personas.
+            </p>
+            <p>
+              A las 05:49, mientras la estructura alcanzaba una cota de inmersión de
+              aproximadamente 99 metros, se escuchó un golpe sordo desde el interior.
+              Inmediatamente después llegó el sonido inconfundible de agua entrando con
+              presión. En el puesto de control se registró una entrada de casi 1.000
+              toneladas de agua por minuto a través del pozo de perforación D-3. Las
+              bombas de lastre no podían compensar ese caudal. Había una grieta grave
+              en una pared de tricelda.
+            </p>
+            <p>
+              Las 22 personas evacuaron. Dieciocho minutos después de la primera señal
+              de alarma, el GBS había desaparecido. Tocó el fondo a 220 metros de
+              profundidad. El impacto fue tan violento que generó un evento sísmico de
+              magnitud 3,0 en la escala Richter y una ola que desplazó varios
+              remolcadores fondeados en las proximidades. En el fondo no quedó una
+              estructura: quedó un montón de escombros.
+            </p>
+            <p>
+              No hubo ninguna víctima. Ese detalle no es irrelevante: los procedimientos
+              de evacuación funcionaron, los tiempos de respuesta fueron suficientes y la
+              tripulación actuó con rapidez. La obra perdida era inmencionable en términos
+              económicos, pero la pérdida humana fue cero. En un accidente offshore en el
+              que una estructura de miles de toneladas desapareció en menos de veinte
+              minutos, ese resultado no fue automático.
+            </p>
+          </section>
+
+          <section id="investigacion" class="lesson-block">
+            <h2>Lo que encontró SINTEF</h2>
+            <p>
+              Statoil encargó a SINTEF, el principal organismo noruego de investigación
+              técnica, la dirección de la investigación sobre las causas del hundimiento.
+              El trabajo produjo 17 informes técnicos. El informe número 17 es el
+              resumen principal.
+            </p>
+            <p>
+              La investigación localizó el origen del fallo en dos paredes de tricelda
+              adyacentes al pozo D-3. El análisis retroactivo demostró que la capacidad
+              resistente de esas paredes era insuficiente para los esfuerzos que actuaban
+              sobre ellas durante las pruebas de lastre. El mecanismo de fallo fue un
+              fallo por cortante: la pared de hormigón no rompió por aplastamiento sino
+              por deslizamiento a lo largo de un plano de fisura diagonal.
+            </p>
+            <p>
+              La secuencia fue la siguiente: una de las paredes de tricelda cedió
+              primero, abriendo una grieta que permitió la entrada de agua bajo presión.
+              La inundación fue tan rápida que desequilibró la estructura y aceleró el
+              colapso de las paredes adyacentes. El proceso que comenzó en un detalle
+              de dos metros cuadrados de hormigón culminó en la pérdida total de una
+              estructura de miles de toneladas.
+            </p>
+            <p>
+              SINTEF también analizó el proceso de diseño. La malla de elementos finitos
+              usada en el modelo de las triceldas no era suficientemente refinada para
+              capturar los gradientes de tensión reales en las esquinas. Los esfuerzos
+              calculados eran correctos para la malla utilizada, pero esa malla no
+              representaba bien la realidad física. Estudios posteriores con mallas más
+              finas y con modelos analíticos simplificados reprodujeron valores de
+              esfuerzo cortante un 47&nbsp;% superiores a los que había producido el
+              modelo original. El problema no era el software: era que nadie había
+              comprobado si el nivel de discretización era apropiado para las
+              condiciones geométricas y de carga de ese elemento concreto.
+            </p>
+          </section>
+
+          <section id="reconstruccion" class="lesson-block">
+            <h2>La plataforma que llegó a tiempo</h2>
+            <p>
+              La pérdida del GBS colocó a Statoil en una situación crítica. El contrato
+              de gas exigía producción antes de octubre de 1993. Quedaban poco más de
+              dos años. La decisión de reconstruir se tomó en semanas.
+            </p>
+            <p>
+              El nuevo GBS se diseñó con las correcciones derivadas de la investigación:
+              paredes de tricelda más gruesas, armado reforzado en las esquinas y un
+              modelo de elementos finitos revisado con mayor densidad de malla en las
+              zonas críticas. La construcción se completó en junio de 1993, diecinueve
+              meses después del hundimiento. El 24 de agosto de 1993 comenzó la
+              producción de gas del campo Sleipner East, dentro del plazo contractual.
+            </p>
+            <p>
+              Los pagos del seguro alcanzaron los 2.300 millones de coronas noruegas.
+              En 1996, Aker y Norwegian Contractors llegaron a un acuerdo con Statoil
+              por el que pagaron 340 millones de coronas adicionales sin reconocer
+              responsabilidad. La pérdida económica total del accidente rondó los
+              700 millones de dólares de 1991.
+            </p>
+          </section>
+
+          <section id="verificacion" class="lesson-block">
+            <h2>Calcular con elementos finitos no es lo mismo que verificar el cálculo</h2>
+            <p>
+              El caso Sleipner A se ha convertido en el ejemplo más citado de lo que
+              ocurre cuando se confunde la ejecución de un análisis numérico con la
+              verificación de sus resultados. El método de elementos finitos es una
+              herramienta de discretización: divide el espacio continuo en elementos
+              finitos y obtiene una solución aproximada. La aproximación es tan buena
+              como la malla que la soporta. En geometrías con concentraciones de tensión
+              &mdash;esquinas, transiciones, nudos complejos&mdash; una malla
+              inadecuada puede dar resultados sistemáticamente incorrectos aunque el
+              programa funcione perfectamente.
+            </p>
+            <p>
+              La lección no es que el método de elementos finitos sea poco fiable: es
+              que requiere un proceso de verificación propio. Ese proceso incluye, al
+              menos, estudios de convergencia de malla &mdash;refinar progresivamente la
+              malla y comprobar que los resultados se estabilizan&mdash;, comparación con
+              soluciones analíticas en casos simplificados, y revisión independiente de
+              los modelos en zonas donde la geometría es singular. Nada de esto existía
+              como requisito formal en el diseño de Sleipner A.
+            </p>
+            <p>
+              Después del accidente, entidades como Det Norske Veritas (DNV) publicaron
+              guías específicas sobre verificación de modelos de elementos finitos para
+              estructuras offshore. El caso también impulsó la investigación en
+              verificación y validación de métodos numéricos como disciplina propia
+              dentro de la mecánica computacional. Desde 1991, la pregunta «¿es
+              suficiente mi malla?» ha dejado de ser opcional en el diseño de
+              estructuras de hormigón sometidas a esfuerzos complejos.
+            </p>
+            <p>
+              Desde el punto de vista de la gestión del proyecto, el hundimiento de
+              Sleipner A ilustra una dificultad real: cuando el cálculo se externaliza
+              a herramientas computacionales avanzadas, la responsabilidad de verificar
+              no desaparece. Se transforma. El ingeniero responsable ya no puede
+              comprobar el resultado a mano, pero sigue teniendo la obligación de
+              juzgar si el modelo captura los fenómenos relevantes. El prestigio del
+              software y la complejidad del método no transfieren esa responsabilidad
+              al programa.
+            </p>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <h2>Referencias y recursos</h2>
+            <ul class="link-stack">
+              <li>
+                <a href="https://www-users.cse.umn.edu/~arnold/disasters/sleipner.html" target="_blank" rel="noopener">Douglas N. Arnold: The sinking of the Sleipner A offshore platform (University of Minnesota)</a>
+                <p>Síntesis técnica del caso con diagramas del tricell y del error de malla. Punto de partida habitual para el estudio del caso en ingeniería computacional.</p>
+              </li>
+              <li>
+                <a href="https://www.osti.gov/etdeweb/biblio/610039" target="_blank" rel="noopener">Sleipner A GBS Loss. Report 17. Main Report (OSTI/ETDEWEB)</a>
+                <p>Informe principal de la investigación oficial. Resume los 17 informes técnicos producidos por SINTEF y establece la causa del fallo en las paredes de tricelda.</p>
+              </li>
+              <li>
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/1350630794900183" target="_blank" rel="noopener">Jakobsen, B. (1994): The Sleipner accident and its causes (Engineering Failure Analysis)</a>
+                <p>Artículo técnico que describe el mecanismo de fallo, la geometría del tricell y las discrepancias entre el modelo FEM y los esfuerzos reales.</p>
+              </li>
+              <li>
+                <a href="https://equinor.industriminne.no/en/sleipner-a-gbs-lost-and-replaced/" target="_blank" rel="noopener">Equinor Industriminne: Sleipner A GBS – lost and replaced</a>
+                <p>Relato institucional de Equinor (antigua Statoil) sobre el hundimiento, la evacuación, la investigación y la reconstrucción del GBS en diecinueve meses.</p>
+              </li>
+              <li>
+                <a href="https://www.ogj.com/home/article/17238901/statoil-cites-design-errors-in-sleipner-structure-loss" target="_blank" rel="noopener">Oil &amp; Gas Journal: Statoil cites design errors in Sleipner structure loss</a>
+                <p>Cobertura periodística especializada contemporánea al accidente que recoge las primeras conclusiones de Statoil sobre los errores de diseño.</p>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Sleipner_A" target="_blank" rel="noopener">Wikipedia: Sleipner A</a>
+                <p>Artículo enciclopédico con descripción de la plataforma, del accidente y de las consecuencias técnicas e industriales.</p>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Condeep" target="_blank" rel="noopener">Wikipedia: Condeep</a>
+                <p>Descripción del sistema constructivo de bases de gravedad de hormigón, con ejemplos de otras plataformas noruegas del mismo tipo.</p>
+              </li>
+            </ul>
+            <a class="primary-button" href="catastrofes-errores-proyectos-ingenieria.html">Volver a catástrofes y errores</a>
+          </section>
+
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>

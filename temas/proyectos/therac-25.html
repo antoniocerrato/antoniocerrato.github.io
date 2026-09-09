@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therac-25: cuando eliminar un interbloqueo convierte un acelerador en un arma | Antonio Cerrato Casado</title>
+  <meta name="description" content="El Therac-25 fue un acelerador lineal de radioterapia que entre 1985 y 1987 causó seis sobredosis masivas de radiación. La causa raíz: sustituir los interbloqueos hardware por comprobaciones software sin revisar las condiciones de carrera que el código heredado introducía." />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a><a href="../../investigacion.html">Investigación</a><a href="../../yo.html">Yo</a><a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Caso de estudio</p>
+        <h1>Therac-25: cuando eliminar un interbloqueo convierte un acelerador en un arma</h1>
+        <p class="lead">
+          Entre 1985 y 1987, una máquina de radioterapia canadiense administró a seis
+          pacientes dosis de radiación entre 40 y 125 veces superiores a las prescritas.
+          Al menos cinco murieron o sufrieron lesiones permanentes. La máquina era el
+          Therac-25, un acelerador lineal fabricado por Atomic Energy of Canada Limited.
+          No falló mecánicamente. Falló porque sus predecesores tenían interbloqueos
+          hardware que garantizaban físicamente la seguridad, y el Therac-25 los suprimió
+          y los sustituyó por comprobaciones software que contenían una condición de
+          carrera. El software funcionaba correctamente la inmensa mayoría de las veces.
+          Cuando no lo hacía, no había ninguna barrera física que lo detuviera.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del caso">
+          <h2>Contenido</h2>
+          <a href="#video">Recurso audiovisual</a>
+          <a href="#maquina">El acelerador y sus predecesores</a>
+          <a href="#interfaz">La interfaz y el operador</a>
+          <a href="#accidentes">Seis accidentes en dos años</a>
+          <a href="#condicion">La condición de carrera</a>
+          <a href="#interloqueos">Los interbloqueos que desaparecieron</a>
+          <a href="#respuesta">«Una sobredosis es imposible»</a>
+          <a href="#leveson">La investigación de Leveson y Turner</a>
+          <a href="#legado">El legado regulatorio</a>
+          <a href="#referencias">Referencias</a>
+        </aside>
+
+        <article class="lesson-content">
+
+          <section id="video" class="lesson-block">
+            <p class="small-title">Recurso audiovisual</p>
+            <h2>El caso explicado: diseño, fallos y respuesta corporativa</h2>
+            <p>
+              Este vídeo analiza el Therac-25 desde la perspectiva del diseño de sistemas
+              y el fallo corporativo: cómo surgieron los errores en el software, por qué
+              tardaron tanto en reconocerse y qué papel jugó la respuesta de AECL en
+              la extensión del daño.
+            </p>
+            <a
+              class="video-preview-link hero-video"
+              href="https://www.youtube.com/watch?v=TjuIpiHJLto"
+              target="_blank"
+              rel="noopener"
+              aria-label="Abrir vídeo sobre el fallo corporativo y técnico del Therac-25"
+            >
+              <span class="video-preview-image">
+                <img
+                  src="https://i.ytimg.com/vi/TjuIpiHJLto/maxresdefault.jpg"
+                  alt="Miniatura del vídeo sobre el fallo corporativo y de diseño del Therac-25"
+                  loading="lazy"
+                />
+                <span class="video-play-icon" aria-hidden="true">▶</span>
+              </span>
+              <span class="video-preview-copy">
+                <strong>Why Therac-25 Was A Fatal Corporate Failure</strong>
+                <span>Análisis de la condición de carrera, la supresión de interbloqueos hardware y la respuesta organizativa de AECL a los accidentes.</span>
+              </span>
+            </a>
+          </section>
+
+          <section id="maquina" class="lesson-block">
+            <p class="small-title">AECL · 1976-1982</p>
+            <h2>El acelerador y sus predecesores</h2>
+            <p>
+              Un acelerador lineal médico acelera electrones hasta velocidades próximas
+              a la de la luz y los dirige contra un tumor. Puede usarse de dos formas.
+              En modo electrónico, el haz llega directamente al paciente con la energía
+              reducida y expandida mediante un dispersor metálico: trata tumores
+              superficiales. En modo de rayos X, el haz impacta contra un blanco de
+              tungsteno que genera fotones de alta energía: penetra tejidos más profundos.
+              La diferencia física entre los dos modos exige que distintos elementos
+              mecánicos &mdash;el dispersor, el blanco, los filtros&mdash; estén en
+              posición antes de que el haz se active.
+            </p>
+            <p>
+              Atomic Energy of Canada Limited (AECL) y la empresa francesa CGR
+              colaboraron durante los años setenta en dos generaciones de aceleradores:
+              el Therac-6 y el Therac-20. Ambos funcionaban con una computadora PDP-11
+              y tenían interbloqueos electromecánicos: antes de disparar el haz, sensores
+              físicos verificaban que el carrusel con los elementos de tratamiento estaba
+              en la posición correcta. Si no lo estaba, un circuito independiente
+              impedía el disparo. El software podía fallar; los interbloqueos no
+              dependían del software.
+            </p>
+            <p>
+              En 1981 la colaboración con CGR terminó. AECL desarrolló en solitario el
+              Therac-25 con un diseño de doble paso de electrones que mejoraba la
+              uniformidad del haz. El software fue escrito por una sola persona durante
+              varios años en lenguaje ensamblador PDP-11, reutilizando código de las
+              versiones anteriores. La diferencia fundamental respecto a sus predecesores
+              no estaba en el acelerador: estaba en que el Therac-25 eliminó los
+              interbloqueos hardware y transfirió esa responsabilidad exclusivamente al
+              software. Se vendieron once máquinas &mdash;seis en Canadá y cinco en
+              Estados Unidos&mdash; a partir de 1982.
+            </p>
+          </section>
+
+          <section id="interfaz" class="lesson-block">
+            <h2>La interfaz y el operador</h2>
+            <p>
+              El Therac-25 se programaba desde un terminal de texto. El operador
+              introducía el tipo de tratamiento, la energía, la dosis, el tamaño del
+              campo y la posición del paciente mediante un formulario que recorría con
+              el cursor. Una vez completados todos los campos, el sistema mostraba los
+              parámetros y pedía confirmación. El operador podía volver atrás con las
+              teclas de cursor para corregir un valor sin necesidad de reiniciar el
+              formulario.
+            </p>
+            <figure class="case-figure">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/90/Therac25_Interface.png"
+                alt="Captura de pantalla de la interfaz de texto del Therac-25: formulario con campos de tipo de tratamiento, energía, dosis y tamaño de campo"
+                width="642"
+                height="386"
+                loading="lazy"
+              />
+              <figcaption>
+                Simulación de la interfaz de texto del Therac-25 reconstruida a partir
+                del código fuente original. El operador recorría los campos con el
+                cursor y podía editar los valores ya introducidos antes de confirmar el
+                tratamiento. Fuente: Wikimedia Commons.
+                <a href="https://commons.wikimedia.org/wiki/File:Therac25_Interface.png" target="_blank" rel="noopener">Ficha de origen</a>.
+              </figcaption>
+            </figure>
+            <p>
+              La interfaz era funcional y los operadores experimentados la usaban con
+              rapidez. Precisamente esa velocidad era uno de los factores del problema:
+              un operador que completaba el formulario en menos de ocho segundos y
+              corregía un campo con la tecla de cursor podía desencadenar una condición
+              de carrera sin saberlo ni poder detectarlo a simple vista.
+            </p>
+            <p>
+              Cuando el sistema detectaba un error, mostraba en la pantalla la palabra
+              <code>MALFUNCTION</code> seguida de un número entre 1 y 64. El manual de
+              usuario no explicaba qué significaba cada código ni advertía de que algunos
+              podían tener consecuencias graves para el paciente. El error más asociado
+              a las sobredosis era el <em>Malfunction 54</em>: la pantalla registraba
+              una dosis de cero o muy baja, el sistema se pausaba y el operador podía
+              reanudar pulsando la tecla «P» de <em>Proceed</em>. Los operadores habían
+              aprendido a presionar «P» con normalidad porque errores menores y
+              recuperables se mostraban con el mismo formato. La máquina no distinguía
+              visualmente entre un problema inocuo y una sobredosis en curso.
+            </p>
+          </section>
+
+          <section id="accidentes" class="lesson-block">
+            <h2>Seis accidentes en dos años</h2>
+            <p>
+              El primero ocurrió el 3 de junio de 1985 en el Kennestone Regional
+              Oncology Center de Marietta, Georgia. La paciente, de 61 años, recibió
+              una dosis estimada de entre 15.000 y 20.000 rad en la clavícula cuando la
+              prescripción era de 200 rad. Sintió un calor intenso durante la sesión.
+              El personal del hospital no asoció la reacción al Therac-25 porque AECL
+              les había garantizado que las sobredosis eran imposibles. La máquina
+              siguió en funcionamiento.
+            </p>
+            <p>
+              En julio de 1985 una paciente del Ontario Cancer Foundation recibió una
+              sobredosis estimada de 13.000 a 17.000 rad. En diciembre de ese año y
+              enero de 1986 se produjo un tercer accidente en el Yakima Valley Memorial
+              Hospital de Washington. AECL, al ser notificado, atribuyó los problemas a
+              fallos de microswitches e introdujo correcciones parciales sin llegar a
+              identificar la causa raíz.
+            </p>
+            <p>
+              Los dos accidentes de Tyler, Texas, en la primavera de 1986, son los mejor
+              documentados. El 21 de marzo, un paciente en su novena sesión recibió una
+              descarga equivalente a entre 16.500 y 25.000 rad concentrados en menos de
+              un centímetro cuadrado en menos de un segundo. Reconoció que algo iba mal
+              por la sensación de descarga eléctrica y el crujido de la máquina y llamó
+              golpeando la puerta de la sala. El operador, siguiendo el procedimiento
+              habitual, había pulsado «P» dos veces antes de que el paciente golpeara.
+              La pantalla solo mostraba seis unidades de dosis registradas sobre las 202
+              prescritas. El paciente murió cinco meses después.
+            </p>
+            <p>
+              El 11 de abril de 1986, en el mismo centro y con el mismo operador, se
+              repitió el accidente. Un paciente tratado por cáncer de piel facial recibió
+              una sobredosis que le causó la muerte el 1 de mayo. Fue el físico del
+              hospital quien, investigando los incidentes de Tyler, consiguió reproducir
+              el error 54 a voluntad: bastaba con introducir los parámetros con rapidez
+              y corregir el modo de tratamiento con la tecla de cursor. AECL, consultado
+              antes, había declarado que no podía reproducir el fallo.
+            </p>
+            <p>
+              El sexto y último accidente conocido ocurrió el 17 de enero de 1987 en el
+              Yakima Valley Memorial Hospital. El paciente falleció en abril de ese año.
+              Tras este último incidente, la FDA intervino y AECL retiró temporalmente
+              el Therac-25 del servicio.
+            </p>
+          </section>
+
+          <section id="condicion" class="lesson-block">
+            <h2>La condición de carrera y el desbordamiento del contador</h2>
+            <p>
+              El mecanismo técnico que producía las sobredosis fue reconstruido en
+              detalle por la investigación posterior. El software controlaba el carrusel
+              del acelerador &mdash;el elemento mecánico que posicionaba el dispersor,
+              el blanco de tungsteno o el campo de luz&mdash; mediante una variable de
+              estado. Esa variable debía indicar al sistema si el carrusel había llegado
+              a la posición correcta antes de permitir el disparo.
+            </p>
+            <p>
+              El problema era doble. Por un lado existía una condición de carrera: si el
+              operador completaba el formulario muy rápidamente &mdash;en los primeros
+              ocho segundos desde la activación del ciclo de control&mdash; y editaba el
+              campo de modo de tratamiento con las teclas de cursor, la tarea de
+              reposicionamiento del carrusel podía aún no haber terminado cuando la tarea
+              de disparo ya había leído la variable de estado. El sistema creía que el
+              carrusel estaba en la posición correcta porque la variable indicaba que lo
+              estaba, pero el carrusel seguía moviéndose.
+            </p>
+            <figure class="case-figure">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Therac_25_Malfunction_54_8_sec.gif"
+                alt="Animación que simula la pantalla del Therac-25 mostrando el error Malfunction 54 y el contador de ocho segundos en el que puede producirse la condición de carrera"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+              <figcaption>
+                Simulación de la pantalla del Therac-25 durante el <em>Malfunction 54</em>.
+                La animación muestra el contador de ocho segundos en el que la condición
+                de carrera podía activarse si el operador editaba el modo de tratamiento
+                con rapidez. Autor: Ajzh2074. Licencia: CC BY-SA 4.0.
+                <a href="https://commons.wikimedia.org/wiki/File:Therac_25_Malfunction_54_8_sec.gif" target="_blank" rel="noopener">Ficha de origen y licencia</a>.
+              </figcaption>
+            </figure>
+            <p>
+              Por otro lado, la variable de estado no se fijaba a un valor determinado:
+              se <em>incrementaba</em>. Tras 256 incrementos su valor desbordaba y volvía
+              a cero, condición que el sistema interpretaba como «no preparado». Cada 256
+              ciclos del bucle de control, la lógica de seguridad se invertía. Esta
+              clase de error &mdash;confundir «poner a cero» con «incrementar» en código
+              de bajo nivel&mdash; es difícil de detectar en pruebas convencionales
+              porque solo se manifiesta en circunstancias muy concretas de tiempo y de
+              acumulación de ciclos.
+            </p>
+            <p>
+              El resultado práctico era que, en esas circunstancias, el Therac-25
+              disparaba el haz de electrones sin haber posicionado ningún elemento de
+              atenuación. En modo electrónico con el carrusel en posición de rayos X, el
+              haz completo llegaba al paciente sin el dispersor. La dosis resultante no
+              era el doble de la prescrita ni el triple: era entre cuarenta y cien veces
+              mayor, concentrada en un área de poco más de un centímetro cuadrado.
+            </p>
+          </section>
+
+          <section id="interloqueos" class="lesson-block">
+            <h2>Los interbloqueos que desaparecieron</h2>
+            <p>
+              En el Therac-20, el modelo inmediatamente anterior, los interbloqueos
+              hardware eran circuitos independientes del software principal. Antes de que
+              el haz se activara, un circuito electromecánico leía directamente la
+              posición del carrusel mediante sensores físicos. Si el carrusel no había
+              llegado a su posición, el circuito bloqueaba la emisión con independencia
+              de lo que dijera el software. El sistema no podía disparar con el carrusel
+              mal posicionado porque el hardware lo impedía físicamente.
+            </p>
+            <p>
+              El Therac-20 contenía, de hecho, el mismo error de software que el
+              Therac-25 &mdash;el contador con desbordamiento y la condición de
+              carrera&mdash;, pero ese error nunca causó daño porque los interbloqueos
+              lo interceptaban antes de que llegara al haz. El código defectuoso viajó
+              al Therac-25 a través de la reutilización. Lo que no viajó fueron los
+              interbloqueos. El software heredó los errores del predecesor; la nueva
+              máquina no heredó la protección física que los hacía inocuos.
+            </p>
+            <p>
+              La decisión de eliminar los interbloqueos no fue el resultado de un
+              análisis de seguridad que los declarara innecesarios. Fue la consecuencia
+              lógica de un diseño que confiaba en que el software sería correcto.
+              Cuando se parte de que el software es correcto, los interbloqueos hardware
+              parecen redundantes y añaden coste. El problema es que esa hipótesis no
+              se había verificado: el software no había sido sometido a pruebas formales
+              de concurrencia ni a revisión independiente del código.
+            </p>
+          </section>
+
+          <section id="respuesta" class="lesson-block">
+            <h2>«Una sobredosis es imposible»</h2>
+            <p>
+              Uno de los elementos más perturbadores del caso Therac-25 no es el error
+              técnico en sí, sino la respuesta de AECL a los primeros accidentes. Ante
+              el primer incidente de Marietta, en 1985, AECL informó al hospital de que
+              el Therac-25 no podía administrar sobredosis. Ante los accidentes de Tyler,
+              en 1986, AECL declaró al principio que no podía reproducir el error y que
+              las causas debían buscarse en otro lugar. La empresa respondió con parches
+              parciales a medida que los incidentes se acumulaban: primero atribuyó el
+              problema a microswitches, luego ajustó umbrales, luego modificó el
+              software en puntos específicos. En ningún momento antes de la intervención
+              de la FDA se planteó una revisión sistemática del código y de sus
+              condiciones de concurrencia.
+            </p>
+            <p>
+              Esa respuesta tenía consecuencias directas en los hospitales. Los operadores
+              habían sido informados de que las sobredosis eran imposibles. Cuando los
+              pacientes describían sensaciones de quemadura o descarga, el personal tendía
+              a buscar explicaciones alternativas &mdash;reacciones cutáneas, fatiga,
+              ansiedad&mdash; antes que cuestionar la máquina. En Yakima, los tratamientos
+              continuaron durante semanas después del primer accidente. En Tyler, el físico
+              del hospital tardó meses en identificar la causa porque AECL le había
+              garantizado que la máquina no podía fallar de esa forma.
+            </p>
+            <p>
+              La brecha entre lo que la empresa afirmaba y lo que los operadores y
+              pacientes experimentaban no era solo una cuestión de comunicación: era una
+              cuestión de epistemología del diseño. AECL no tenía pruebas de que las
+              sobredosis fueran imposibles; tenía la ausencia de pruebas de que fueran
+              posibles. La diferencia importa cuando hay vidas en juego.
+            </p>
+          </section>
+
+          <section id="leveson" class="lesson-block">
+            <h2>La investigación de Leveson y Turner</h2>
+            <p>
+              En 1993, Nancy Leveson, investigadora del MIT especializada en seguridad
+              de sistemas, y Clark Turner publicaron en la revista <em>Computer</em> de
+              la IEEE el artículo «An Investigation of the Therac-25 Accidents». Es el
+              análisis de referencia del caso y uno de los documentos más citados en la
+              historia de la ingeniería de software.
+            </p>
+            <p>
+              Leveson y Turner documentaron los seis incidentes con precisión, pero el
+              valor central de su análisis era sistémico: mostraron que el fallo del
+              Therac-25 no era simplemente un error de programación. Era el resultado
+              de la interacción entre decisiones de diseño de software, arquitectura del
+              sistema, pruebas insuficientes, análisis de seguridad inexistente,
+              comunicación deficiente entre fabricante, hospitales y reguladores, y una
+              respuesta organizativa que priorizó la continuidad operativa sobre la
+              comprensión del problema.
+            </p>
+            <p>
+              Una de las observaciones más útiles del artículo para cualquier proyecto
+              técnico: «Se hace frecuentemente la asunción ingenua de que reutilizar
+              software o usar software comercial incrementará la seguridad porque ese
+              software habrá sido ampliamente ejercitado. Reutilizar módulos de software
+              no garantiza la seguridad en el nuevo sistema al que se transfieren.» El
+              Therac-20 había funcionado durante años sin incidentes, pero eso solo
+              probaba que era seguro en su propio entorno, con sus propios interbloqueos.
+              No probaba nada sobre el Therac-25.
+            </p>
+            <p>
+              Leveson también señaló que el sistema de pruebas de AECL no incluía
+              pruebas de integración software-hardware en condiciones reales de uso.
+              El Therac-25 no fue probado como sistema completo &mdash;software y
+              hardware juntos&mdash; hasta que las máquinas estaban ya instaladas en
+              los hospitales. El banco de pruebas era el propio paciente.
+            </p>
+          </section>
+
+          <section id="legado" class="lesson-block">
+            <h2>El legado regulatorio: de la FDA al IEC 62304</h2>
+            <p>
+              La FDA, que hasta entonces había regulado los dispositivos médicos
+              principalmente desde la perspectiva del hardware, identificó el caso
+              Therac-25 como un punto de inflexión. Las sobredosis demostraron que el
+              software podía ser el elemento causante de un fallo de seguridad en un
+              dispositivo médico, y que los procedimientos de validación habituales del
+              hardware no eran trasladables directamente al software. A partir de los
+              años noventa, la FDA empezó a exigir que los fabricantes documentaran y
+              validaran el software de sus dispositivos de forma explícita.
+            </p>
+            <p>
+              En el plano normativo internacional, el estándar IEC 62304 &mdash;publicado
+              en 2006 y revisado en 2015&mdash; establece los requisitos del ciclo de
+              vida del software para dispositivos médicos. Exige clasificar el software
+              por nivel de riesgo, definir los requisitos de seguridad antes de
+              codificar, documentar las pruebas, gestionar las no conformidades y
+              aplicar controles específicos para software que se reutiliza de versiones
+              anteriores. Todas esas exigencias responden, directa o indirectamente, a
+              los mecanismos de fallo del Therac-25.
+            </p>
+            <p>
+              Más allá de la normativa, el caso introdujo en la ingeniería de sistemas
+              un principio que hoy resulta evidente pero entonces no lo era: la defensa
+              en profundidad. Un sistema de seguridad crítica no debe depender de una
+              única barrera. Si el software puede fallar &mdash;y en principio siempre
+              puede&mdash;, debe existir una segunda barrera independiente que no
+              dependa del software para actuar. En un acelerador lineal, esa barrera
+              es un interbloqueo hardware. Suprimirla no simplifica el sistema: elimina
+              la única protección que funciona cuando lo demás falla.
+            </p>
+            <p>
+              El Therac-25 también dejó una lección más difícil de codificar en una
+              norma: la de los mecanismos organizativos que permiten que un peligro
+              conocido continúe activo. Hubo avisos. Hubo informes de operadores.
+              Hubo pacientes que describieron sensaciones anómalas. Hubo físicos que
+              intentaron reproducir el error. Todo eso existía antes de que la FDA
+              interviniera, y no fue suficiente para detener la máquina. La cadena que
+              conecta un síntoma clínico con una corrección técnica tiene que funcionar
+              aunque el fabricante diga que el problema es imposible.
+            </p>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <h2>Referencias y recursos</h2>
+            <ul class="link-stack">
+              <li>
+                <a href="https://dl.acm.org/doi/10.1109/MC.1993.274940" target="_blank" rel="noopener">Leveson, N. G. y Turner, C. S. (1993): An Investigation of the Therac-25 Accidents. <em>Computer</em>, IEEE.</a>
+                <p>El artículo de referencia sobre el caso. Documenta los seis accidentes, analiza las causas técnicas y organizativas y extrae conclusiones sistémicas que siguen siendo válidas para cualquier sistema crítico controlado por software.</p>
+              </li>
+              <li>
+                <a href="https://www.cs.columbia.edu/~junfeng/08fa-e6998/sched/readings/therac25.pdf" target="_blank" rel="noopener">Versión en PDF del artículo de Leveson y Turner (Columbia University)</a>
+                <p>Copia del artículo completo con todos los detalles técnicos, la cronología de los accidentes y la secuencia exacta de la condición de carrera y el desbordamiento del contador.</p>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Therac-25" target="_blank" rel="noopener">Wikipedia: Therac-25</a>
+                <p>Artículo enciclopédico con descripción técnica de la máquina, los seis incidentes y las consecuencias regulatorias.</p>
+              </li>
+              <li>
+                <a href="https://ethicsunwrapped.utexas.edu/case-study/therac-25" target="_blank" rel="noopener">Ethics Unwrapped (University of Texas): Therac-25</a>
+                <p>Análisis del caso desde la perspectiva de la ética profesional en ingeniería: la responsabilidad del fabricante, el papel de los reguladores y los límites de la confianza en el software.</p>
+              </li>
+              <li>
+                <a href="https://hackaday.com/2015/10/26/killed-by-a-machine-the-therac-25/" target="_blank" rel="noopener">Hackaday: Killed by a Machine — The Therac-25</a>
+                <p>Explicación técnica detallada de la condición de carrera, el código ensamblador original y los mecanismos exactos de cada tipo de sobredosis.</p>
+              </li>
+            </ul>
+            <a class="primary-button" href="catastrofes-errores-proyectos-ingenieria.html">Volver a catástrofes y errores</a>
+          </section>
+
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Antonio Cerrato Casado</p>
+    </div>
+  </footer>
+</body>
+</html>
