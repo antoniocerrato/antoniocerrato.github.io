@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso práctico: ¿compensa invertir doce millones en un equipo industrial? | Antonio Cerrato Casado</title>
+  <meta name="description" content="Ejercicio original resuelto paso a paso: inversión de doce millones, producción, costes, amortización, venta final e impuestos. Cálculo de VAN, TIR y recuperación con gráficos y datos descargables." />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body class="financial-case">
+  <header class="site-header"><nav class="nav container" aria-label="Navegación principal">
+    <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+    <div class="nav-links"><a href="../../docencia.html">Docencia</a><a href="../../investigacion.html">Investigación</a><a href="../../yo.html">Yo</a><a href="../../index.html#contacto">Contacto</a></div>
+  </nav></header>
+  <main id="contenido">
+    <section class="page-hero"><div class="container page-hero-inner">
+      <p class="small-title">Proyectos de Ingeniería · Ejercicio original resuelto</p>
+      <h1>Caso práctico: ¿compensa invertir doce millones en un equipo industrial?</h1>
+      <p class="lead">Una inversión, cinco años de actividad y una venta final. Vamos a seguir el dinero desde el primer desembolso hasta el último cobro, sin confundir beneficio, amortización y caja.</p>
+      <p><a href="../../asignaturas/proyectos-ingenieria.html">Proyectos de Ingeniería</a> · <a href="estudios-previos-viabilidad-economica.html">Viabilidad económica</a></p>
+    </div></section>
+    <section class="section"><div class="container lesson-layout">
+      <aside class="lesson-nav" aria-label="Recorrido del ejercicio">
+        <h2>Vamos por partes</h2>
+        <a href="#enunciado">1. El enunciado</a>
+        <a href="#ventas">2. Producción, ventas y costes</a>
+        <a href="#amortizacion">3. La amortización</a>
+        <a href="#venta-final">4. Qué pasa al vender</a>
+        <a href="#impuestos">5. Impuestos y flujos</a>
+        <a href="#van">6. El VAN</a>
+        <a href="#tir">7. La TIR</a>
+        <a href="#payback">8. Plazo de recuperación</a>
+        <a href="#conclusion">9. Qué podemos concluir</a>
+        <a href="#descargas">Datos y referencias</a>
+      </aside>
+      <article class="lesson-content">
+        <section id="enunciado" class="lesson-block">
+          <h2>1. El ejercicio del que partimos</h2>
+          <p>En esta entrada recupero el ejercicio de mis apuntes de viabilidad económica. Mantengo sus datos y sus simplificaciones: antes de añadir clientes que pagan tarde, préstamos o reposiciones, conviene entender bien cómo se construye un flujo de caja. La ampliación a un proyecto más próximo a la práctica está en el <a href="caso-practico-planta-prefabricados.html">caso de la planta de prefabricados</a>.</p>
+          <p>Una empresa estudia comprar un equipo industrial por <strong>12.000.000 €</strong>. Lo utilizará durante cinco años para fabricar un producto y, al terminar, lo venderá. Tenemos que decidir si la inversión ofrece una rentabilidad suficiente.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Datos del enunciado original"><table><caption>Datos del enunciado original</caption><thead><tr><th scope="col">Dato</th><th scope="col">Valor e hipótesis</th></tr></thead><tbody><tr><th scope="row">Inversión inicial</th><td>12.000.000 €, pagados en el momento 0</td></tr>
+<tr><th scope="row">Vida útil y horizonte de análisis</th><td>5 años completos</td></tr>
+<tr><th scope="row">Producción y ventas</th><td>10.000 unidades en el año 1; crecimiento del 8 % anual hasta el año 3; constantes en los años 4 y 5</td></tr>
+<tr><th scope="row">Precio de venta</th><td>1.000 €/unidad en el año 1; incremento anual del 6 %</td></tr>
+<tr><th scope="row">Coste variable</th><td>500 €/unidad en el año 1; incremento anual del 4 %</td></tr>
+<tr><th scope="row">Coste fijo</th><td>2.000.000 € en el año 1; incremento anual del 3 %</td></tr>
+<tr><th scope="row">Coste de capital</th><td>10 % anual</td></tr>
+<tr><th scope="row">Impuesto sobre beneficios</th><td>25 %; se paga en el mismo año en que se genera</td></tr>
+<tr><th scope="row">Amortización</th><td>Lineal durante cinco años; valor residual fiscal dado: 1.200.000 €</td></tr>
+<tr><th scope="row">Venta del equipo</th><td>1.000.000 €, cobrados al final del año 5</td></tr>
+<tr><th scope="row">Cobros y pagos de explotación</th><td>Se producen en el mismo año que los ingresos y costes correspondientes</td></tr></tbody></table></div></div>
+          <p>Nos piden los flujos antes y después de impuestos, la amortización, el efecto de la venta final y tres indicadores: <strong>valor actual neto (VAN), tasa interna de rentabilidad (TIR) y plazo de recuperación</strong>, este último con y sin actualización.</p>
+          <p>Situaremos los flujos anuales al cierre de cada ejercicio. No añadiremos un préstamo ni una inversión en existencias que el enunciado no contempla. Tampoco incorporaremos saldos de IVA. El 10 % será la rentabilidad mínima exigida a esta inversión después de impuestos: <strong>no es una cuota que debamos pagar ni tiene por qué ser el interés de un préstamo</strong>.</p>
+          <div class="document-note"><p><strong>Una convención para leer las cifras.</strong> Las tablas muestran euros, salvo donde se indica otra unidad. Calcularemos sin redondeos intermedios y mostraremos normalmente dos decimales. Por eso, multiplicar dos cifras ya redondeadas de una tabla puede producir una pequeña diferencia.</p></div>
+        </section>
+        <section id="ventas" class="lesson-block">
+          <h2>2. Primero, lo que produce y vende el equipo</h2>
+          <p>Empecemos por las unidades. El 8 % se aplica al año anterior, no siempre a las 10.000 iniciales. En el segundo año venderemos 10.000 × 1,08 = 10.800 unidades; en el tercero, 10.800 × 1,08 = 11.664. Ahí se detiene el crecimiento de la cantidad. <strong>Los precios y costes unitarios, en cambio, siguen aumentando hasta el año 5.</strong></p>
+          <p>Si llamamos <em>t</em> al año, el precio será 1.000 × 1,06<sup>t−1</sup> y el coste variable unitario, 500 × 1,04<sup>t−1</sup>. El exponente es <em>t − 1</em> porque en el primer año todavía no hemos aplicado ningún incremento.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Unidades y valores unitarios"><table><caption>Unidades y valores unitarios</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Año 1</th><th scope="col">Año 2</th><th scope="col">Año 3</th><th scope="col">Año 4</th><th scope="col">Año 5</th></tr></thead><tbody><tr><th scope="row">Unidades vendidas</th><td>10.000</td><td>10.800</td><td>11.664</td><td>11.664</td><td>11.664</td></tr>
+<tr><th scope="row">Precio (€/unidad)</th><td>1000,00000</td><td>1060,00000</td><td>1123,60000</td><td>1191,01600</td><td>1262,47696</td></tr>
+<tr><th scope="row">Coste variable (€/unidad)</th><td>500,00000</td><td>520,00000</td><td>540,80000</td><td>562,43200</td><td>584,92928</td></tr></tbody></table></div></div>
+          <p>Los ingresos resultan de multiplicar las unidades por el precio. El coste variable total se obtiene de la misma manera, usando el coste por unidad. El coste fijo no se multiplica por la producción: es una cantidad anual, aunque en este enunciado suba un 3 % cada año.</p>
+          <div class="finance-equation">Ingresos = unidades × precio<br />Costes de explotación = unidades × coste variable unitario + coste fijo<br />Flujo de explotación antes de impuestos = ingresos − costes de explotación</div>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Ingresos, costes y flujo antes de impuestos (€)"><table><caption>Ingresos, costes y flujo antes de impuestos (€)</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Año 1</th><th scope="col">Año 2</th><th scope="col">Año 3</th><th scope="col">Año 4</th><th scope="col">Año 5</th></tr></thead><tbody><tr><th scope="row">Ingresos</th><td>10.000.000,00</td><td>11.448.000,00</td><td>13.105.670,40</td><td>13.892.010,62</td><td>14.725.531,26</td></tr>
+<tr><th scope="row">Coste variable total</th><td>5.000.000,00</td><td>5.616.000,00</td><td>6.307.891,20</td><td>6.560.206,85</td><td>6.822.615,12</td></tr>
+<tr><th scope="row">Coste fijo</th><td>2.000.000,00</td><td>2.060.000,00</td><td>2.121.800,00</td><td>2.185.454,00</td><td>2.251.017,62</td></tr>
+<tr><th scope="row">Costes de explotación totales</th><td>7.000.000,00</td><td>7.676.000,00</td><td>8.429.691,20</td><td>8.745.660,85</td><td>9.073.632,74</td></tr>
+<tr><th scope="row">Flujo antes de impuestos</th><td>3.000.000,00</td><td>3.772.000,00</td><td>4.675.979,20</td><td>5.146.349,78</td><td>5.651.898,52</td></tr></tbody></table></div></div>
+          <p>Comprobemos el primer año a mano: entran 10 millones y salen 5 millones de costes variables y 2 millones de costes fijos. Quedan <strong>3 millones antes de impuestos</strong>. Ese importe todavía no es el beneficio sujeto al impuesto: falta considerar el desgaste económico del equipo mediante la amortización.</p>
+          <p>Podemos identificar este margen con el resultado antes de amortizaciones, intereses e impuestos —lo que suele llamarse EBITDA— dentro de las simplificaciones del caso. Aquí coincide con la caja de explotación antes de impuestos porque hemos supuesto que se cobra y se paga todo en el mismo ejercicio. En una empresa real, esa coincidencia no está garantizada.</p>
+        </section>
+        <section id="amortizacion" class="lesson-block">
+          <h2>3. La amortización no es un segundo pago de la máquina</h2>
+          <p>Los doce millones ya salieron de caja en el momento 0. Si volviéramos a restarlos como pagos a lo largo de los cinco años, estaríamos contando dos veces la misma inversión. Lo que hacemos al amortizar es distinto: repartir su importe amortizable entre los ejercicios que se benefician de su uso.</p>
+          <p>El enunciado nos da una amortización lineal y un valor residual fiscal de 1,2 millones. En este modelo ese importe representa el valor que quedará pendiente tras las cinco cuotas. Por tanto:</p>
+          <div class="finance-equation">Cuota anual = (12.000.000 − 1.200.000) / 5 = <strong>2.160.000 €/año</strong></div>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Amortización y valor pendiente al cierre, antes de vender (€)"><table><caption>Amortización y valor pendiente al cierre, antes de vender (€)</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Año 1</th><th scope="col">Año 2</th><th scope="col">Año 3</th><th scope="col">Año 4</th><th scope="col">Año 5</th></tr></thead><tbody><tr><th scope="row">Cuota de amortización</th><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td></tr>
+<tr><th scope="row">Valor pendiente</th><td>9.840.000,00</td><td>7.680.000,00</td><td>5.520.000,00</td><td>3.360.000,00</td><td>1.200.000,00</td></tr></tbody></table></div></div>
+          <p>En el año 1, el resultado antes del impuesto será 3.000.000 − 2.160.000 = 840.000 €. La amortización reduce ese resultado, aunque no haya salido dinero por ella en ese año. A un tipo del 25 %, cada cuota reduce el impuesto en 2.160.000 × 25 % = <strong>540.000 €</strong>, frente a un cálculo sin esa deducción y con la misma actividad.</p>
+          <div class="document-note"><p><strong>Atención: estamos resolviendo un supuesto, no eligiendo una amortización fiscal real.</strong> Para mantener el ejercicio original, asumimos que la cuota indicada es fiscalmente deducible y que no hay diferencias entre amortización contable y fiscal. No debemos convertir esa hipótesis en una regla general para cualquier máquina.</p></div>
+          <p>En la práctica, el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">Plan General de Contabilidad, norma de registro y valoración 2.ª</a>, relaciona la amortización contable con la vida útil y el valor residual. La deducibilidad fiscal se comprueba aparte, conforme al <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">artículo 12 de la Ley del Impuesto sobre Sociedades</a>. Su tabla general asigna a «Maquinaria» un coeficiente lineal máximo del 12 % y un período máximo de 18 años, sin perjuicio de otras categorías y vías admitidas por la ley. Una cuota de 2,16 millones sobre una adquisición de 12 millones no se justifica por esa fila ordinaria sin más.</p>
+          <p>He desarrollado esta distinción, con ejemplos y enlaces a la normativa, en <a href="amortizacion-inmovilizado-analisis-financiero.html">la entrada sobre amortización del inmovilizado</a>. Para el ejercicio de hoy basta con no perder de vista qué dato nos han dado y qué tendríamos que justificar en un proyecto real.</p>
+        </section>
+        <section id="venta-final" class="lesson-block">
+          <h2>4. ¿Qué ocurre cuando vendemos el equipo?</h2>
+          <p>Al finalizar el quinto año quedan 1.200.000 € pendientes en libros, pero el comprador solo paga 1.000.000 €. Son dos conceptos distintos: el primero procede de nuestro cálculo de amortización; el segundo es el cobro efectivo de la venta.</p>
+          <div class="finance-equation">Resultado de la venta = precio de venta − valor pendiente<br />1.000.000 − 1.200.000 = <strong>−200.000 €</strong></div>
+          <p>Tenemos una pérdida de 200.000 €. No significa que paguemos esa cantidad al comprador: de hecho, cobramos un millón. La pérdida reduce el resultado sujeto a impuesto del quinto año. Como ese resultado sigue siendo positivo, pagaremos 200.000 × 25 % = <strong>50.000 € menos</strong>. No necesitamos suponer una devolución ni esperar a compensar pérdidas en años futuros.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable con desplazamiento horizontal"><a href="../../assets/proyectos/equipo-industrial/venta-final.svg" target="_blank" rel="noopener" aria-label="Abrir figura a tamaño completo"><img src="../../assets/proyectos/equipo-industrial/venta-final.svg" width="1000" height="500" alt="La venta genera un cobro de un millón y una pérdida de doscientos mil euros que reduce el impuesto en cincuenta mil." loading="lazy" /></a></div><figcaption>Figura 1. Del valor pendiente al efecto de la venta sobre la caja. Elaboración propia a partir de los datos del ejercicio. <a href="../../assets/proyectos/equipo-industrial/venta-final.svg" target="_blank" rel="noopener">Abrir a tamaño completo</a>.</figcaption></figure>
+          <p>Podemos describir la salida del equipo como un cobro de 1.000.000 € más un ahorro fiscal de 50.000 €. También podemos calcular directamente el impuesto total del año incluyendo la pérdida. Ambas formas llevan al mismo resultado; lo importante es <strong>no sumar ese ahorro dos veces</strong>.</p>
+        </section>
+        <section id="impuestos" class="lesson-block">
+          <h2>5. Del resultado al dinero que queda</h2>
+          <p>Ahora ya podemos calcular el impuesto. En este ejercicio no hay intereses ni otros ajustes fiscales, así que la base imponible se obtiene restando la amortización al margen de explotación e incorporando, en el año 5, la pérdida por la venta.</p>
+          <div class="finance-equation">Base imponible = ingresos − costes de explotación − amortización + resultado de la venta<br />Impuesto = base imponible × 25 %</div>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Base imponible e impuesto (€)"><table><caption>Base imponible e impuesto (€)</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Año 1</th><th scope="col">Año 2</th><th scope="col">Año 3</th><th scope="col">Año 4</th><th scope="col">Año 5</th></tr></thead><tbody><tr><th scope="row">Flujo antes de impuestos</th><td>3.000.000,00</td><td>3.772.000,00</td><td>4.675.979,20</td><td>5.146.349,78</td><td>5.651.898,52</td></tr>
+<tr><th scope="row">Amortización a restar</th><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td><td>2.160.000,00</td></tr>
+<tr><th scope="row">Resultado de la venta, con su signo</th><td>0,00</td><td>0,00</td><td>0,00</td><td>0,00</td><td>-200.000,00</td></tr>
+<tr><th scope="row">Base imponible</th><td>840.000,00</td><td>1.612.000,00</td><td>2.515.979,20</td><td>2.986.349,78</td><td>3.291.898,52</td></tr>
+<tr><th scope="row">Impuesto</th><td>210.000,00</td><td>403.000,00</td><td>628.994,80</td><td>746.587,44</td><td>822.974,63</td></tr></tbody></table></div></div>
+          <p>En el primer año, el impuesto es 840.000 × 25 % = 210.000 €. La caja que nos queda es 3.000.000 − 210.000 = <strong>2.790.000 €</strong>. Si partiéramos del beneficio después de impuestos, tendríamos 630.000 € y deberíamos añadir de nuevo los 2.160.000 € de amortización para llegar a la misma caja. La añadimos porque antes se había restado como gasto sin ser un pago, no porque nadie nos la ingrese.</p>
+          <p>Para evitar rodeos, construiremos la serie directamente a partir de cobros y pagos:</p>
+          <div class="finance-equation">Flujo neto anual = ingresos − costes de explotación − impuesto + cobro por venta del equipo</div>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Flujos de caja después de impuestos (€)"><table><caption>Flujos de caja después de impuestos (€)</caption><thead><tr><th scope="col">Concepto</th><th scope="col">Año 1</th><th scope="col">Año 2</th><th scope="col">Año 3</th><th scope="col">Año 4</th><th scope="col">Año 5</th></tr></thead><tbody><tr><th scope="row">Flujo antes de impuestos</th><td>3.000.000,00</td><td>3.772.000,00</td><td>4.675.979,20</td><td>5.146.349,78</td><td>5.651.898,52</td></tr>
+<tr><th scope="row">Impuesto a restar, incluida la venta</th><td>210.000,00</td><td>403.000,00</td><td>628.994,80</td><td>746.587,44</td><td>822.974,63</td></tr>
+<tr><th scope="row">Cobro por venta a sumar</th><td>0,00</td><td>0,00</td><td>0,00</td><td>0,00</td><td>1.000.000,00</td></tr>
+<tr><th scope="row">Flujo neto</th><td>2.790.000,00</td><td>3.369.000,00</td><td>4.046.984,40</td><td>4.399.762,33</td><td>5.828.923,89</td></tr></tbody></table></div></div>
+          <p>El quinto flujo merece una comprobación: 5.651.898,52 − 822.974,63 + 1.000.000 = <strong>5.828.923,89 €</strong>. La pérdida de la venta ya está recogida en el impuesto; no la restamos otra vez de la caja.</p>
+          <p>Nos falta añadir el momento 0: <strong>−12.000.000 €</strong>. El signo negativo indica que es un desembolso. Con eso queda completa la serie que vamos a valorar.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable con desplazamiento horizontal"><a href="../../assets/proyectos/equipo-industrial/cronologia.svg" target="_blank" rel="noopener" aria-label="Abrir figura a tamaño completo"><img src="../../assets/proyectos/equipo-industrial/cronologia.svg" width="1000" height="500" alt="Desembolso inicial de doce millones y cinco flujos positivos; el último incluye la venta y su efecto fiscal." loading="lazy" /></a></div><figcaption>Figura 2. Calendario de la inversión y de sus retornos. M€ significa millones de euros. Elaboración propia a partir de los datos del ejercicio. <a href="../../assets/proyectos/equipo-industrial/cronologia.svg" target="_blank" rel="noopener">Abrir a tamaño completo</a>.</figcaption></figure>
+        </section>
+        <section id="van" class="lesson-block">
+          <h2>6. El VAN: comparar todos los euros en la misma fecha</h2>
+          <p>Un euro que recuperamos dentro de cinco años no equivale a un euro disponible hoy. La empresa exige un 10 % anual por comprometer su dinero en esta inversión. Para comparar, llevamos cada flujo futuro al momento 0: lo dividimos por 1,10 tantas veces como años tengamos que esperar.</p>
+          <p>Por ejemplo, los 2.790.000 € del año 1 equivalen a 2.790.000 / 1,10 = 2.536.363,64 € de hoy. Para el año 2 dividimos por 1,10²; para el quinto, por 1,10⁵.</p>
+          <div class="finance-equation">VAN = −12.000.000 + 2.790.000 / 1,10 + 3.369.000 / 1,10² + 4.046.984,40 / 1,10³ + 4.399.762,332 / 1,10⁴ + 5.828.923,88964 / 1,10⁵</div>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Actualización de los flujos al 10 % (€)"><table><caption>Actualización de los flujos al 10 % (€)</caption><thead><tr><th scope="col">Momento</th><th scope="col">Flujo neto</th><th scope="col">Valor en el momento 0</th><th scope="col">Saldo actualizado acumulado</th></tr></thead><tbody><tr><th scope="row">0</th><td>-12.000.000,00</td><td>-12.000.000,00</td><td>-12.000.000,00</td></tr>
+<tr><th scope="row">1</th><td>2.790.000,00</td><td>2.536.363,64</td><td>-9.463.636,36</td></tr>
+<tr><th scope="row">2</th><td>3.369.000,00</td><td>2.784.297,52</td><td>-6.679.338,84</td></tr>
+<tr><th scope="row">3</th><td>4.046.984,40</td><td>3.040.559,28</td><td>-3.638.779,56</td></tr>
+<tr><th scope="row">4</th><td>4.399.762,33</td><td>3.005.096,87</td><td>-633.682,69</td></tr>
+<tr><th scope="row">5</th><td>5.828.923,89</td><td>3.619.303,13</td><td>2.985.620,44</td></tr></tbody></table></div></div>
+          <div class="finance-equation"><strong>VAN = 2.985.620,44 €</strong></div>
+          <p>El VAN es positivo. Con nuestras hipótesis, la inversión recupera el desembolso, remunera el capital al 10 % exigido y aporta un excedente equivalente a unos 2,99 millones de euros actuales. <strong>No significa que tengamos esa cantidad en el banco al final del quinto año</strong>: es una valoración en el momento inicial.</p>
+          <p>La suma simple de los cobros netos menos la inversión es 8.434.670,62 €. Esa cifra no es el VAN porque mezcla euros de distintas fechas sin aplicar el coste de capital.</p>
+        </section>
+        <section id="tir" class="lesson-block">
+          <h2>7. La TIR: ¿qué rentabilidad hace que el VAN sea cero?</h2>
+          <p>En el VAN fijamos la rentabilidad exigida y calculamos cuánto valor queda. En la TIR hacemos la pregunta al revés: ¿qué tasa de descuento deja el valor de los flujos futuros exactamente igual a los doce millones invertidos?</p>
+          <div class="finance-equation">0 = −12.000.000 + Σ [flujo del año t / (1 + TIR)<sup>t</sup>]<br /><strong>TIR = 18,2093 % anual ≈ 18,21 %</strong></div>
+          <p>El símbolo Σ solo nos pide sumar los cinco términos, uno por cada año. Para encontrar la tasa podemos tantear: al 18 %, el VAN es +64.314,59 €; al 20 %, es −529.099,06 €. La solución está entre ambos valores.</p>
+          <p>Una interpolación lineal entre esos dos puntos da aproximadamente el 18,2168 %, que se redondea al 18,22 %. Es una aproximación útil a mano, pero el cálculo numérico de la raíz da el <strong>18,21 %</strong>. La diferencia aparece porque el VAN no varía en línea recta con la tasa.</p>
+          <p>Como la TIR supera el 10 % exigido, coincide con el VAN en aceptar esta inversión bajo las hipótesis dadas. No quiere decir que cada año cobremos el 18,21 % de doce millones: la rentabilidad resume una serie de importes y fechas diferentes.</p>
+          <p>En una hoja de cálculo, podemos usar <code>TIR</code> sobre la serie completa, incluido el desembolso inicial negativo. Para el VAN, la función <code>VNA</code> se aplica a los flujos de los años 1 a 5 y después se suma el flujo del momento 0. Meter también el desembolso inicial dentro de <code>VNA</code> lo descontaría un período que no corresponde.</p>
+        </section>
+        <section id="payback" class="lesson-block">
+          <h2>8. ¿Cuánto tardamos en recuperar la inversión?</h2>
+          <p>El plazo de recuperación —o <em>payback</em>— mira cuándo la suma de los flujos compensa el desembolso inicial. Nos habla de recuperación, no de toda la rentabilidad: ignora lo que ocurra después de recuperar la inversión.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Saldo pendiente o excedente acumulado (€)"><table><caption>Saldo pendiente o excedente acumulado (€)</caption><thead><tr><th scope="col">Cierre del año</th><th scope="col">Sin actualizar</th><th scope="col">Actualizado al 10 %</th></tr></thead><tbody><tr><th scope="row">0</th><td>-12.000.000,00</td><td>-12.000.000,00</td></tr>
+<tr><th scope="row">1</th><td>-9.210.000,00</td><td>-9.463.636,36</td></tr>
+<tr><th scope="row">2</th><td>-5.841.000,00</td><td>-6.679.338,84</td></tr>
+<tr><th scope="row">3</th><td>-1.794.015,60</td><td>-3.638.779,56</td></tr>
+<tr><th scope="row">4</th><td>2.605.746,73</td><td>-633.682,69</td></tr>
+<tr><th scope="row">5</th><td>8.434.670,62</td><td>2.985.620,44</td></tr></tbody></table></div></div>
+          <h3>Sin descuento: durante el cuarto año</h3>
+          <p>Al final del año 3 todavía faltan 1.794.015,60 €. El flujo del cuarto año es 4.399.762,33 €. Si suponemos que ese flujo se genera uniformemente a lo largo del año, la fracción necesaria es:</p>
+          <div class="finance-equation">Payback simple ≈ 3 + 1.794.015,60 / 4.399.762,332 = <strong>3,41 años</strong></div>
+          <p>Es decir, aproximadamente tres años y cinco meses. El decimal no son meses: 0,41 años se multiplica por 12. Si mantenemos estrictamente la convención de todos los cobros al cierre, la recuperación sucede en el momento 4; el valor fraccionado requiere esa hipótesis adicional de reparto uniforme.</p>
+          <h3>Con descuento: durante el quinto año, pero cuidado con la venta</h3>
+          <p>Al cierre del cuarto año aún faltan 633.682,69 € en valor actual. Dividirlos por todo el flujo actualizado del quinto año daría 4 + 633.682,69 / 3.619.303,13 = <strong>4,18 años</strong>. Esa interpolación habitual tiene aquí una limitación: distribuye a lo largo del año el cobro de la venta y su efecto fiscal, aunque llegan al final.</p>
+          <p>Para una aproximación más coherente, separamos la caja ordinaria del año 5 de la salida del equipo. Sin incluir la venta ni su ahorro fiscal, el impuesto sobre la explotación sería 872.974,63 € y el flujo operativo, 4.778.923,89 €. Actualizado con el factor anual del quinto año, equivale a 2.967.335,74 €.</p>
+          <div class="finance-equation">Recuperación descontada aproximada ≈ 4 + 633.682,691073 / (4.778.923,88964 / 1,10⁵) = <strong>4,21 años</strong></div>
+          <p>Este cálculo sigue suponiendo que la caja operativa se reparte uniformemente y conserva el descuento anual del modelo. No es un cálculo mensual exacto. Con los flujos estrictamente concentrados en los cierres, solo podemos afirmar que la inversión se recupera <strong>al cierre del año 5</strong>. Para dar una fecha concreta necesitaríamos el calendario real de cobros, pagos e impuestos.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable con desplazamiento horizontal"><a href="../../assets/proyectos/equipo-industrial/recuperacion.svg" target="_blank" rel="noopener" aria-label="Abrir figura a tamaño completo"><img src="../../assets/proyectos/equipo-industrial/recuperacion.svg" width="1000" height="700" alt="El saldo sin descuento cruza el cero entre los años tres y cuatro; el saldo actualizado lo hace entre cuatro y cinco." loading="lazy" /></a></div><figcaption>Figura 3. Diferencia entre recuperar el importe desembolsado y recuperarlo incorporando la rentabilidad exigida. Elaboración propia a partir de los datos del ejercicio. <a href="../../assets/proyectos/equipo-industrial/recuperacion.svg" target="_blank" rel="noopener">Abrir a tamaño completo</a>.</figcaption></figure>
+        </section>
+        <section id="conclusion" class="lesson-block">
+          <h2>9. La respuesta y sus límites</h2>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Resumen de resultados"><table><caption>Resumen de resultados</caption><thead><tr><th scope="col">Indicador</th><th scope="col">Resultado</th></tr></thead><tbody><tr><th scope="row">VAN al 10 %</th><td>2.985.620,44 €</td></tr>
+<tr><th scope="row">TIR calculada numéricamente</th><td>18,21 % anual</td></tr>
+<tr><th scope="row">Recuperación simple interpolada</th><td>3,41 años; al cierre del año 4 en el modelo discreto</td></tr>
+<tr><th scope="row">Recuperación descontada, solo caja operativa interpolada</th><td>4,21 años aproximadamente; al cierre del año 5 en el modelo discreto</td></tr>
+<tr><th scope="row">Decisión con estos datos</th><td>Aceptar: VAN positivo y TIR superior al 10 %</td></tr></tbody></table></div></div>
+          <p>La respuesta del ejercicio es favorable, pero conviene terminar con una frase completa: <strong>la inversión resulta rentable si se cumplen los datos y las hipótesis del enunciado</strong>. No hemos demostrado que las ventas estén aseguradas, que la máquina no se averíe ni que la empresa disponga del dinero necesario en cada mes.</p>
+          <p>Este caso permite aprender el recorrido fundamental: unidades, ingresos, costes, amortización, impuesto, caja y valoración. Un estudio para decidir una inversión real también tendría que justificar el presupuesto y la amortización, introducir cobros y pagos aplazados, existencias, financiación, tesorería, reposiciones y escenarios de riesgo. Eso es precisamente lo que hacemos en el <a href="caso-practico-planta-prefabricados.html">caso práctico de la planta de prefabricados</a>, que puede leerse como continuación de este ejercicio.</p>
+        </section>
+        <section id="descargas" class="lesson-block">
+          <h2>Datos para practicar y referencias</h2>
+          <p>Puedes <a href="../../assets/proyectos/equipo-industrial/flujos-equipo-industrial.csv" download>descargar las tablas de cálculo en CSV</a> para comprobar los resultados en una hoja de cálculo. El archivo usa punto y coma como separador y coma decimal; contiene los valores calculados, no fórmulas. Si prefieres reproducir las operaciones con código, tienes el <a href="../../scripts/modelo-equipo-industrial.js" download>modelo de cálculo en JavaScript</a>, que se ejecuta por separado y no interviene en el funcionamiento de esta página.</p>
+          <ul>
+            <li><strong>Apuntes de viabilidad económica de Antonio Cerrato Casado.</strong> Enunciado y solución original del ejercicio de inversión en un equipo de doce millones de euros. Esta entrada conserva los datos y revisa las operaciones sin redondeos intermedios.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">Real Decreto 1514/2007: Plan General de Contabilidad, NRV 2.ª</a>. Referencia para la amortización contable y la baja del inmovilizado. Ayuda a distinguir el valor pendiente de un activo de su precio de venta.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">Ley 27/2014, artículo 12: amortizaciones</a>. Métodos y condiciones de deducibilidad fiscal; tabla de coeficientes y períodos. La amortización a cinco años del ejercicio es un dato supuesto, no una aplicación automática de la fila de maquinaria.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a29" target="_blank" rel="noopener">Ley 27/2014, artículo 29: tipos de gravamen</a>. El 25 % utilizado es el tipo dado en el ejercicio y coincide con el general; no implica que toda empresa tribute necesariamente a ese tipo.</li>
+          </ul>
+          <p>Para repasar: <a href="amortizacion-inmovilizado-analisis-financiero.html">amortización e inmovilizado</a> · <a href="estudios-previos-viabilidad-economica.html">estudios previos y viabilidad económica</a>.</p>
+        </section>
+      </article>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>Antonio Cerrato Casado</p></div></footer>
+</body>
+</html>

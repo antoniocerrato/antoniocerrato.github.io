@@ -1,5 +1,62 @@
 # Contexto para continuar el proyecto
 
+## Ejercicio original del equipo industrial — 2026-10-09
+
+- Se añade `temas/proyectos/caso-practico-equipo-industrial.html` por petición de Antonio,
+  como entrada independiente y complementaria al caso de prefabricados. Conserva los
+  datos originales de sus apuntes: inversión de 12 M€, cinco años, cuota de 2,16 M€/año,
+  valor pendiente de 1,2 M€ y venta por 1 M€. Los TeX privados no se publican.
+- Desarrollo didáctico desde las unidades vendidas hasta los flujos, con tres SVG propios,
+  tablas, CSV descargable y cálculo reproducible en `scripts/modelo-equipo-industrial.js`.
+- Cálculo sin redondeos intermedios: VAN 2.985.620,44 €, TIR 18,2093 %. La interpolación
+  manual de la TIR da 18,2168 %, distinguida expresamente de la raíz numérica.
+- Recuperación simple aproximada: 3,41 años. La descontada interpolada con todo el flujo
+  final daría 4,18; excluyendo venta y ahorro fiscal terminales resulta aproximadamente
+  4,21. Se explica la hipótesis de reparto operativo uniforme y que, con cierres anuales
+  estrictos, la recuperación sucede en los momentos 4 y 5, respectivamente.
+- Se mantiene la deducibilidad de la amortización como hipótesis del ejercicio, sin
+  presentarla como cumplimiento automático de la tabla fiscal de maquinaria. Referencias
+  directas al PGC NRV 2 y LIS artículos 12 y 29; enlaces a la entrada de amortizaciones.
+- Enlazado desde asignatura, viabilidad y caso de prefabricados. Se reutiliza el estilo
+  `.financial-case`, con tablas y figuras desplazables y sin JavaScript en la página.
+- Verificación: VAN y los seis flujos del CSV contrastados mediante cálculo independiente
+  en PowerShell; 136 enlaces locales y anclas comprobados en las páginas afectadas;
+  SVG válidos y texto sin caracteres rotos. Chrome a 390, 768 y 1440 px sin desbordamiento
+  de página, con revisión visual de capturas de móvil y escritorio. `git diff --check` correcto.
+
+## Caso práctico de prefabricados — 2026-10-09
+
+- Se incorpora `temas/proyectos/caso-practico-planta-prefabricados.html`, autorizado tras
+  discutir el ejemplo con Antonio. Título: «Caso práctico: análisis financiero de una
+  inversión en una planta de prefabricados». Tono docente cercano, desarrollo desde cero.
+- Adapta el ejercicio de sus dos archivos TeX privados, sin reproducirlo literalmente.
+  No publicar ni enlazar esas fuentes privadas. Precedente real: inversión EDER en Kallham;
+  producto: muro doble. Las cifras españolas son hipótesis docentes identificadas.
+- Diez ejercicios; inversión fija 12 M€ más stock inicial de 384.657,53 €. Activos separados,
+  amortización contable/fiscal coincidente de 1,03 M€/año y reposiciones de 0,8 M€ en años
+  4 y 8. Venta y liquidación al año 10, sin duplicar un valor de continuidad.
+- VAN 3.039.116,34 € al 10 %, TIR 14,1811 %, TIR accionista 18,9344 %, DSCR mínimo 1,49755.
+  Recuperación aproximada 5,98 y 9,15 años: la interpolación excluye los cobros terminales.
+- Cinco figuras SVG propias, CSV y XLSX de tres hojas con fórmulas y valores precalculados
+  en `assets/proyectos/prefabricados/`. El modelo numérico reproducible está en
+  `scripts/modelo-prefabricados.js`; puede ejecutarse con Node sin dependencias.
+- El libro permite cambiar entradas y ventas. Sensibilidades publicadas y textos de payback
+  son referencias del caso base, expresamente identificadas como no recalculables.
+- Marco: PGC NRV 2 y 3, ICAC 01/03/2013, LIS arts. 10, 11, 12, 16, 29, 40 y 124,
+  RIS arts. 3 y 4, LIVA y AEAT para deducción y devolución. Enlaces directos en el artículo.
+- Se explicitan simplificaciones: fiscalidad marginal de empresa existente con beneficios,
+  pago anual del IS aproximado al devengo, WACC constante y ausencia de IVA en VAN base.
+  Ejemplo separado del puente del IVA, sin presentarlo como presupuesto mensual completo.
+- Enlaces incorporados desde asignatura, viabilidad y amortizaciones. CSS nuevo limitado
+  a `.financial-case`; sin JavaScript ni dependencias nuevas en la entrada.
+- Verificaciones: 437 fórmulas del XLSX evaluadas contra sus valores precalculados;
+  VAN y TIR contrastados con un cálculo independiente en PowerShell; XML del libro y
+  SVG válidos; rutas y anclas internas comprobadas. Chrome con emulación real de 390,
+  768 y 1440 px: sin desbordamiento horizontal de página. Tablas y gráficos se desplazan
+  dentro de su contenedor; figuras enlazadas a tamaño completo. `git diff --check` correcto.
+- Material temporal de validación dentro de `Fuentes_Ignorar/prefabricados-validacion/`,
+  ignorado por Git. Se conserva sin tocar `temas/proyectos/videointeresanteQuebeq`.
+
 ## Actualización — 2026-10-09
 
 - Se añadió `temas/proyectos/amortizacion-inmovilizado-analisis-financiero.html`, una entrada

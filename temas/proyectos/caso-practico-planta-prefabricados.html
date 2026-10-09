@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso práctico: análisis financiero de una planta de prefabricados | Antonio Cerrato Casado</title>
+  <meta name="description" content="Un caso resuelto paso a paso: inversión de 12 millones en una planta de muros prefabricados, amortización con referencias al BOE, circulante, impuestos, VAN, TIR, préstamo y riesgos. Incluye gráficos y hoja de cálculo." />
+  <link rel="stylesheet" href="../../styles.css" />
+</head>
+<body class="financial-case">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links"><a href="../../docencia.html">Docencia</a><a href="../../investigacion.html">Investigación</a><a href="../../yo.html">Yo</a><a href="../../index.html#contacto">Contacto</a></div>
+    </nav>
+  </header>
+  <main id="contenido">
+    <section class="page-hero"><div class="container page-hero-inner">
+      <p class="small-title">Proyectos de Ingeniería · Caso práctico resuelto</p>
+      <h1>Caso práctico: análisis financiero de una inversión en una planta de prefabricados</h1>
+      <p class="lead">Tenemos una inversión de doce millones de euros sobre la mesa. Vamos a estudiar qué tendría que producir y vender una planta para recuperarla, pagar sus obligaciones y ofrecer una rentabilidad razonable.</p>
+      <p><a href="../../asignaturas/proyectos-ingenieria.html">Proyectos de Ingeniería</a> · <a href="estudios-previos-viabilidad-economica.html">Viabilidad económica</a></p>
+    </div></section>
+    <section class="section"><div class="container lesson-layout">
+      <aside class="lesson-nav" aria-label="Recorrido del ejercicio">
+        <h2>Vamos por partes</h2>
+        <a href="#caso">1. Qué vamos a fabricar</a>
+        <a href="#enunciado">2. Datos del ejercicio</a>
+        <a href="#inversion">3. Inversión inicial</a>
+        <a href="#explotacion">4. Ventas y costes</a>
+        <a href="#amortizacion">5. Amortización e impuestos</a>
+        <a href="#circulante">6. El dinero pendiente de cobro</a>
+        <a href="#flujos">7. Flujos y valor final</a>
+        <a href="#rentabilidad">8. VAN, TIR y recuperación</a>
+        <a href="#financiacion">9. El préstamo</a>
+        <a href="#tesoreria">10. Tesorería e IVA</a>
+        <a href="#riesgo">11. Qué puede cambiar</a>
+        <a href="#decision">12. Nuestra decisión</a>
+        <a href="#descargas">Hoja de cálculo</a>
+        <a href="#fuentes">Fuentes y normativa</a>
+      </aside>
+      <article class="lesson-content">
+        <section id="caso" class="lesson-block">
+          <p class="small-title">Antes de calcular</p>
+          <h2>1. Pongamos nombre a la inversión</h2>
+          <p>Si quieres empezar por un modelo más sencillo, puedes resolver primero el
+            <a href="caso-practico-equipo-industrial.html">ejercicio original del equipo industrial</a>.
+            Allí seguimos los cinco años del enunciado de clase; aquí ampliamos el análisis
+            y damos un contexto industrial a la inversión.</p>
+          <p>Decir que una máquina cuesta doce millones de euros permite hacer un ejercicio de matemáticas financieras. Para tomar una decisión de ingeniería necesitamos algo más: saber qué compra ese dinero, qué producto saldrá de la fábrica y quién lo pagará. Empecemos por ahí.</p>
+          <p>Imaginemos una empresa española de prefabricados que estudia ampliar su actividad con una planta automatizada de <strong>muros dobles de hormigón armado</strong>. Son elementos formados por dos placas, unidas mediante celosías, que se transportan a la obra y se rellenan allí con hormigón. En nuestro caso, la fábrica vende el prefabricado a pie de planta: el cliente contrata el transporte, el montaje y el relleno.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable; desplazamiento horizontal en pantallas pequeñas"><a href="../../assets/proyectos/prefabricados/producto.svg" target="_blank" rel="noopener" aria-label="Abrir la figura a tamaño completo"><img src="../../assets/proyectos/prefabricados/producto.svg" width="1000" height="620" alt="Sección de dos placas de 6 cm separadas por un hueco de 18 cm. Un metro cuadrado de muro requiere 0,12 metros cúbicos de hormigón prefabricado." loading="lazy"/></a></div><figcaption>Figura 1. Esquema docente, sin escala, del producto del ejercicio. La configuración general se apoya en la <a href="https://www.eder.co.at/systembau/doppelwand-und-elementdecke-betonfertigteile" target="_blank" rel="noopener">descripción técnica de EDER</a>. Las dimensiones y cantidades son hipótesis del caso, no un diseño estructural ni una ficha comercial. <a href="../../assets/proyectos/prefabricados/producto.svg" target="_blank" rel="noopener">Abrir figura a tamaño completo</a>.</figcaption></figure>
+          <p>La escala de la inversión tiene un precedente real. EDER publicó una inversión total de 12 millones de euros en Kallham, Austria, asociada a una instalación de muros dobles y prelosas y a una nueva nave de 6.000 m². Podemos conocer el proyecto en la <a href="https://www.eder.co.at/service-kontakt/presse/detail/toller-erfolg-der-eder-schulung-enev-2016-leicht-gemacht" target="_blank" rel="noopener">información de la empresa</a> y en la <a href="https://apg.progress.group/en-us/group/references/eder" target="_blank" rel="noopener">referencia del suministrador Progress Group</a>.</p>
+          <div class="document-note"><p><strong>Qué es real y qué estamos suponiendo.</strong> El producto, la tecnología y ese precedente industrial están documentados. La empresa española, el presupuesto desglosado, los precios, los costes y la financiación que siguen son hipótesis docentes. Los doce millones del precedente no son una oferta actual para construir esta planta en España.</p></div>
+          <p>Voy a resolver el caso con detalle. Me interesa que se entienda por qué aparece cada importe: una hoja de cálculo puede dar un VAN con muchos decimales y, sin embargo, estar respondiendo a una pregunta equivocada.</p>
+        </section>
+        <section id="enunciado" class="lesson-block">
+          <p class="small-title">El encargo</p>
+          <h2>2. ¿Qué nos pide la empresa?</h2>
+          <p>La dirección quiere saber si compensa invertir y si podrá atender un préstamo durante los primeros años. Evaluaremos diez años de explotación y, al terminar, supondremos que vende los activos y liquida los saldos pendientes de esta actividad. <strong>El final del análisis no significa que la nave haya agotado su vida útil.</strong></p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Datos generales: hipótesis que usaremos en todos los cálculos"><table><caption>Datos generales: hipótesis que usaremos en todos los cálculos</caption><thead><tr><th scope="col">Dato</th><th scope="col">Hipótesis</th></tr></thead><tbody><tr><th scope="row">Inversión fija, sin IVA recuperable</th><td>12.000.000 €, desembolsados en el momento 0</td></tr>
+<tr><th scope="row">Arranque</th><td>Todos los activos están disponibles al comenzar el año 1; diez ejercicios completos</td></tr>
+<tr><th scope="row">Capacidad de producto vendible</th><td>100.000 m²/año; 250 días de trabajo, dos turnos y 400 m² vendibles/día</td></tr>
+<tr><th scope="row">Ventas físicas</th><td>60.000, 70.000 y 80.000 m² en los años 1–3; 85.000 m²/año del 4 al 10</td></tr>
+<tr><th scope="row">Precio del primer año</th><td>150 €/m²; crecimiento nominal anual del 2 %</td></tr>
+<tr><th scope="row">Coste variable inicial</th><td>92 €/m²; crecimiento anual del 2,5 %</td></tr>
+<tr><th scope="row">Coste fijo inicial</th><td>1.600.000 €/año; crecimiento anual del 2 %</td></tr>
+<tr><th scope="row">Cobros, existencias y pagos</th><td>60 días de clientes; 30 días de materiales; 45 días de proveedores</td></tr>
+<tr><th scope="row">Impuesto sobre Sociedades</th><td>Tipo marginal del 25 %; sin incentivos ni ajustes en el caso base</td></tr>
+<tr><th scope="row">Rentabilidad mínima del proyecto</th><td>10 % nominal anual, después de impuestos</td></tr>
+<tr><th scope="row">Reposiciones</th><td>Moldes e informática: 800.000 € al final de los años 4 y 8</td></tr>
+<tr><th scope="row">Venta final y salida</th><td>Cobro de 3.400.000 €; coste de salida de 150.000 €, ambos en el año 10</td></tr></tbody></table></div></div>
+          <p>Los aumentos de precio y coste se aplican desde el segundo año. Si el precio inicial es 150 €, en el año 2 será 153 €, no 156,06 €. Esta pequeña comprobación evita desplazar toda una serie un año.</p>
+          <p>Trabajaremos en <strong>euros nominales</strong>: los precios futuros ya llevan incorporados sus incrementos. Por coherencia, la tasa de descuento también será nominal. No añadiremos otra inflación general a estas mismas partidas.</p>
+          <p>Suponemos que la empresa ya existe, viene facturando más de 10 millones de euros y no conserva el régimen de reducida dimensión. Tiene otras actividades rentables que permiten absorber las eventuales pérdidas marginales de este proyecto. Así podemos estudiar el efecto incremental al tipo general del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a29" target="_blank" rel="noopener">artículo 29 de la Ley del Impuesto sobre Sociedades</a>. No estamos modelando una sociedad nueva ni una devolución automática de impuestos cuando aparezca una pérdida.</p>
+          <details><summary>Las simplificaciones que conviene tener a la vista</summary>
+            <p>El modelo concentra los flujos al cierre de cada año; aproxima el pago del impuesto al año de devengo y trabaja sin saldos de IVA. La tesorería mensual se trata después, con un ejemplo separado. No hay subvenciones, comisiones de financiación, impagados ni existencias de producto terminado al cierre. Las mermas normales están absorbidas en el coste unitario y en la capacidad vendible.</p>
+            <p>La producción coincide con las ventas, pero los cobros no son inmediatos. Los precios de reposición se mantienen constantes en términos nominales por hipótesis: se supone que la mejora tecnológica compensa el encarecimiento. Si no se acepta esa hipótesis, habrá que presupuestar importes mayores.</p>
+          </details>
+          <p>El trabajo consiste en construir los flujos, calcular VAN, TIR y recuperación, comprobar el préstamo y estudiar qué cambios pueden hacer que la decisión deje de ser favorable. El enunciado y su solución comparten exactamente los mismos datos en la hoja descargable.</p>
+        </section>
+        <section id="inversion" class="lesson-block">
+          <p class="small-title">Paso 1</p><h2>3. Los doce millones no se gastan en una sola máquina</h2>
+          <p>Necesitamos terreno, edificio y equipos. Los importes siguientes representan costes puestos en condiciones de uso: incorporan las partidas directamente atribuibles de proyecto, transporte, montaje y pruebas que correspondan a cada activo. Para el ejercicio consideramos este presupuesto cerrado; en la contratación real habría que desarrollar mediciones, ofertas y una reserva para desviaciones.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Presupuesto inicial del caso, sin IVA recuperable"><table><caption>Presupuesto inicial del caso, sin IVA recuperable</caption><thead><tr><th scope="col">Activo</th><th scope="col">Importe</th><th scope="col">Qué comprende</th></tr></thead><tbody><tr><th scope="row">Terreno</th><td>800.000 €</td><td>Parcela adquirida para la planta</td></tr>
+<tr><th scope="row">Nave industrial</th><td>2.800.000 €</td><td>Edificio y elementos constructivos permanentes</td></tr>
+<tr><th scope="row">Maquinaria</th><td>7.600.000 €</td><td>Preparación del hormigón, fabricación, circulación de bandejas, curado y manipulación</td></tr>
+<tr><th scope="row">Moldes</th><td>600.000 €</td><td>Juego independiente de moldes y elementos de conformación</td></tr>
+<tr><th scope="row">Informática</th><td>200.000 €</td><td>Equipos físicos de control y gestión; no una licencia indefinida</td></tr>
+<tr><th scope="row">Total de activos</th><td>12.000.000 €</td><td>Inversión fija del momento 0</td></tr></tbody></table></div></div>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable; desplazamiento horizontal en pantallas pequeñas"><a href="../../assets/proyectos/prefabricados/inversion.svg" target="_blank" rel="noopener" aria-label="Abrir la figura a tamaño completo"><img src="../../assets/proyectos/prefabricados/inversion.svg" width="1000" height="500" alt="Distribución: maquinaria 7,6 millones; nave 2,8; terreno 0,8; moldes 0,6 e informática 0,2. Se añaden 384.658 euros de existencias iniciales." loading="lazy"/></a></div><figcaption>Figura 2. Elaboración docente con los datos del ejercicio. La inversión fija y el dinero necesario para empezar a operar son necesidades distintas. <a href="../../assets/proyectos/prefabricados/inversion.svg" target="_blank" rel="noopener">Abrir figura a tamaño completo</a>.</figcaption></figure>
+          <p>Antes de fabricar hay que comprar materiales. En este ejemplo pagamos al contado el stock inicial; el crédito de proveedores empieza con las compras ordinarias posteriores. El stock equivale a treinta días de los materiales del primer año:</p>
+          <p class="finance-equation">Stock inicial = 60.000 × 78 × 30 / 365 = <strong>384.657,53 €</strong></p>
+          <p>Los 78 €/m² son las compras de materiales incluidas en los 92 €/m² de coste variable. Su desglose aparece a continuación. Por tanto, la necesidad inicial del modelo es:</p>
+          <p class="finance-equation">12.000.000 + 384.657,53 = <strong>12.384.657,53 €</strong></p>
+          <p>El IVA transitorio y un colchón de liquidez podrían exigir fondos adicionales. Volveremos sobre ellos en el apartado de tesorería. Tampoco debemos cargar aquí, otra vez, un estudio ya pagado que no cambiaría al aceptar o rechazar el proyecto: sería un coste hundido. Si utilizásemos una parcela propia que pudiéramos vender o alquilar, sí habría que reconocer su coste de oportunidad. En este caso compramos la parcela y ese coste ya está en los 800.000 €.</p>
+        </section>
+        <section id="explotacion" class="lesson-block">
+          <p class="small-title">Paso 2</p><h2>4. De los metros cuadrados al resultado de explotación</h2>
+          <p>La fábrica no alcanza su actividad prevista el primer día. Partimos de 60.000 m² vendidos y llegamos a 85.000 en el cuarto año. Ese crecimiento representa el aprendizaje de producción y la entrada de pedidos. Mantener una capacidad disponible de 100.000 m² no garantiza que el mercado compre todo lo que podemos fabricar.</p>
+          <p>En el producto simplificado de la figura, cada m² contiene 0,12 m³ de hormigón prefabricado. Los 60.000 m² iniciales suponen 7.200 m³ incorporados al producto vendible. Esta comprobación física debe ser compatible con la dosificación, el curado, el número de bandejas y los turnos; la capacidad no se justifica únicamente escribiendo una cifra en una celda.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Coste variable de un m² vendido en el año 1: presupuesto docente"><table><caption>Coste variable de un m² vendido en el año 1: presupuesto docente</caption><thead><tr><th scope="col">Partida</th><th scope="col">€/m²</th><th scope="col">Tratamiento del pago</th></tr></thead><tbody><tr><th scope="row">Materiales para el hormigón</th><td>24</td><td>Incluidos en compras a proveedores</td></tr>
+<tr><th scope="row">Acero y celosías</th><td>40</td><td>Incluidos en compras a proveedores</td></tr>
+<tr><th scope="row">Insertos y accesorios</th><td>8</td><td>Incluidos en compras a proveedores</td></tr>
+<tr><th scope="row">Consumibles de fabricación</th><td>6</td><td>Incluidos en compras a proveedores</td></tr>
+<tr><th scope="row">Energía</th><td>6</td><td>Pagada dentro del periodo</td></tr>
+<tr><th scope="row">Mano de obra eventual ligada a producción</th><td>8</td><td>Pagada dentro del periodo</td></tr>
+<tr><th scope="row">Total</th><td>92</td><td>78 de materiales almacenables + 14 de energía y trabajo</td></tr></tbody></table></div></div>
+          <p>Los costes fijos iniciales son 1.050.000 € de plantilla estable, 250.000 € de mantenimiento ordinario, 100.000 € de seguros y otros servicios y 200.000 € de administración y estructura incremental. Suman 1.600.000 €. “Fijo” significa que no varía con cada m² dentro de este intervalo de actividad; sí puede subir con el tiempo o cambiar al añadir un turno.</p>
+          <p>Para el año 1, las cuentas son fáciles de seguir:</p>
+          <div class="finance-equation">Ingresos = 60.000 × 150 = 9.000.000 €<br/>Coste variable = 60.000 × 92 = 5.520.000 €<br/>Margen antes de amortización = 9.000.000 − 5.520.000 − 1.600.000 = <strong>1.880.000 €</strong></div>
+          <p>A este último margen lo llamaremos <strong>EBITDA</strong>: resultado antes de intereses, impuestos y amortizaciones. Todavía no es beneficio neto ni dinero libre para repartir.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Primeros cinco años de explotación; importes monetarios en euros"><table><caption>Primeros cinco años de explotación; importes monetarios en euros</caption><thead><tr><th scope="col">Año</th><th scope="col">m² vendidos</th><th scope="col">€/m²</th><th scope="col">Ingresos</th><th scope="col">Coste variable</th><th scope="col">Coste fijo</th><th scope="col">EBITDA</th></tr></thead><tbody><tr><th scope="row">1</th><td>60.000</td><td>150,00</td><td>9.000.000</td><td>5.520.000</td><td>1.600.000</td><td>1.880.000</td></tr>
+<tr><th scope="row">2</th><td>70.000</td><td>153,00</td><td>10.710.000</td><td>6.601.000</td><td>1.632.000</td><td>2.477.000</td></tr>
+<tr><th scope="row">3</th><td>80.000</td><td>156,06</td><td>12.484.800</td><td>7.732.600</td><td>1.664.640</td><td>3.087.560</td></tr>
+<tr><th scope="row">4</th><td>85.000</td><td>159,18</td><td>13.530.402</td><td>8.421.285</td><td>1.697.933</td><td>3.411.185</td></tr>
+<tr><th scope="row">5</th><td>85.000</td><td>162,36</td><td>13.801.010</td><td>8.631.817</td><td>1.731.891</td><td>3.437.302</td></tr></tbody></table></div></div>
+          <p>El precio aumenta un 2 % mientras que el coste variable crece un 2,5 %. Por eso, al estabilizar las ventas físicas, el negocio no mejora automáticamente por vender cada año más caro: también cuesta más producir. En las tablas mostramos euros redondeados; los cálculos y el archivo descargable conservan la precisión completa.</p>
+        </section>
+        <section id="amortizacion" class="lesson-block">
+          <p class="small-title">Paso 3</p><h2>5. La amortización: del activo al gasto deducible</h2>
+          <p>Ya pagamos los equipos al principio. Ahora reconocemos contablemente la parte de su coste que consumimos cada año. Ese gasto recibe el nombre de amortización. No corresponde a un segundo pago al proveedor.</p>
+          <p>La <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">norma de registro y valoración 2.ª del PGC</a> exige un reparto sistemático atendiendo a la vida útil y al valor residual. La <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2013-2557#segunda" target="_blank" rel="noopener">resolución del ICAC de 1 de marzo de 2013, norma segunda</a>, desarrolla el inicio de la amortización, los métodos y la revisión de las estimaciones. La vida útil se justifica técnicamente; no se obtiene copiando sin más un porcentaje fiscal.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Amortización anual: elección contable y contraste con el artículo 12 de la LIS"><table><caption>Amortización anual: elección contable y contraste con el artículo 12 de la LIS</caption><thead><tr><th scope="col">Activo</th><th scope="col">Vida elegida</th><th scope="col">Cuota anual</th><th scope="col">Máximo fiscal lineal</th><th scope="col">Periodo máximo fiscal</th></tr></thead><tbody><tr><th scope="row">Terreno</th><td>No se amortiza</td><td>0 €</td><td>No aplicable</td><td>No aplicable</td></tr>
+<tr><th scope="row">Nave</th><td>40 años</td><td>70.000 € (2,5 %)</td><td>3 %</td><td>68 años</td></tr>
+<tr><th scope="row">Maquinaria</th><td>10 años</td><td>760.000 € (10 %)</td><td>12 %</td><td>18 años</td></tr>
+<tr><th scope="row">Moldes</th><td>4 años</td><td>150.000 € (25 %)</td><td>33 %</td><td>6 años</td></tr>
+<tr><th scope="row">Informática</th><td>4 años</td><td>50.000 € (25 %)</td><td>25 %</td><td>8 años</td></tr>
+<tr><th scope="row">Total, con reposiciones previstas</th><td>—</td><td>1.030.000 €/año</td><td>—</td><td>—</td></tr></tbody></table></div></div>
+          <p>Las columnas fiscales son un extracto del <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">artículo 12 de la Ley 27/2014</a>. Suponemos que la clasificación corresponde a los bienes descritos. El <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-7771#a4" target="_blank" rel="noopener">artículo 4 del Reglamento</a> admite los coeficientes comprendidos entre los extremos de la tabla. Para maquinaria, el intervalo ordinario va del 100/18 = 5,56 % al 12 %. Nuestro 10 % está dentro.</p>
+          <p>En todos los activos amortizables adoptamos un valor residual nulo <em>al final de su vida útil</em>, como hipótesis conservadora del ejercicio. La nave se venderá antes de cumplir cuarenta años y tendrá valor pendiente. Para la maquinaria suponemos que al final del décimo año no habrá un cobro neto de reventa; una oferta de segunda mano obligaría a revisar esa estimación. El <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-7771#a3" target="_blank" rel="noopener">artículo 3 del Reglamento</a> regula la exclusión del valor residual de la base amortizable y el comienzo desde la puesta en funcionamiento.</p>
+          <p class="finance-equation">Amortización maquinaria = (7.600.000 − 0) / 10 = <strong>760.000 €/año</strong></p>
+          <div class="document-note"><p><strong>Un cuidado importante.</strong> La tabla permite un máximo fiscal, pero eso no autoriza a deducir sin más más amortización que la contabilizada. En el régimen ordinario hay que respetar la inscripción contable, salvo excepciones legales. Aquí cuota contable y deducción fiscal coinciden; no suponemos una amortización acelerada. Véanse el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a11" target="_blank" rel="noopener">artículo 11.3 de la LIS</a> y la <a href="https://sede.agenciatributaria.gob.es/Sede/impuesto-sobre-sociedades/gestion-impuesto-sobre-sociedades/obligaciones-contables-registrales.html" target="_blank" rel="noopener">explicación de la AEAT</a>.</p></div>
+          <h3>¿Por qué la cuota no baja después del año 4?</h3>
+          <p>Al terminar el cuarto año se agotan los moldes y los equipos informáticos iniciales. Compramos sus sustitutos por 800.000 €, disponibles al empezar el quinto año. Repetimos la operación al final del año 8. Los equipos retirados tienen valor contable y cobro de salida nulos. Las nuevas cuotas sustituyen a las anteriores y mantienen el total anual en 1.030.000 €.</p>
+          <p>El mantenimiento ordinario de 250.000 € incluido en los costes fijos no es esta reposición: conserva los equipos. La reposición renueva activos y se registra como inversión. Así evitamos olvidar la compra o deducirla entera como un gasto de ese año.</p>
+          <h3>Ahora sí: el resultado y el impuesto del año 1</h3>
+          <div class="finance-equation">EBIT = EBITDA − amortización<br/>EBIT = 1.880.000 − 1.030.000 = 850.000 €<br/>Impuesto sin deuda = 850.000 × 25 % = <strong>212.500 €</strong></div>
+          <p><strong>EBIT</strong> significa resultado antes de intereses e impuestos. En este caso sencillo coincide con la base imponible operativa sin financiación. En una liquidación real se revisarían los ajustes fiscales, las pérdidas pendientes, las deducciones y las demás reglas aplicables.</p>
+          <p>La amortización permite reducir el impuesto del año en 1.030.000 × 25 % = 257.500 €. Ese ahorro es el escudo fiscal. Si partiéramos del resultado después de impuestos, sumaríamos de nuevo la amortización para llegar a la caja. Como aquí partimos del EBITDA, ya está excluida: <strong>no debemos sumarla otra vez</strong>. Puedes ampliar esta distinción en la <a href="amortizacion-inmovilizado-analisis-financiero.html">entrada sobre amortizaciones</a>.</p>
+        </section>
+        <section id="circulante" class="lesson-block">
+          <p class="small-title">Paso 4</p><h2>6. Hemos vendido, pero todavía no hemos cobrado</h2>
+          <p>Imagina que expedimos un muro en noviembre y el cliente paga en enero. La venta aparece en el resultado de este año; el dinero, en la cuenta bancaria del siguiente. Algo parecido ocurre con los materiales que dejamos almacenados. Por otra parte, los proveedores nos permiten pagar algunas compras más tarde.</p>
+          <p>Llamaremos <strong>necesidades operativas de fondos (NOF)</strong> al dinero que queda comprometido en clientes y existencias, descontando la financiación espontánea de proveedores. No incluye préstamos bancarios, una caja mínima ni los saldos tributarios en este modelo.</p>
+          <div class="finance-equation">NOF = clientes pendientes de cobro + existencias − proveedores pendientes de pago</div>
+          <p>Usamos 365 días y una actividad uniforme como aproximación para los saldos de cierre. El stock incluye solo materiales: no guardamos electricidad ni salarios en el almacén. Suponemos compras anuales de materiales iguales al consumo a efectos de estimar proveedores; con variaciones relevantes del inventario o estacionalidad desarrollaríamos el calendario mensual de compras.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Circulante del año 1: todas las bases están sin IVA"><table><caption>Circulante del año 1: todas las bases están sin IVA</caption><thead><tr><th scope="col">Saldo</th><th scope="col">Cálculo</th><th scope="col">Importe</th></tr></thead><tbody><tr><th scope="row">Clientes</th><td>9.000.000 × 60 / 365</td><td>1.479.452,05 €</td></tr>
+<tr><th scope="row">Materiales</th><td>4.680.000 × 30 / 365</td><td>384.657,53 €</td></tr>
+<tr><th scope="row">Proveedores</th><td>4.680.000 × 45 / 365</td><td>576.986,30 €</td></tr>
+<tr><th scope="row">NOF al cierre</th><td>Clientes + materiales − proveedores</td><td>1.287.123,29 €</td></tr>
+<tr><th scope="row">NOF ya aportadas en el momento 0</th><td>Stock inicial pagado</td><td>384.657,53 €</td></tr>
+<tr><th scope="row">Aumento del año 1</th><td>NOF finales − NOF iniciales</td><td>902.465,75 €</td></tr></tbody></table></div></div>
+          <p>Restaremos <strong>902.465,75 €</strong> del flujo del primer año. Restar las NOF finales completas duplicaría los 384.657,53 € que ya aportamos antes de empezar.</p>
+          <p>El mismo criterio se repite cada año: restamos la variación de NOF, no el saldo total. Un aumento consume caja; una reducción la libera. En el cierre del año 10 supondremos que cobramos los clientes, recuperamos el importe del stock y pagamos los proveedores. Es una recuperación íntegra simplificada; un cierre real puede exigir meses y generar impagados o descuentos.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable; desplazamiento horizontal en pantallas pequeñas"><a href="../../assets/proyectos/prefabricados/resultado-caja.svg" target="_blank" rel="noopener" aria-label="Abrir la figura a tamaño completo"><img src="../../assets/proyectos/prefabricados/resultado-caja.svg" width="1000" height="500" alt="Año 1: 1.880.000 euros de EBITDA menos 212.500 euros de impuesto menos 902.466 de circulante adicional dan 765.034 euros de flujo libre." loading="lazy"/></a></div><figcaption>Figura 3. Elaboración docente. El primer año tiene margen positivo, pero gran parte del dinero todavía está comprometido en la explotación. <a href="../../assets/proyectos/prefabricados/resultado-caja.svg" target="_blank" rel="noopener">Abrir figura a tamaño completo</a>.</figcaption></figure>
+        </section>
+
+        <section id="flujos" class="lesson-block">
+          <p class="small-title">Paso 5</p><h2>7. Construimos el flujo libre de cada año</h2>
+          <p>Ya tenemos las piezas. El <strong>flujo libre del proyecto</strong> es el dinero que queda después de operar, pagar el impuesto que correspondería sin deuda y atender las inversiones necesarias. Lo calculamos antes de repartir ese dinero entre banco y accionistas.</p>
+          <div class="finance-equation">Flujo libre = EBITDA − impuesto sin deuda − aumento de NOF − inversión<br/>En el último año añadimos la venta neta y la recuperación de NOF.</div>
+          <p>En el año 1 no compramos nuevos activos porque la planta ya se ha pagado en el momento 0:</p>
+          <p class="finance-equation">FC<sub>1</sub> = 1.880.000 − 212.500 − 902.465,75 = <strong>765.034,25 €</strong></p>
+          <p>En el año 4 sí hay una salida adicional de 800.000 € por reposiciones. Obsérvese cómo el flujo disminuye aunque el EBITDA haya aumentado. La contabilidad reparte el coste del equipo; el banco carga la factura cuando la pagamos.</p>
+          <h3>El cierre: vender no es lo mismo que tener valor en libros</h3>
+          <p>Antes de vender, el valor contable y fiscal pendiente es 3.300.000 €: 800.000 € del terreno, 2.100.000 € de la nave y 400.000 € de los últimos moldes y equipos informáticos. La maquinaria está totalmente amortizada. Es posible que el mercado pague un importe distinto.</p>
+          <p>Suponemos un precio conjunto de 3.400.000 €: 900.000 € por el terreno, 2.200.000 € por la nave, 200.000 € por los moldes y 100.000 € por los equipos informáticos. La preparación de la venta, retirada y cierre cuesta 150.000 €. Son estimaciones nominales del año 10, que habría que contrastar con tasaciones y presupuestos.</p>
+          <div class="finance-equation">Resultado fiscal de salida = 3.400.000 − 150.000 − 3.300.000 = −50.000 €<br/>Efecto marginal en el impuesto = −50.000 × 25 % = −12.500 €<br/>Cobro neto = 3.400.000 − 150.000 − (−12.500) = <strong>3.262.500 €</strong></div>
+          <p>Los 12.500 € son una reducción del impuesto de la empresa bajo nuestras hipótesis, no una devolución independiente. La relación entre baja del activo, precio neto y valor contable se recoge en el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">PGC, norma 2.ª, apartado 3</a>. Aquí no hay diferencias entre valor contable y fiscal.</p>
+          <p>Además recuperamos 2.164.510,66 € de NOF. No añadimos un valor de continuidad: estamos suponiendo venta y liquidación. Sumar también los beneficios futuros de seguir explotando estos mismos activos contaría dos veces la salida del negocio.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Flujos del proyecto. Importes en miles de euros; cifras redondeadas"><table><caption>Flujos del proyecto. Importes en miles de euros; cifras redondeadas</caption><thead><tr><th scope="col">Año</th><th scope="col">EBITDA</th><th scope="col">IS sin deuda</th><th scope="col">Δ NOF</th><th scope="col">Inversión</th><th scope="col">Venta neta + NOF liberadas</th><th scope="col">Flujo libre</th></tr></thead><tbody><tr><th scope="row">0</th><td>—</td><td>—</td><td>384,7</td><td>12.000,0</td><td>—</td><td>-12.384,7</td></tr>
+<tr><th scope="row">1</th><td>1880,0</td><td>212,5</td><td>902,5</td><td>0,0</td><td>0,0</td><td>765,0</td></tr>
+<tr><th scope="row">2</th><td>2477,0</td><td>361,8</td><td>243,4</td><td>0,0</td><td>0,0</td><td>1871,8</td></tr>
+<tr><th scope="row">3</th><td>3087,6</td><td>514,4</td><td>252,3</td><td>0,0</td><td>0,0</td><td>2320,8</td></tr>
+<tr><th scope="row">4</th><td>3411,2</td><td>595,3</td><td>147,9</td><td>800,0</td><td>0,0</td><td>1868,0</td></tr>
+<tr><th scope="row">5</th><td>3437,3</td><td>601,8</td><td>37,1</td><td>0,0</td><td>0,0</td><td>2798,3</td></tr>
+<tr><th scope="row">6</th><td>3462,9</td><td>608,2</td><td>37,9</td><td>0,0</td><td>0,0</td><td>2816,8</td></tr>
+<tr><th scope="row">7</th><td>3487,9</td><td>614,5</td><td>38,6</td><td>0,0</td><td>0,0</td><td>2834,9</td></tr>
+<tr><th scope="row">8</th><td>3512,3</td><td>620,6</td><td>39,3</td><td>800,0</td><td>0,0</td><td>2052,4</td></tr>
+<tr><th scope="row">9</th><td>3536,1</td><td>626,5</td><td>40,1</td><td>0,0</td><td>0,0</td><td>2869,5</td></tr>
+<tr><th scope="row">10</th><td>3559,2</td><td>632,3</td><td>40,8</td><td>0,0</td><td>5427,0</td><td>8313,1</td></tr></tbody></table></div></div>
+          <p>La letra griega Δ significa “variación”. En el momento 0 hemos usado esa columna para mostrar el stock inicial aportado. En el año 10 aún calculamos las NOF de explotación antes del cierre y después las recuperamos. Ambas operaciones aparecen, para que la liquidación pueda seguirse sin saltos.</p>
+        </section>
+        <section id="rentabilidad" class="lesson-block">
+          <p class="small-title">Paso 6</p><h2>8. ¿La inversión remunera el dinero comprometido?</h2>
+          <p>Cobrar un euro dentro de diez años no equivale a disponer de él hoy. Durante ese tiempo el dinero tiene otras oportunidades y soporta riesgo. Actualizar un flujo consiste en expresarlo en euros equivalentes del momento inicial.</p>
+          <div class="finance-equation">Valor actual del flujo del año t = FC<sub>t</sub> / (1 + r)<sup>t</sup><br/>VAN = FC<sub>0</sub> + suma de los flujos futuros actualizados</div>
+          <p>La tasa <em>r</em> es el rendimiento mínimo exigido. No es necesariamente el interés del préstamo. Adoptamos un 10 % nominal después de impuestos como hipótesis de evaluación; su estimación profesional exige comparar riesgo, financiación y alternativas.</p>
+          <details><summary>De dónde podría salir ese 10 %: el coste medio del capital</summary>
+            <p>El coste medio ponderado del capital, habitualmente llamado WACC, combina la rentabilidad exigida por los accionistas y el coste de la deuda después de su efecto fiscal. Con una estructura objetivo del 50 % de fondos propios y 50 % de deuda, rentabilidad del accionista del 16,25 %, interés del 5 % e impuesto del 25 %:</p>
+            <p class="finance-equation">WACC = 0,50 × 16,25 % + 0,50 × 5 % × (1 − 25 %) = 10 %</p>
+            <p>Todos esos porcentajes financieros son hipótesis, no cotizaciones de mercado. La estructura objetivo no coincide cada año con el préstamo decreciente que estudiaremos. Mantener WACC y rentabilidad exigida al accionista constantes es una aproximación docente; una valoración con apalancamiento cambiante debería ajustar las tasas o valorar por separado los ahorros fiscales de la deuda.</p>
+          </details>
+          <p>Para comprobar la mecánica, el primer flujo se actualiza así: 765.034,25 / 1,10 = 695.485,68 €. Los restantes se dividen por 1,10 elevado a su año correspondiente. El desembolso inicial no se descuenta porque ya está situado en el presente.</p>
+          <div class="finance-equation">VAN = −12.384.657,53 + 15.423.773,87 = <strong>3.039.116,34 €</strong></div>
+          <p>Ese VAN positivo significa que, bajo las hipótesis del caso, el proyecto recupera la inversión y remunera el capital al 10 %, dejando además 3,04 millones de valor equivalente actual. No es el beneficio contable acumulado ni el saldo que veremos necesariamente en el banco.</p>
+          <h3>La TIR y los plazos de recuperación</h3>
+          <p>La <strong>tasa interna de retorno (TIR)</strong> es la tasa que hace cero el VAN. Al resolverla numéricamente con estos mismos flujos obtenemos un <strong>14,18 %</strong>. Supera el 10 % exigido, aunque esto no elimina el riesgo de que las ventas o los costes sean distintos.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable; desplazamiento horizontal en pantallas pequeñas"><a href="../../assets/proyectos/prefabricados/recuperacion.svg" target="_blank" rel="noopener" aria-label="Abrir la figura a tamaño completo"><img src="../../assets/proyectos/prefabricados/recuperacion.svg" width="1000" height="590" alt="Curvas del flujo acumulado sin descontar y descontado al 10 %. Cruzan cero en los años 6 y 10, respectivamente." loading="lazy"/></a></div><figcaption>Figura 4. Elaboración docente a partir del cuadro de flujos. Los puntos representan cierres anuales; los segmentos ayudan a leer la tendencia y no describen los cobros de cada mes. <a href="../../assets/proyectos/prefabricados/recuperacion.svg" target="_blank" rel="noopener">Abrir figura a tamaño completo</a>.</figcaption></figure>
+          <p>El <strong>payback simple</strong> mide cuándo se recupera el desembolso sin descontar. Al final del año 5 faltan 2.760.623,25 € y el año 6 aporta 2.816.812,14 €. Si suponemos que ese flujo operativo entra uniformemente durante el año:</p>
+          <p class="finance-equation">Payback simple ≈ 5 + 2.760.623,25 / 2.816.812,14 = <strong>5,98 años</strong></p>
+          <p>El <strong>payback descontado</strong> aplica el mismo razonamiento a los valores actuales. Al final del año 9 faltan 165.934,67 €. Para estimar la fracción del año 10 usamos solo su flujo operativo de 2.886.066,22 €, actualizado al momento 0; excluimos la venta y la liquidación, que llegan al final:</p>
+          <p class="finance-equation">Payback descontado ≈ 9 + 165.934,67 / (2.886.066,22 / 1,10<sup>10</sup>) = <strong>9,15 años</strong></p>
+          <p>Las fracciones son aproximaciones bajo esa distribución uniforme. Si tomamos literalmente el calendario anual de pagos al cierre, la recuperación se observa al finalizar los años 6 y 10. No tendría sentido repartir la venta final del inmueble entre todos los meses para anticipar artificialmente la recuperación.</p>
+          <p>El valor actual de la venta neta es 1,26 millones. Si eliminamos ese cobro, pero mantenemos la recuperación de NOF, el VAN todavía es positivo: <strong>1,78 millones</strong>. Esta comprobación nos permite ver cuánto depende la decisión del valor de salida.</p>
+        </section>
+        <section id="financiacion" class="lesson-block">
+          <p class="small-title">Paso 7</p><h2>9. ¿Y si financiamos parte de la planta con un préstamo?</h2>
+          <p>Hasta aquí estudiamos la inversión. Ahora añadimos una forma concreta de pagarla: un préstamo de 6.000.000 € al 5 % fijo, sin comisiones en el ejercicio. El primer año solo pagamos intereses; del segundo al séptimo devolvemos 1.000.000 € de principal cada año. A esa espera inicial en la devolución del principal la llamamos <strong>carencia de principal</strong>.</p>
+          <p>Los accionistas aportan el resto: 12.384.657,53 − 6.000.000 = <strong>6.384.657,53 €</strong>. Los intereses se calculan sobre la deuda pendiente al comienzo de cada año. Devolver principal es un pago, pero no un gasto deducible.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Calendario del préstamo y capacidad anual de pago; euros"><table><caption>Calendario del préstamo y capacidad anual de pago; euros</caption><thead><tr><th scope="col">Año</th><th scope="col">Deuda inicial</th><th scope="col">Intereses</th><th scope="col">Principal</th><th scope="col">Pago al banco</th><th scope="col">DSCR</th></tr></thead><tbody><tr><th scope="row">1</th><td>6.000.000</td><td>300.000</td><td>0</td><td>300.000</td><td>2,80</td></tr>
+<tr><th scope="row">2</th><td>6.000.000</td><td>300.000</td><td>1.000.000</td><td>1.300.000</td><td>1,50</td></tr>
+<tr><th scope="row">3</th><td>5.000.000</td><td>250.000</td><td>1.000.000</td><td>1.250.000</td><td>1,91</td></tr>
+<tr><th scope="row">4</th><td>4.000.000</td><td>200.000</td><td>1.000.000</td><td>1.200.000</td><td>1,60</td></tr>
+<tr><th scope="row">5</th><td>3.000.000</td><td>150.000</td><td>1.000.000</td><td>1.150.000</td><td>2,47</td></tr>
+<tr><th scope="row">6</th><td>2.000.000</td><td>100.000</td><td>1.000.000</td><td>1.100.000</td><td>2,58</td></tr>
+<tr><th scope="row">7</th><td>1.000.000</td><td>50.000</td><td>1.000.000</td><td>1.050.000</td><td>2,71</td></tr></tbody></table></div></div>
+          <p>El <strong>DSCR</strong> es el cociente entre la caja disponible para pagar la deuda y el pago de intereses más principal. En nuestro cálculo restamos previamente las reposiciones y usamos el impuesto con intereses. No empleamos la venta final para justificar los pagos ordinarios:</p>
+          <div class="finance-equation">Caja para deuda = EBITDA − impuesto con deuda − Δ NOF − reposiciones<br/>DSCR = caja para deuda / (intereses + principal)</div>
+          <p>En el año 2 disponemos de 1.946.818,49 € para un pago de 1.300.000 €. El cociente es <strong>1,498</strong>, el mínimo del préstamo. Por cada euro que debemos pagar, se prevén aproximadamente 1,50 euros disponibles. Un valor inferior a 1 indicaría insuficiencia anual; el margen que exige el banco se negocia y no es un umbral universal.</p>
+          <p>Suponemos deducibles todos los intereses del caso y capacidad fiscal suficiente en la empresa. Antes de aplicar esa hipótesis en una operación real hay que revisar el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a16" target="_blank" rel="noopener">artículo 16 de la LIS</a>, que limita la deducción de gastos financieros, y el resto de financiación de la entidad.</p>
+          <h3>El flujo que queda al accionista</h3>
+          <p>Podemos partir del flujo del proyecto y quitar el coste de los intereses después de impuestos y la devolución del principal:</p>
+          <div class="finance-equation">Flujo al accionista = flujo del proyecto − intereses × (1 − 25 %) − principal<br/>Año 1: 765.034,25 − 300.000 × 0,75 − 0 = <strong>540.034,25 €</strong></div>
+          <p>La TIR del accionista asciende al <strong>18,93 %</strong>; el VAN a la rentabilidad exigida del 16,25 % es <strong>999.037,33 €</strong>, con la aproximación de tasas constantes ya explicada. El préstamo eleva la rentabilidad porcentual del dinero propio en el caso favorable, pero también concentra el riesgo: el banco mantiene sus vencimientos cuando las ventas caen.</p>
+          <p>No restamos el préstamo en el flujo del proyecto ni descontamos el flujo del accionista al WACC. Son dos preguntas distintas, con inversiones, riesgos y tasas de referencia diferentes. La hoja de cálculo muestra ambos recorridos para poder comprobarlos.</p>
+        </section>
+        <section id="tesoreria" class="lesson-block">
+          <p class="small-title">Antes de hablar con el banco</p><h2>10. Una tabla anual no basta para prever la tesorería</h2>
+          <p>El caso base necesita 12,385 millones antes del IVA transitorio y del colchón de caja. Eso no significa que baste con disponer de esa cantidad en cualquier fecha. Un anticipo al fabricante, seis meses de retraso o una devolución de IVA pendiente pueden aumentar el máximo descubierto bancario.</p>
+          <h3>Un ejemplo concreto con el IVA de la máquina</h3>
+          <p>Supongamos que la factura nacional de maquinaria soporta el tipo general del 21 %, que el IVA es íntegramente deducible y que su recuperación efectiva tarda seis meses. Son las condiciones de este ejemplo, no una afirmación sobre el plazo de la Administración. El importe transitorio es 7.600.000 × 21 % = <strong>1.596.000 €</strong>. El tipo general figura en el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740#a90" target="_blank" rel="noopener">artículo 90 de la Ley del IVA</a>; el derecho a deducir tiene sus requisitos en los <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740#a92" target="_blank" rel="noopener">artículos 92 y siguientes</a>.</p>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Financiación puente del IVA: cálculo separado del VAN base"><table><caption>Financiación puente del IVA: cálculo separado del VAN base</caption><thead><tr><th scope="col">Momento</th><th scope="col">Movimiento</th><th scope="col">Efecto</th></tr></thead><tbody><tr><th scope="row">Al pagar la factura</th><td>Se pagan 1.596.000 € de IVA y se dispone de un puente por igual importe</td><td>Hace falta capacidad de crédito adicional</td></tr>
+<tr><th scope="row">Durante seis meses</th><td>Interés simple al 5 % anual</td><td>1.596.000 × 5 % × 6/12 = 39.900 €</td></tr>
+<tr><th scope="row">Al recuperar el IVA</th><td>Se cobran 1.596.000 € y se cancela el principal del puente</td><td>El principal deja de estar comprometido</td></tr>
+<tr><th scope="row">Efecto fiscal del interés</th><td>Ahorro supuesto de 39.900 × 25 %</td><td>Coste neto del puente: 29.925 €</td></tr></tbody></table></div></div>
+          <p>Este ejemplo no incluye el IVA de los demás activos ni el de la explotación y <strong>no está sumado al VAN base</strong>. Sirve para dimensionar una necesidad que el modelo sin IVA no muestra. Si incorporamos el puente a la rentabilidad del accionista, añadiremos sus desembolsos, cancelación, intereses y efecto fiscal en sus fechas, una sola vez.</p>
+          <p>La recuperación puede producirse por compensación o devolución. El <a href="https://sede.agenciatributaria.gob.es/Sede/iva/obtener-devolucion-iva/solicitar-devolucion-mensualmente.html" target="_blank" rel="noopener">régimen de devolución mensual explicado por la AEAT</a> exige sus propias condiciones; solicitar una devolución no equivale a cobrarla ese mismo día.</p>
+          <h3>Qué llevaríamos a una previsión mensual</h3>
+          <p>Colocaríamos los anticipos y certificaciones de inversión, las nóminas, las compras, el IVA, los cobros a clientes, las cuotas y una reserva mínima de caja en un calendario de meses. Añadiríamos el calendario real del Impuesto sobre Sociedades: la ley regula los pagos fraccionados en el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a40" target="_blank" rel="noopener">artículo 40</a> y la declaración en el <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a124" target="_blank" rel="noopener">artículo 124</a>. En las tablas anuales hemos aproximado el pago al año del devengo; no presentamos esa simplificación como el calendario legal.</p>
+          <p>El mayor saldo negativo de ese calendario, más el margen de seguridad que acordemos, determinaría la financiación de corto plazo. No podemos obtener un máximo mensual fiable a partir de promedios anuales sin concretar pedidos y fechas de pago. La aprobación financiera definitiva exigiría completar ese presupuesto de tesorería.</p>
+        </section>
+        <section id="riesgo" class="lesson-block">
+          <p class="small-title">Paso 8</p><h2>11. ¿Qué tendría que cambiar para que no compensase invertir?</h2>
+          <p>Una cifra de VAN aislada dice poco sobre la solidez de la decisión. Vamos a cambiar una hipótesis cada vez, manteniendo las demás. Esto es un <strong>análisis de sensibilidad</strong>: ayuda a identificar dónde debemos invertir más esfuerzo de comprobación.</p>
+          <figure class="case-figure case-figure--natural"><div class="finance-figure-scroll" tabindex="0" role="region" aria-label="Figura ampliable; desplazamiento horizontal en pantallas pequeñas"><a href="../../assets/proyectos/prefabricados/sensibilidad.svg" target="_blank" rel="noopener" aria-label="Abrir la figura a tamaño completo"><img src="../../assets/proyectos/prefabricados/sensibilidad.svg" width="1000" height="550" alt="Comparación del VAN: base 3,04 millones; volumen menos 15 % da menos 0,12; precio menos 10 % da menos 2,75; coste variable más 10 % da menos 0,64." loading="lazy"/></a></div><figcaption>Figura 5. Elaboración docente. Cada barra corresponde a un cálculo completo del flujo con una hipótesis modificada; las variaciones no se suman entre sí. <a href="../../assets/proyectos/prefabricados/sensibilidad.svg" target="_blank" rel="noopener">Abrir figura a tamaño completo</a>.</figcaption></figure>
+          <div class="table-card document-table"><div class="table-wrap" tabindex="0" role="region" aria-label="Sensibilidad: cambios respecto del caso base"><table><caption>Sensibilidad: cambios respecto del caso base</caption><thead><tr><th scope="col">Hipótesis modificada</th><th scope="col">VAN</th><th scope="col">Cómo se ha recalculado</th></tr></thead><tbody><tr><th scope="row">Ventas −15 %</th><td>-121.240 €</td><td>Menor producción y venta en todos los años; también cambian materiales y NOF</td></tr>
+<tr><th scope="row">Precio −10 %</th><td>-2.745.783 €</td><td>Menor precio inicial y mantenimiento del crecimiento anual del 2 %</td></tr>
+<tr><th scope="row">Coste variable +10 %</th><td>-638.879 €</td><td>Aumentan costes unitarios y compras a proveedores; se recalculan NOF</td></tr>
+<tr><th scope="row">Inversión +15 %</th><td>1.386.219 €</td><td>Suben todos los activos, sus amortizaciones y las reposiciones un 15 %</td></tr>
+<tr><th scope="row">Cobro a 90 días</th><td>2.495.859 €</td><td>Más saldo de clientes; se conserva el resto del ciclo de cobro y pago</td></tr>
+<tr><th scope="row">Venta final −30 %</th><td>2.744.176 €</td><td>Cambia el precio bruto de salida y su efecto fiscal</td></tr>
+<tr><th scope="row">Descuento al 12 %</th><td>1.467.281 €</td><td>Mismos flujos, distinta exigencia de rentabilidad</td></tr></tbody></table></div></div>
+          <p>El precio es especialmente sensible. Antes de aprobar la inversión interesaría tener ofertas y pedidos comparables que respaldasen los 150 €/m², conocer descuentos, tolerancias, penalizaciones y el coste de los rechazos. En los prefabricados, vender metros cuadrados con armados o geometrías distintos bajo un mismo precio medio puede ocultar una pérdida de margen.</p>
+          <h3>Dos umbrales que no debemos confundir</h3>
+          <p>Para cubrir costes contables del primer año, cada m² deja 150 − 92 = 58 € antes de costes fijos y amortización. Por tanto:</p>
+          <p class="finance-equation">Umbral contable = (1.600.000 + 1.030.000) / 58 = <strong>45.345 m²/año</strong></p>
+          <p>Ese volumen deja el EBIT aproximadamente en cero, pero no remunera necesariamente los doce millones invertidos. Para obtener VAN cero, reduciendo proporcionalmente todo el programa de ventas, el cálculo exige conservar aproximadamente el <strong>85,58 %</strong> de las ventas base: unos 51.345 m² el primer año y 72.739 m² anuales en la etapa estable. Es un umbral financiero de la trayectoria completa, no una capacidad mínima universal.</p>
+          <h3>Un retraso también tiene precio</h3>
+          <p>Como escenario separado, supongamos que desembolsamos lo previsto en el momento 0, pero toda la explotación, las reposiciones y la salida se retrasan un año. Además, soportamos 250.000 € de gastos de espera al final del primer año, deducibles bajo la hipótesis de beneficios suficientes en la empresa. El VAN baja a <strong>1.466.501 €</strong>. Aquí todavía no hemos añadido los costes de refinanciar el préstamo: es una sensibilidad del proyecto, que exigiría rehacer también su calendario financiero.</p>
+          <p>Un escenario adverso combinaría varias causas compatibles: menos pedidos, más coste del acero y cobros más lentos. Habría que recalcular conjuntamente resultados, impuestos, NOF y cobertura de deuda. No basta con sumar las pérdidas de VAN de estas barras; algunas relaciones son compartidas y el calendario importa.</p>
+          <details><summary>¿Y si vendemos la planta al terminar el quinto año?</summary>
+            <p>Podemos estudiar esa alternativa sin cambiar la vida útil contable de la maquinaria. Supongamos una oferta de 7.500.000 €, un coste de salida de 150.000 € y la recuperación íntegra de las NOF. El valor pendiente en ese momento es 7.650.000 €. El cobro neto fiscal resulta 7.425.000 € y el VAN de los cinco años asciende a 447.144,40 €.</p>
+            <p>La oferta de 7,5 millones es una hipótesis adicional, no una valoración de mercado. La comparación muestra que acortar el horizonte exige valorar la salida; no autoriza a amortizar en cinco años activos cuya vida útil es mayor.</p>
+          </details>
+        </section>
+        <section id="decision" class="lesson-block">
+          <p class="small-title">Lo que llevaríamos a la dirección</p><h2>12. Nuestra decisión, con sus condiciones</h2>
+          <p>Con estos datos, la inversión supera la rentabilidad mínima exigida: el VAN es 3,04 millones y la TIR, 14,18 %. El préstamo propuesto también puede pagarse con la caja anual prevista, con un DSCR mínimo próximo a 1,50.</p>
+          <p>Yo no cerraría la recomendación con “VAN positivo, adelante”. La bajada del precio del 10 % convierte el VAN en negativo, y una reducción del volumen del 15 % prácticamente agota el margen de seguridad. La decisión dependería, sobre todo, de validar cartera comercial, precio neto por tipo de muro, consumo de acero, presupuesto instalado y plazo de puesta en marcha.</p>
+          <p>Antes de contratar pediría un presupuesto desglosado con contingencias, la confirmación de capacidad del suministrador, una previsión comercial contrastada, tasaciones de salida y un calendario mensual de tesorería. Revisaría también permisos, suministro eléctrico, mano de obra, control de calidad y obligaciones de cierre: su traducción financiera son inversión, gastos, plazos y riesgos que deben entrar en el modelo.</p>
+          <p>La utilidad del ejercicio está en poder seguir el camino completo: <strong>producto → ventas y costes → resultado → impuestos → caja → rentabilidad y capacidad de pago</strong>. Si ese camino está bien construido, cambiar un dato nos ayuda a entender el proyecto. Si no lo está, calcular más decimales solo disimula el problema.</p>
+        </section>
+        <section id="descargas" class="lesson-block">
+          <p class="small-title">Para trabajar el caso</p><h2>Hoja de cálculo y datos</h2>
+          <p>El libro contiene tres hojas: <em>Hipótesis</em>, con las entradas editables en azul; <em>Modelo</em>, con las fórmulas anuales; y <em>Resultados</em>, con los indicadores y el ejemplo del puente de IVA. Puedes cambiar precios, costes, volúmenes y plazos de cobro para observar el efecto. Los escenarios de sensibilidad publicados se incluyen como valores de referencia y están identificados como tales; no cambian automáticamente con las entradas.</p>
+          <p>Para reproducir esta entrada, conserva las vidas útiles y el calendario de financiación. Si los modificas, revisa las reposiciones y comprueba que la deuda termina cancelada: la hoja no sustituye esa decisión técnica. Los plazos de recuperación que se muestran como texto corresponden al caso base; las series acumuladas permiten comprobar otros casos.</p>
+          <div class="resource-box">
+            <p><a class="primary-button" href="../../assets/proyectos/prefabricados/modelo-financiero-prefabricados.xlsx" download>Descargar hoja de cálculo (.xlsx)</a></p>
+            <p><a href="../../assets/proyectos/prefabricados/flujos-prefabricados.csv" download>Descargar cuadro de flujos (.csv; separador punto y coma)</a></p>
+            <p><a href="amortizacion-inmovilizado-analisis-financiero.html">Repasar la amortización</a> · <a href="estudios-previos-viabilidad-economica.html">Volver al tema de viabilidad económica</a></p>
+          </div>
+        </section>
+        <section id="fuentes" class="lesson-block">
+          <p class="small-title">Referencias comentadas</p><h2>Fuentes industriales y normativa</h2>
+          <p>Consulta normativa: 9 de octubre de 2026. Las proyecciones mantienen las reglas del caso durante diez años como hipótesis; no predicen futuras reformas. Los textos consolidados del BOE facilitan la consulta y tienen carácter informativo.</p>
+          <ul class="link-stack">
+            <li><a href="https://www.eder.co.at/service-kontakt/presse/detail/toller-erfolg-der-eder-schulung-enev-2016-leicht-gemacht" target="_blank" rel="noopener">EDER: nueva instalación de Kallham</a>. Fuente empresarial del precedente de inversión de 12 millones y de la nave; no respalda los precios ni los márgenes del ejercicio español.</li>
+            <li><a href="https://www.eder.co.at/systembau/doppelwand-und-elementdecke-betonfertigteile" target="_blank" rel="noopener">EDER: muros dobles y prelosas</a>. Explica el producto y la combinación de prefabricación y hormigonado en obra.</li>
+            <li><a href="https://apg.progress.group/en-us/group/references/eder" target="_blank" rel="noopener">Progress Group: referencia EDER</a>. Describe la automatización y los equipos participantes.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">PGC: norma 2.ª</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A3-2" target="_blank" rel="noopener">norma 3.ª</a>. Coste, amortización, baja, terrenos, construcciones y sustitución de componentes.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2013-2557#segunda" target="_blank" rel="noopener">Resolución del ICAC de 1 de marzo de 2013, norma segunda</a>. Desarrollo de vida útil, valor residual, inicio, revisión y métodos de amortización.</li>
+            <li>Ley 27/2014: <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a10" target="_blank" rel="noopener">artículo 10</a> (base imponible), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a11" target="_blank" rel="noopener">11.3</a> (inscripción contable), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">12</a> (tabla y deducción), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a16" target="_blank" rel="noopener">16</a> (intereses), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a29" target="_blank" rel="noopener">29</a> (tipos), <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a40" target="_blank" rel="noopener">40</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a124" target="_blank" rel="noopener">124</a> (pagos y declaración).</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-7771#a3" target="_blank" rel="noopener">Reglamento del Impuesto sobre Sociedades: artículo 3</a> y <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2015-7771#a4" target="_blank" rel="noopener">artículo 4</a>. Base amortizable y aplicación de los coeficientes de las tablas.</li>
+            <li><a href="https://sede.agenciatributaria.gob.es/Sede/impuesto-sobre-sociedades/gestion-impuesto-sobre-sociedades/obligaciones-contables-registrales.html" target="_blank" rel="noopener">AEAT: base imponible y contabilidad</a>. Aclara la relación entre gasto contabilizado y deducibilidad.</li>
+            <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740#a90" target="_blank" rel="noopener">Ley del IVA: artículo 90</a>, <a href="https://www.boe.es/buscar/act.php?id=BOE-A-1992-28740#a92" target="_blank" rel="noopener">artículos 92 y siguientes</a> y <a href="https://sede.agenciatributaria.gob.es/Sede/iva/obtener-devolucion-iva/solicitar-devolucion-mensualmente.html" target="_blank" rel="noopener">AEAT: devolución mensual</a>. Tipo general, deducción y contexto del ejemplo de liquidez.</li>
+          </ul>
+          <p>Los gráficos, las tablas y el esquema del producto son elaboración docente a partir de las hipótesis de este caso. Las ilustraciones explican el cálculo; no reproducen los planos de una instalación comercial.</p>
+        </section>
+      </article>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>Antonio Cerrato Casado</p></div></footer>
+</body>
+</html>

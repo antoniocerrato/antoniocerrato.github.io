@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc"><title id="title">¿Qué vendemos? Un metro cuadrado de muro doble</title><desc id="desc">Esquema sin escala de dos placas armadas unidas por celosías. Se suministra el prefabricado; el hormigón de relleno y el montaje se ejecutan en obra.</desc><rect width="1000" height="620" fill="#f7f7f1"/><style>text{font-family:Arial,sans-serif;fill:#243b38}.title{font-size:27px;font-weight:700}.label{font-size:19px}.small{font-size:16px}.grid{stroke:#d9dfd9;stroke-width:1}</style><text x="36" y="45" class="title">¿Qué vendemos? Un metro cuadrado de muro doble</text>
+<text x="36" y="80" class="label">Sección horizontal esquemática · hipótesis: 30 cm de espesor total</text>
+<rect x="180" y="140" width="640" height="65" fill="#91a29f"/><rect x="180" y="205" width="640" height="170" fill="#e5eee6" stroke="#74918a" stroke-dasharray="8 5"/><rect x="180" y="375" width="640" height="65" fill="#91a29f"/>
+<path d="M220 177 L310 408 L400 177 L490 408 L580 177 L670 408 L760 177" fill="none" stroke="#286672" stroke-width="7"/>
+<text x="195" y="130" class="label">Placa prefabricada armada · 6 cm</text><text x="240" y="292" class="label">Hueco de 18 cm: relleno posterior en obra</text><text x="195" y="475" class="label">Placa prefabricada armada · 6 cm</text>
+<text x="36" y="525" class="label">1 m² de muro = 0,12 m³ de hormigón en fábrica (dos placas de 6 cm)</text>
+<text x="36" y="560" class="small">Las líneas representan las celosías de unión; no constituyen un detalle de armado.</text>
+<text x="36" y="590" class="small">Precio del ejercicio: suministro a pie de fábrica, sin transporte, montaje ni relleno.</text></svg>
