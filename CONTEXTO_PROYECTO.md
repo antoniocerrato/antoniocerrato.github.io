@@ -1,5 +1,14 @@
 # Contexto para continuar el proyecto
 
+## Actualización — 2026-10-09
+
+- Se añadió `temas/proyectos/amortizacion-inmovilizado-analisis-financiero.html`, una entrada
+  docente sobre amortización del inmovilizado aplicada al análisis financiero.
+- Diferencia amortización contable, fiscal y devolución de principal; explica métodos,
+  efecto fiscal y traslado al flujo de caja mediante cuatro ejemplos resueltos.
+- Incluye enlaces al PGC, la Resolución del ICAC de 1 de marzo de 2013 y los artículos 12
+  y 101 a 103 de la Ley 27/2014. Se enlazó desde la asignatura y el tema de viabilidad.
+
 Este archivo resume el estado actual de la web personal de Antonio Cerrato Casado para que una futura sesión pueda retomarla sin reconstruir el contexto desde cero.
 
 ## Estado vigente — 2026-09-09 (sesión 2)

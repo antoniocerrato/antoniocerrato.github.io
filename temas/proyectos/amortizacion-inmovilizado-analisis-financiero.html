@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amortización del inmovilizado en el análisis financiero | Antonio Cerrato Casado</title>
+  <meta name="description" content="Guía para incorporar la amortización contable y fiscal al análisis financiero de proyectos, con ejemplos, tablas y normativa española." />
+  <link rel="stylesheet" href="../../styles.css" />
+  <script>
+    window.MathJax = { tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]] } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="../../index.html">Antonio Cerrato Casado</a>
+      <div class="nav-links">
+        <a href="../../docencia.html">Docencia</a>
+        <a href="../../investigacion.html">Investigación</a>
+        <a href="../../yo.html">Yo</a>
+        <a href="../../index.html#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="small-title">Proyectos de Ingeniería · Análisis financiero</p>
+        <h1>Amortización del inmovilizado</h1>
+        <p class="lead">Cómo repartir el coste de una inversión, estimar su efecto fiscal y trasladarlo correctamente a los flujos de caja de un proyecto.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container lesson-layout">
+        <aside class="lesson-nav" aria-label="Apartados del tema">
+          <h2>Contenido</h2>
+          <a href="#conceptos">Tres conceptos distintos</a>
+          <a href="#calculo">Cálculo contable</a>
+          <a href="#metodos">Métodos</a>
+          <a href="#fiscalidad">Amortización fiscal</a>
+          <a href="#flujo-caja">Efecto en el flujo de caja</a>
+          <a href="#ejemplos">Ejemplos resueltos</a>
+          <a href="#procedimiento">Procedimiento</a>
+          <a href="#referencias">Normativa</a>
+        </aside>
+
+        <article class="lesson-content">
+          <section id="conceptos" class="lesson-block">
+            <p class="small-title">Punto de partida</p>
+            <h2>Una palabra, tres conceptos distintos</h2>
+            <p>
+              En un estudio financiero, <strong>amortizar un activo</strong> significa distribuir contablemente su importe amortizable durante el tiempo en que presta servicio. No supone pagar de nuevo el activo: la salida de caja se produjo al adquirirlo. Tampoco es lo mismo que amortizar un préstamo, que consiste en devolver su principal.
+            </p>
+            <div class="table-card"><div class="table-wrap"><table>
+              <thead><tr><th>Concepto</th><th>Qué representa</th><th>Efecto inmediato en caja</th></tr></thead>
+              <tbody>
+                <tr><td>Amortización contable</td><td>Consumo estimado de los beneficios económicos del activo.</td><td>No; es un gasto sin pago en ese periodo.</td></tr>
+                <tr><td>Amortización fiscal</td><td>Importe que la normativa admite como gasto deducible.</td><td>Indirecto: puede reducir el impuesto pagado.</td></tr>
+                <tr><td>Amortización financiera</td><td>Devolución del principal de una deuda.</td><td>Sí; es una salida de tesorería.</td></tr>
+              </tbody>
+            </table></div></div>
+            <div class="document-note"><p><strong>Idea clave:</strong> la amortización del activo reduce el resultado, pero no la caja; la devolución del préstamo reduce la caja, pero no es un gasto de explotación. Los intereses de la deuda tienen un tratamiento diferente.</p></div>
+          </section>
+
+          <section id="calculo" class="lesson-block">
+            <p class="small-title">Base del cálculo</p>
+            <h2>Importe amortizable, vida útil y comienzo</h2>
+            <p>El Plan General de Contabilidad y su desarrollo por el ICAC exigen una amortización sistemática y racional según la vida útil y el valor residual. Para el método lineal:</p>
+            \[ Importe\ amortizable = Coste\ inicial - Valor\ residual \]
+            \[ Amortización\ anual = \frac{Coste\ inicial - Valor\ residual}{Vida\ útil} \]
+            <p>
+              El coste inicial no tiene por qué coincidir únicamente con la factura. Puede incluir los desembolsos necesarios para que el activo quede en condiciones de funcionamiento y, cuando corresponda, costes estimados de desmantelamiento o rehabilitación. La amortización comienza cuando el activo está disponible para su utilización, no necesariamente cuando se encarga, se paga o alcanza su producción plena.
+            </p>
+            <h3>Preguntas que deben justificarse</h3>
+            <ul>
+              <li><strong>Coste:</strong> ¿qué desembolsos forman realmente parte del activo?</li>
+              <li><strong>Valor residual:</strong> ¿qué importe neto se espera recuperar al final?</li>
+              <li><strong>Vida útil:</strong> ¿durante cuánto tiempo o cuántas unidades generará rendimientos?</li>
+              <li><strong>Patrón de consumo:</strong> ¿el uso será uniforme, decreciente o ligado a la producción?</li>
+              <li><strong>Componentes:</strong> ¿existen partes significativas con vidas útiles diferentes?</li>
+            </ul>
+            <p>
+              Los terrenos normalmente no se amortizan porque su vida se considera ilimitada; terreno y construcción deben separarse incluso cuando se compran conjuntamente. También deben separarse componentes significativos con vidas distintas, por ejemplo obra civil, equipos electromecánicos y grandes revisiones periódicas.
+            </p>
+          </section>
+
+          <section id="metodos" class="lesson-block">
+            <p class="small-title">Patrón de consumo</p>
+            <h2>Métodos de amortización</h2>
+            <p>El método debe representar cómo se consumen los rendimientos del activo. La resolución del ICAC contempla, entre otros, los métodos lineal, decreciente y de unidades de producción.</p>
+            <div class="table-card"><div class="table-wrap"><table>
+              <thead><tr><th>Método</th><th>Criterio</th><th>Cuándo resulta coherente</th></tr></thead>
+              <tbody>
+                <tr><td>Lineal</td><td>Cuota constante durante la vida útil.</td><td>Consumo aproximadamente uniforme.</td></tr>
+                <tr><td>Decreciente</td><td>Cuotas mayores al inicio y menores después.</td><td>Más rendimiento u obsolescencia en los primeros años.</td></tr>
+                <tr><td>Unidades de producción</td><td>Cuota proporcional a horas, ciclos, toneladas u otra unidad física.</td><td>El desgaste depende principalmente del nivel de actividad.</td></tr>
+              </tbody>
+            </table></div></div>
+            \[ A_t = (Coste - Valor\ residual)\frac{Unidades_t}{Unidades\ totales\ estimadas} \]
+            <p>La vida útil, el valor residual y el método se revisan, como mínimo, al cierre de cada ejercicio. Los cambios de estimación modifican prospectivamente las cuotas futuras.</p>
+          </section>
+
+          <section id="fiscalidad" class="lesson-block">
+            <p class="small-title">Impuesto sobre Sociedades</p>
+            <h2>Amortización contable y amortización fiscal</h2>
+            <p>
+              Ambas pueden coincidir, pero responden a reglas distintas. El artículo 12 de la Ley 27/2014 considera deducible la amortización que corresponda a una depreciación efectiva y admite distintas vías para acreditarla: coeficientes lineales de su tabla, porcentaje constante, números dígitos, un plan aceptado por la Administración o la justificación de su importe.
+            </p>
+            <h3>Extracto orientativo de la tabla fiscal</h3>
+            <div class="table-card"><div class="table-wrap"><table>
+              <thead><tr><th>Tipo de elemento</th><th>Coeficiente lineal máximo</th><th>Periodo máximo</th></tr></thead>
+              <tbody>
+                <tr><td>Obra civil general</td><td>2&nbsp;%</td><td>100 años</td></tr>
+                <tr><td>Pavimentos</td><td>6&nbsp;%</td><td>34 años</td></tr>
+                <tr><td>Infraestructuras y obras mineras</td><td>7&nbsp;%</td><td>30 años</td></tr>
+                <tr><td>Maquinaria</td><td>12&nbsp;%</td><td>18 años</td></tr>
+                <tr><td>Equipos para procesos de información</td><td>25&nbsp;%</td><td>8 años</td></tr>
+              </tbody>
+            </table></div></div>
+            <p>Esta es solo una selección útil para proyectos de ingeniería. Deben consultarse la <a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">tabla completa y las reglas del artículo 12 en el BOE</a> antes de cerrar el modelo.</p>
+            <div class="document-note"><p><strong>No convertir la tabla fiscal en una tabla de vidas útiles contables.</strong> El límite fiscal sirve para calcular la deducción; la cuota contable debe seguir el patrón real de consumo. Si difieren, se realiza un ajuste fiscal y pueden aparecer diferencias temporarias e impuesto diferido.</p></div>
+            <p>
+              Existen supuestos específicos de libertad o aceleración de la amortización. Como dependen del activo, la entidad, la fecha de puesta a disposición y otros requisitos, no deben aplicarse automáticamente: hay que comprobar la redacción vigente del artículo 12 y, en su caso, los incentivos para empresas de reducida dimensión de los artículos 101 a 103 de la misma ley.
+            </p>
+          </section>
+
+          <section id="flujo-caja" class="lesson-block">
+            <p class="small-title">Del resultado a la caja</p>
+            <h2>Cómo entra la amortización en el flujo de caja</h2>
+            <p>En un modelo simplificado sin deuda, partimos del resultado antes de intereses, impuestos y amortizaciones, \(EBITDA_t\):</p>
+            \[ EBIT_t = EBITDA_t - A_t \]
+            \[ Impuesto_t = \max(0, EBIT_t\tau) \]
+            \[ FCO_t = EBIT_t - Impuesto_t + A_t \]
+            <p>Sin pérdidas fiscales ni otras diferencias, puede escribirse:</p>
+            \[ FCO_t = EBITDA_t(1-\tau) + A_t\tau \]
+            <p>
+              El término \(A_t\tau\) es el <strong>escudo fiscal de la amortización</strong>. No es un cobro independiente, sino el impuesto que se deja de pagar gracias a la deducción admitida. Si la empresa no puede aprovecharla en ese momento, no debe anticiparse el ahorro sin modelar las reglas aplicables.
+            </p>
+            <h3>Dos precauciones para el VAN</h3>
+            <ul>
+              <li>La inversión inicial sí es un flujo de caja; no debe restarse otra vez mediante la amortización.</li>
+              <li>Al final, la venta del activo genera un cobro y puede producir una renta fiscal por diferencia entre precio neto de venta y valor fiscal pendiente.</li>
+            </ul>
+          </section>
+
+          <section id="ejemplos" class="lesson-block">
+            <p class="small-title">Aplicación</p>
+            <h2>Ejemplos resueltos</h2>
+            <h3>1. Máquina con valor residual</h3>
+            <p>Una máquina cuesta 120.000&nbsp;€, se venderá previsiblemente por 20.000&nbsp;€ al final de una vida útil de cinco años y su consumo es uniforme. La base amortizable es 100.000&nbsp;€ y la cuota lineal, 20.000&nbsp;€ anuales.</p>
+            <div class="table-card"><div class="table-wrap"><table>
+              <thead><tr><th>Año</th><th>Cuota</th><th>Amortización acumulada</th><th>Valor contable al cierre</th></tr></thead>
+              <tbody>
+                <tr><td>0</td><td>—</td><td>0&nbsp;€</td><td>120.000&nbsp;€</td></tr>
+                <tr><td>1</td><td>20.000&nbsp;€</td><td>20.000&nbsp;€</td><td>100.000&nbsp;€</td></tr>
+                <tr><td>2</td><td>20.000&nbsp;€</td><td>40.000&nbsp;€</td><td>80.000&nbsp;€</td></tr>
+                <tr><td>3</td><td>20.000&nbsp;€</td><td>60.000&nbsp;€</td><td>60.000&nbsp;€</td></tr>
+                <tr><td>4</td><td>20.000&nbsp;€</td><td>80.000&nbsp;€</td><td>40.000&nbsp;€</td></tr>
+                <tr><td>5</td><td>20.000&nbsp;€</td><td>100.000&nbsp;€</td><td>20.000&nbsp;€</td></tr>
+              </tbody>
+            </table></div></div>
+
+            <h3>2. Producción desigual</h3>
+            <p>Un equipo de 110.000&nbsp;€, con valor residual de 10.000&nbsp;€, puede procesar 50.000 unidades. Si el primer año procesa 15.000, su cuota es \(100.000 \times 15.000 / 50.000 = 30.000\)&nbsp;€. Si el segundo procesa 8.000, la cuota será 16.000&nbsp;€. El método refleja mejor el desgaste cuando la actividad varía mucho.</p>
+
+            <h3>3. Efecto fiscal en la caja</h3>
+            <p>Una inversión de 100.000&nbsp;€, amortizable en cinco años y sin valor residual, produce un \(EBITDA\) anual de 35.000&nbsp;€. Se usa, solo con finalidad docente, un tipo impositivo del 25&nbsp;%.</p>
+            <div class="table-card"><div class="table-wrap"><table>
+              <thead><tr><th>Magnitud anual</th><th>Cálculo</th><th>Importe</th></tr></thead>
+              <tbody>
+                <tr><td>EBITDA</td><td>Dato</td><td>35.000&nbsp;€</td></tr>
+                <tr><td>Amortización</td><td>100.000 / 5</td><td>20.000&nbsp;€</td></tr>
+                <tr><td>EBIT</td><td>35.000 − 20.000</td><td>15.000&nbsp;€</td></tr>
+                <tr><td>Impuesto</td><td>15.000 × 25&nbsp;%</td><td>3.750&nbsp;€</td></tr>
+                <tr><td>Flujo de caja operativo</td><td>15.000 − 3.750 + 20.000</td><td>31.250&nbsp;€</td></tr>
+                <tr><td>Escudo fiscal</td><td>20.000 × 25&nbsp;%</td><td>5.000&nbsp;€</td></tr>
+              </tbody>
+            </table></div></div>
+            <p>Si se olvidara la amortización al calcular el impuesto, se estimarían 8.750&nbsp;€ en lugar de 3.750&nbsp;€. El flujo quedaría infravalorado en los 5.000&nbsp;€ del escudo fiscal. El ejemplo supone que toda la cuota es deducible ese año.</p>
+
+            <h3>4. Diferencia temporal contable-fiscal</h3>
+            <p>Una máquina de 100.000&nbsp;€ se amortiza contablemente en diez años: 10.000&nbsp;€ anuales. Si el patrón fiscal aplicable permite deducir 12.000&nbsp;€ el primer año, el gasto fiscal supera al contable en 2.000&nbsp;€. Se practica un ajuste extracontable negativo de 2.000&nbsp;€: se paga menos impuesto ahora, pero no se obtiene una deducción total mayor, sino un adelanto que revertirá después.</p>
+          </section>
+
+          <section id="procedimiento" class="lesson-block">
+            <p class="small-title">Plantilla de trabajo</p>
+            <h2>Procedimiento para un estudio de viabilidad</h2>
+            <ol>
+              <li>Separar inversión, gastos de explotación y financiación.</li>
+              <li>Descomponer la inversión en activos y componentes con vidas distintas.</li>
+              <li>Estimar coste, valor residual, fecha de disponibilidad y patrón de consumo.</li>
+              <li>Construir el cuadro contable y el valor pendiente.</li>
+              <li>Comprobar la deducción fiscal y registrar los ajustes.</li>
+              <li>Calcular impuestos y sumar los gastos sin pago para obtener la caja.</li>
+              <li>Incluir reinversiones, capital circulante y valor terminal antes del VAN y la TIR.</li>
+              <li>Ensayar escenarios de vida útil, valor residual, utilización y fiscalidad.</li>
+            </ol>
+            <div class="document-note"><p>En ejercicios académicos pueden simplificarse las reglas fiscales, pero las hipótesis deben quedar escritas. Para decisiones reales hay que revisar la norma vigente y las circunstancias concretas con asesoramiento competente.</p></div>
+          </section>
+
+          <section id="referencias" class="lesson-block">
+            <p class="small-title">Fuentes oficiales</p>
+            <h2>Normativa y referencias</h2>
+            <ul class="link-stack">
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2007-19884#A2-2" target="_blank" rel="noopener">Real Decreto 1514/2007: Plan General de Contabilidad, norma de registro y valoración 2.ª</a>. Regula la valoración y amortización del inmovilizado material.</li>
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2013-2557#segunda" target="_blank" rel="noopener">Resolución del ICAC de 1 de marzo de 2013, norma segunda</a>. Desarrolla valor amortizable, vida útil, métodos e inicio de la amortización.</li>
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a12" target="_blank" rel="noopener">Ley 27/2014 del Impuesto sobre Sociedades, artículo 12</a>. Regula la deducibilidad fiscal y contiene la tabla de coeficientes.</li>
+              <li><a href="https://www.boe.es/buscar/act.php?id=BOE-A-2014-12328#a101" target="_blank" rel="noopener">Ley 27/2014, artículos 101 a 103</a>. Regula determinados incentivos de las empresas de reducida dimensión.</li>
+            </ul>
+            <p>Los enlaces conducen a textos consolidados del BOE, que facilitan la consulta de la redacción vigente pero tienen carácter informativo. Para actuaciones con efectos jurídicos debe comprobarse también la publicación oficial y la normativa aplicable en la fecha del hecho económico.</p>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>Antonio Cerrato Casado</p></div></footer>
+</body>
+</html>
